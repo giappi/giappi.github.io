@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Biên tập kí âm sáo trúc</title>
+        <meta charset="utf-8" />
+        <script>
+            var notename = [ "đô0", "đô0#", "rê0", "mi0b", "mi0", "fa0", "fa0#", "sol0", "sol0#", "la0", "xi0b", "xi0", "đô", "đô#", "rê", "mib", "mi", "fa", "fa#", "sol", "sol#", "la", "xib", "xi", "đố", "đố#", "rế", "míb", "mí", "fá", "fá#", "sól", "sól#", "lá", "xíb", "xí", "đô3", "đô3#", "rê3", "mib3", "mi3", "fa3", "fa3#", "sol3", "sol3#", "la3", "xib3", "xi3"];
+            var notename_ext = {"đô2": "đố", "đô#2": "đố#", "rê2": "rế", "mi2b": "míb", "mi2": "mí", "fa2": "fá", "fa#2":"fá#", "sol2": "sól", "sol#2": "sól#", "la2": "lá", "xib2": "xíb", "xi2": "xí"};
+            
+            function normalizeNote(note_string)
+            {
+                return notename_ext[note_string] || note_string;
+            }
+            
+            function parseNote(note_string)
+            {
+                return notename.indexOf(note_string.toLowerCase());
+            }
+            
+            function parseSheet(sheet_string)
+            {
+                var song = [];
+                sheet_string = sheet_string.trim();
+                sheet_string = normalizeNote(sheet_string);
+                var lines = sheet_string.split("\n");
+                for(var line of lines)
+                {
+                    var notes = [];
+                    var words = line.trim().split(/ +/g);
+                    for(var note_string of words)
+                    {
+                        notes.push(parseNote(note_string));
+                    }
+                    song.push(notes);
+                }
+                return song;
+            }
+            
+            function toSheet(song)
+            {
+                var sheet = "";
+                for(var notes of song)
+                {
+                    sheet += notes.map(note => notename[note]).join(" ") + "\n";
+                }
+                return sheet;
+            }
+            
+            function checkShift(song, amount)
+            {
+                return !song.some(notes => notes.some(note => (note + amount < 0 || note + amount > notename.length - 1) ));
+            }
+            
+            function shiftSong(song, amount)
+            {
+                return song.map(words => words.map(word => word + amount));
+            }
+            
+            function shiftSheet(sheet_string, amount)
+            {
+                sheet_string = sheet_string.toLowerCase();
+                var complete = true;
+                var sheet_string1 = sheet_string.replace(/[a-z0-9#báàêếềíìóòôốồđ]+/ig, function(m)
+                {
+                    var note = parseNote(normalizeNote(m));
+                    console.log(m, "=> " ,note);
+                    if(note > -1 && note + amount > -1 && note + amount < notename.length)
+                    {
+                        return notename[note + amount];
+                    }
+                    //complete = false;
+                    return m;
+                });
+                return complete ? sheet_string1 : sheet_string;
+            }
+        </script>
+        <style>
+            #stdin
+            {
+                width: 500px;
+                height: 300px;
+                font-family: "Courier New";
+            }
+        </style>
+    </head>
+    <body>
+        <textarea id="stdin" >
+fa fa đố la xib đố
+rế đố đố
+la la la sol la đố fa
+fa la sol fa đô
+</textarea>
+        <div>
+            <span>Dịch nốt:</span>
+            <div class="button_container" >
+                <input type="button" value="-" onclick="shift(-1)" ></input>
+                <input type="button" value="+" onclick="shift(+1)" ></input>
+            </div>
+        </div>
+        <div id="stdout" >
+<b>Quy ước:</b><br />
+Quãng 1: có 12 nốt, bao gồm cả thăng(#), giáng (b): đô, đô#, rê, mib, mi, fa, fa#, sol, sol#, la, xib, xi<br />
+Quãng 2: thêm dấu sắc vào mỗi tên nốt: <i>đố, đố#, rế, míb, mí, fá, fá# sól, ...</i><br />
+Quãng 3: thêm số 3 vào sau mỗi nốt: <i>đô3, đô#3, rê3, mi3b, mi3, fa3, ...</i><br />
+Quãng 0: thêm dấu huyền vào mỗi nốt: <i>đồ, đồ#, rề, mìb, mì, fà, fà#, sòl, ...</i><br />
+        </pre>
+        <script>
+            /* global shiftSong, parseSheet, toSheet, checkShift, shiftSheet */
+            function shift(amount)
+            {
+                var sheet = document.getElementById("stdin").value;
+                var song = parseSheet(sheet);
+                /*
+                if(checkShift(song, amount))
+                {
+                    song = shiftSong(song, amount);
+                    document.getElementById("stdin").value = toSheet(song);
+                }
+                else
+                {
+                    console.log("invalid song!");
+                }
+                */
+                document.getElementById("stdin").value = shiftSheet(sheet, amount);
+
+            };
+            window.onload = function(e)
+            {
+            };
+        </script>
+    </body>
+<!-- https://github.com/giappi/flute-note-editor.git -->
+</html>
