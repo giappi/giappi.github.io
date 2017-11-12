@@ -1,0 +1,2675 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>  
+  <title>The Swift Programming Language (Swift 4): Expressions</title>
+  <link rel="stylesheet" type="text/css" href="../../../../Resources/1274/CSS/style-1.6.3.css" />
+  <link rel="stylesheet" type="text/css" href="../../../../Resources/1274/CSS/feedback-1.6.3.css" />
+  <meta charset='utf-8'> 
+<meta id="j-version" name="j-version" content="" />
+<meta id="build" name="build" content="32e73169b28e462967e02f4e96a19a99" />
+<meta id="document-version" name="document-version" content="10.1.2" />
+<meta id="book-assignments" name="book-assignments" content="{Type/Guide}, {Topic/Swift}" />
+<meta scheme="apple_ref" id="identifier" name="identifier" content="//apple_ref/doc/uid/TP40014097" />
+<meta id="chapterId" name="chapterId" content="TP40014097-CH32">
+<meta id="book-title" name="book-title" content="The Swift Programming Language (Swift 4)" />
+<meta id="book-resource-type" name="book-resource-type" content="Guide" />
+<meta id="book-root" name="book-root" content="./" />
+<meta id="book-json" name="book-json" content="book.json">
+<meta id="date" name="date" content="2017-09-19" />
+<meta id="description" name="description" content="The definitive guide to Swift, Apple’s programming language for building iOS, macOS, watchOS, and tvOS apps." />
+<meta id="IndexTitle" name="IndexTitle" content="" />
+<meta id="resources-uri" name="resources-uri" content="../../../../Resources/1274">
+<link id="book-index-page" rel="Start" title="" type="text/html" href="./index.html">
+<!-- , next_chapter: next_chapter, previous_chapter: previous_chapter -->
+<link id="next-page" rel="Next" type="text/html" href="">
+<link id="previous-page" rel="Prev" type="text/html" href="">
+<meta id="devcenter" name="devcenter" content="<!-- DEVCENTER_NAME -->" />
+<meta id="devcenter-url" name="devcenter-url" content="<!-- DEVCENTER_URL -->" />
+<meta id="reflib" name="reflib" content="<!-- REFLIB_NAME -->" />
+
+<meta id="xcode-display" name="xcode-display" content="render" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta id="platforms" name="platforms" content="Xcode Developer Tools">
+</head>
+
+  <body id="conceptual_flow_with_tasks" class="jazz">
+    
+    <header id="ios_header" class="hideOnPrint hideInXcode">
+  <div class="content-wrapper">
+    <p class="header-text">
+    	<a href="../../../../navigation/">Guides and Sample Code
+ 		</a>
+ </p>
+    <p id="wwdr"><img id="apple_logo" src="../../../../Resources/1274/Images/apple2.png" height="14px" width="12px" aria-hidden="true" /><a href="https://developer.apple.com">Developer</a></p>
+  </div>
+</header>
+
+    <section id="valence">
+  <div class="content-wrapper">
+    <p id="hierarchial_navigation">
+      <span id="book_title">The Swift Programming Language (Swift 4)</span>
+    </p>
+    <form id="search" class="hideInXcode" method="get" action="/search/index.php" accept-charset="utf-8" autocomplete="off">
+  <input type="search" id="ssi_SearchField" placeholder="Search Guides and Sample Code" name="q" autocomplete="off" tabindex="2" />
+</form>
+
+      
+   
+   
+
+
+
+
+    <span class="download-text hideInXcode">
+      <a href="https://itunes.apple.com/us/book/the-swift-programming-language/id881256329?mt=11">iBooks</a>
+    </span>
+
+    
+
+    <img id="shortstack" src="../../../../Resources/1274/Images/shortstack_2x.png"/>
+  </div>
+</section>
+    <div class="content-wrapper">
+      <nav id="navigator" class="book-parts hideInXcode" role="navigation">
+    <ul class="nav-parts">
+        <li data-id="//apple_ref/doc/uid/TP40014097-CH1-ID2"
+            class="part-name">
+            <a href="index.html#//apple_ref/doc/uid/TP40014097-CH3-ID0" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH3-ID0">Welcome to Swift</a>
+          <ul class="nav-chapters">
+              <li class="nav-chapter">
+              	<a href="index.html#//apple_ref/doc/uid/TP40014097-CH3-ID0" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH3-ID0">About Swift</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Compatibility.html#//apple_ref/doc/uid/TP40014097-CH45-ID561" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH45-ID561">Version Compatibility</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="GuidedTour.html#//apple_ref/doc/uid/TP40014097-CH2-ID1" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH2-ID1">A Swift Tour</a>
+              </li>
+          </ul>
+        </li>
+        <li data-id="//apple_ref/doc/uid/TP40014097-CH4-ID233"
+            class="part-name">
+            <a href="TheBasics.html#//apple_ref/doc/uid/TP40014097-CH5-ID309" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH5-ID309">Language Guide</a>
+          <ul class="nav-chapters">
+              <li class="nav-chapter">
+              	<a href="TheBasics.html#//apple_ref/doc/uid/TP40014097-CH5-ID309" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH5-ID309">The Basics</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="BasicOperators.html#//apple_ref/doc/uid/TP40014097-CH6-ID60" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH6-ID60">Basic Operators</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="StringsAndCharacters.html#//apple_ref/doc/uid/TP40014097-CH7-ID285" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH7-ID285">Strings and Characters</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="CollectionTypes.html#//apple_ref/doc/uid/TP40014097-CH8-ID105" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH8-ID105">Collection Types</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="ControlFlow.html#//apple_ref/doc/uid/TP40014097-CH9-ID120" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH9-ID120">Control Flow</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Functions.html#//apple_ref/doc/uid/TP40014097-CH10-ID158" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH10-ID158">Functions</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Closures.html#//apple_ref/doc/uid/TP40014097-CH11-ID94" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH11-ID94">Closures</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Enumerations.html#//apple_ref/doc/uid/TP40014097-CH12-ID145" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH12-ID145">Enumerations</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="ClassesAndStructures.html#//apple_ref/doc/uid/TP40014097-CH13-ID82" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH13-ID82">Classes and Structures</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Properties.html#//apple_ref/doc/uid/TP40014097-CH14-ID254" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH14-ID254">Properties</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Methods.html#//apple_ref/doc/uid/TP40014097-CH15-ID234" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH15-ID234">Methods</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Subscripts.html#//apple_ref/doc/uid/TP40014097-CH16-ID305" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH16-ID305">Subscripts</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Inheritance.html#//apple_ref/doc/uid/TP40014097-CH17-ID193" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH17-ID193">Inheritance</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Initialization.html#//apple_ref/doc/uid/TP40014097-CH18-ID203" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH18-ID203">Initialization</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Deinitialization.html#//apple_ref/doc/uid/TP40014097-CH19-ID142" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH19-ID142">Deinitialization</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="OptionalChaining.html#//apple_ref/doc/uid/TP40014097-CH21-ID245" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH21-ID245">Optional Chaining</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="ErrorHandling.html#//apple_ref/doc/uid/TP40014097-CH42-ID508" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH42-ID508">Error Handling</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="TypeCasting.html#//apple_ref/doc/uid/TP40014097-CH22-ID338" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH22-ID338">Type Casting</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="NestedTypes.html#//apple_ref/doc/uid/TP40014097-CH23-ID242" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH23-ID242">Nested Types</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Extensions.html#//apple_ref/doc/uid/TP40014097-CH24-ID151" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH24-ID151">Extensions</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Protocols.html#//apple_ref/doc/uid/TP40014097-CH25-ID267" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH25-ID267">Protocols</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Generics.html#//apple_ref/doc/uid/TP40014097-CH26-ID179" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH26-ID179">Generics</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="AutomaticReferenceCounting.html#//apple_ref/doc/uid/TP40014097-CH20-ID48" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH20-ID48">Automatic Reference Counting</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="MemorySafety.html#//apple_ref/doc/uid/TP40014097-CH46-ID567" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH46-ID567">Memory Safety</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="AccessControl.html#//apple_ref/doc/uid/TP40014097-CH41-ID3" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH41-ID3">Access Control</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="AdvancedOperators.html#//apple_ref/doc/uid/TP40014097-CH27-ID28" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH27-ID28">Advanced Operators</a>
+              </li>
+          </ul>
+        </li>
+        <li data-id="//apple_ref/doc/uid/TP40014097-CH28-ID427"
+            class="part-name nav-part-active open-part">
+            <a href="AboutTheLanguageReference.html#//apple_ref/doc/uid/TP40014097-CH29-ID345" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH29-ID345">Language Reference</a>
+          <ul class="nav-chapters">
+              <li class="nav-chapter">
+              	<a href="AboutTheLanguageReference.html#//apple_ref/doc/uid/TP40014097-CH29-ID345" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH29-ID345">About the Language Reference</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="LexicalStructure.html#//apple_ref/doc/uid/TP40014097-CH30-ID410" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH30-ID410">Lexical Structure</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Types.html#//apple_ref/doc/uid/TP40014097-CH31-ID445" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH31-ID445">Types</a>
+              </li>
+              <li class="nav-chapter nav-current-chapter">
+              	<a href="#//apple_ref/doc/uid/TP40014097-CH32-ID383" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH32-ID383">Expressions</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Statements.html#//apple_ref/doc/uid/TP40014097-CH33-ID428" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH33-ID428">Statements</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Declarations.html#//apple_ref/doc/uid/TP40014097-CH34-ID351" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH34-ID351">Declarations</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Attributes.html#//apple_ref/doc/uid/TP40014097-CH35-ID347" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH35-ID347">Attributes</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Patterns.html#//apple_ref/doc/uid/TP40014097-CH36-ID419" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH36-ID419">Patterns</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="GenericParametersAndArguments.html#//apple_ref/doc/uid/TP40014097-CH37-ID406" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH37-ID406">Generic Parameters and Arguments</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="zzSummaryOfTheGrammar.html#//apple_ref/doc/uid/TP40014097-CH38-ID458" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH38-ID458">Summary of the Grammar</a>
+              </li>
+          </ul>
+        </li>
+        <li data-id="//apple_ref/doc/uid/TP40014097-CH39-ID460"
+            class="part-name">
+            <a href="RevisionHistory.html#//apple_ref/doc/uid/TP40014097-CH40-ID459" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH40-ID459">Revision History</a>
+          <ul class="nav-chapters">
+              <li class="nav-chapter">
+              	<a href="RevisionHistory.html#//apple_ref/doc/uid/TP40014097-CH40-ID459" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH40-ID459">Document Revision History</a>
+              </li>
+          </ul>
+        </li>
+    </ul>
+</nav>
+
+      <menu id="bashful" type="toolbar">
+  <div class="shield"></div>
+  <menuitem id="jump_to" class="menu-bar-item closed">
+  <span>On This Page</span>
+  <div class="chevron">
+    <div class="chevy chevron-left"></div>
+    <div class="chevy chevron-right"></div>
+  </div>
+  <menu type="list" class="details">
+      <ul class="list-bullet">
+          <li class="item">
+            <a href="#//apple_ref/doc/uid/TP40014097-CH32-ID384">Prefix Expressions</a>
+          </li>
+          <li class="item">
+            <a href="#//apple_ref/doc/uid/TP40014097-CH32-ID385">Binary Expressions</a>
+          </li>
+          <li class="item">
+            <a href="#//apple_ref/doc/uid/TP40014097-CH32-ID389">Primary Expressions</a>
+          </li>
+          <li class="item">
+            <a href="#//apple_ref/doc/uid/TP40014097-CH32-ID397">Postfix Expressions</a>
+          </li>
+      </ul>
+  </menu>
+</menuitem>
+
+</menu>
+<div class="pixel-line"></div>
+<div class="rubber-band-gap"></div>
+<article class="chapter">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32"></a><a name="//apple_ref/doc/uid/TP40014097-CH32-ID383"></a>
+
+  <h2 class='chapter-name'>Expressions</h2>
+
+
+  
+  	<section class="section">
+  		<p class="para">
+  In Swift, there are four kinds of expressions: prefix expressions, binary expressions, primary expressions, and postfix expressions. Evaluating an expression returns a value, causes a side effect, or both.
+</p>
+<p class="para">
+  Prefix and binary expressions let you apply operators to smaller expressions. Primary expressions are conceptually the simplest kind of expression, and they provide a way to access values. Postfix expressions, like prefix and binary expressions, let you build up more complex expressions using postfixes such as function calls and member access. Each kind of expression is described in detail in the sections below.
+</p>
+<div class="syntax-defs">
+  <p class="syntax-defs-name">
+  Grammar of an expression
+</p><div class="syntax-defs-group">
+  <p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/expression"></a>
+  <span class="syntax-def-name">
+  expression
+</span>
+<span class="arrow">
+  →
+</span><span class="optional"><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/try-operator" data-renderer-version="2" data-id="//apple_ref/swift/grammar/try-operator">try-operator</a>&shy;</span><sub class="subscript">opt</sub>&shy;</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/prefix-expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/prefix-expression">prefix-expression</a>&shy;</span><span class="optional"><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/binary-expressions" data-renderer-version="2" data-id="//apple_ref/swift/grammar/binary-expressions">binary-expressions</a>&shy;</span><sub class="subscript">opt</sub>&shy;</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/expression-list"></a>
+  <span class="syntax-def-name">
+  expression-list
+</span>
+<span class="arrow">
+  →
+</span><span class="alternative">
+  <span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/expression">expression</a>&shy;</span>
+</span><span class="alternative">
+  <span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/expression">expression</a>&shy;</span><code class="literal">,&shy;</code><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/expression-list" data-renderer-version="2" data-id="//apple_ref/swift/grammar/expression-list">expression-list</a>&shy;</span>
+</span>
+</p>
+</div>
+ </div>
+		</section> 
+
+
+  <section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-ID384"></a>
+  <h3 class="section-name" tabindex="0">Prefix Expressions</h3>
+  <p class="para">
+  <em>Prefix expressions</em> combine an optional prefix operator with an expression. Prefix operators take one argument, the expression that follows them.
+</p><p class="para">
+  For information about the behavior of these operators, see <span class="x-name"><a href="BasicOperators.html#//apple_ref/doc/uid/TP40014097-CH6-ID60" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH6-ID60">Basic Operators</a></span> and <span class="x-name"><a href="AdvancedOperators.html#//apple_ref/doc/uid/TP40014097-CH27-ID28" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH27-ID28">Advanced Operators</a></span>.
+</p><p class="para">
+  For information about the operators provided by the Swift standard library, see <a href="https://developer.apple.com/documentation/swift/operator_declarations">Operator Declarations</a>.
+</p><p class="para">
+  In addition to the standard library operators, you use <code class="code-voice">&amp;</code> immediately before the name of a variable that’s being passed as an in-out argument to a function call expression. For more information and to see an example, see <span class="x-name"><a href="Functions.html#//apple_ref/doc/uid/TP40014097-CH10-ID173" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH10-ID173">In-Out Parameters</a></span>.
+</p><div class="syntax-defs">
+  <p class="syntax-defs-name">
+  Grammar of a prefix expression
+</p><div class="syntax-defs-group">
+  <p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/prefix-expression"></a>
+  <span class="syntax-def-name">
+  prefix-expression
+</span>
+<span class="arrow">
+  →
+</span><span class="optional"><span class="syntactic-cat"><a href="LexicalStructure.html#//apple_ref/swift/grammar/prefix-operator" data-renderer-version="2" data-id="//apple_ref/swift/grammar/prefix-operator">prefix-operator</a>&shy;</span><sub class="subscript">opt</sub>&shy;</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/postfix-expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/postfix-expression">postfix-expression</a>&shy;</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-NoLink_405"></a>
+  <span class="syntax-def-name">
+  prefix-expression
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/in-out-expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/in-out-expression">in-out-expression</a>&shy;</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/in-out-expression"></a>
+  <span class="syntax-def-name">
+  in-out-expression
+</span>
+<span class="arrow">
+  →
+</span><code class="literal">&amp;&shy;</code><span class="syntactic-cat"><a href="LexicalStructure.html#//apple_ref/swift/grammar/identifier" data-renderer-version="2" data-id="//apple_ref/swift/grammar/identifier">identifier</a>&shy;</span>
+</p>
+</div>
+ </div>
+  <section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-ID516"></a>
+  <h3 class="section-name" tabindex="0">Try Operator</h3>
+  <p class="para">
+  A <em>try expression</em> consists of the <code class="code-voice">try</code> operator followed by an expression that can throw an error. It has the following form:
+</p><span class="caption"></span>
+<div class="code-outline">
+  <ul class="code-outline-lines">
+    <li><pre class="code-voice"><span class="kt">try</span> <em class="variable-text">expression</em></pre></li>
+  </ul>
+</div><p class="para">
+  An <em>optional-try expression</em> consists of the <code class="code-voice">try?</code> operator followed by an expression that can throw an error. It has the following form:
+</p><span class="caption"></span>
+<div class="code-outline">
+  <ul class="code-outline-lines">
+    <li><pre class="code-voice"><span class="kt">try</span>? <em class="variable-text">expression</em></pre></li>
+  </ul>
+</div><p class="para">
+  If the <em>expression</em> does not throw an error, the value of the optional-try expression is an optional containing the value of the <em>expression</em>. Otherwise, the value of the optional-try expression is <code class="code-voice">nil</code>.
+</p><p class="para">
+  A <em>forced-try expression</em> consists of the <code class="code-voice">try!</code> operator followed by an expression that can throw an error. It has the following form:
+</p><span class="caption"></span>
+<div class="code-outline">
+  <ul class="code-outline-lines">
+    <li><pre class="code-voice"><span class="kt">try</span>! <em class="variable-text">expression</em></pre></li>
+  </ul>
+</div><p class="para">
+  If the <em>expression</em> throws an error, a runtime error is produced.
+</p><p class="para">
+  When the expression on the left-hand side of a binary operator is marked with <code class="code-voice">try</code>, <code class="code-voice">try?</code>, or <code class="code-voice">try!</code>, that operator applies to the whole binary expression. That said, you can use parentheses to be explicit about the scope of the operator’s application.
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="vc">sum</span> = <span class="kt">try</span> <span class="vc">someThrowingFunction</span>() + <span class="vc">anotherThrowingFunction</span>()   <span class="c">// try applies to both function calls</span></code></li>
+            <li><code class="code-voice"><span class="vc">sum</span> = <span class="kt">try</span> (<span class="vc">someThrowingFunction</span>() + <span class="vc">anotherThrowingFunction</span>()) <span class="c">// try applies to both function calls</span></code></li>
+            <li><code class="code-voice"><span class="vc">sum</span> = (<span class="kt">try</span> <span class="vc">someThrowingFunction</span>()) + <span class="vc">anotherThrowingFunction</span>() <span class="c">// Error: try applies only to the first function call</span></code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  A <code class="code-voice">try</code> expression can’t appear on the right-hand side of a binary operator, unless the binary operator is the assignment operator or the <code class="code-voice">try</code> expression is enclosed in parentheses.
+</p><p class="para">
+  For more information and to see examples of how to use <code class="code-voice">try</code>, <code class="code-voice">try?</code>, and <code class="code-voice">try!</code>, see <span class="x-name"><a href="ErrorHandling.html#//apple_ref/doc/uid/TP40014097-CH42-ID508" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH42-ID508">Error Handling</a></span>.
+</p><div class="syntax-defs">
+  <p class="syntax-defs-name">
+  Grammar of a try expression
+</p><div class="syntax-defs-group">
+  <p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/try-operator"></a>
+  <span class="syntax-def-name">
+  try-operator
+</span>
+<span class="arrow">
+  →
+</span><span class="alternative">
+  <code class="literal">try&shy;</code>
+</span><span class="alternative">
+  <code class="literal">try&shy;</code><code class="literal">?&shy;</code>
+</span><span class="alternative">
+  <code class="literal">try&shy;</code><code class="literal">!&shy;</code>
+</span>
+</p>
+</div>
+ </div>
+  
+</section>
+
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-ID385"></a>
+  <h3 class="section-name" tabindex="0">Binary Expressions</h3>
+  <p class="para">
+  <em>Binary expressions</em> combine an infix binary operator with the expression that it takes as its left-hand and right-hand arguments. It has the following form:
+</p><span class="caption"></span>
+<div class="code-outline">
+  <ul class="code-outline-lines">
+    <li><pre class="code-voice"><em class="variable-text">left-hand argument</em> <em class="variable-text">operator</em> <em class="variable-text">right-hand argument</em></pre></li>
+  </ul>
+</div><p class="para">
+  For information about the behavior of these operators, see <span class="x-name"><a href="BasicOperators.html#//apple_ref/doc/uid/TP40014097-CH6-ID60" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH6-ID60">Basic Operators</a></span> and <span class="x-name"><a href="AdvancedOperators.html#//apple_ref/doc/uid/TP40014097-CH27-ID28" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH27-ID28">Advanced Operators</a></span>.
+</p><p class="para">
+  For information about the operators provided by the Swift standard library, see <a href="https://developer.apple.com/documentation/swift/operator_declarations">Operator Declarations</a>.
+</p><div class="note">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-NoLink_409"></a>
+  <aside class="aside">
+    <p class="aside-title">Note
+    </p>
+    	<p class="para">At parse time, an expression made up of binary operators is represented as a flat list. This list is transformed into a tree by applying operator precedence. For example, the expression <code class="code-voice">2 + 3 * 5</code> is initially understood as a flat list of five items, <code class="code-voice">2</code>, <code class="code-voice">+</code>, <code class="code-voice">3</code>, <code class="code-voice">*</code>, and <code class="code-voice">5</code>. This process transforms it into the tree (2 + (3 * 5)).
+    	</p>
+    
+  </aside>
+</div><div class="syntax-defs">
+  <p class="syntax-defs-name">
+  Grammar of a binary expression
+</p><div class="syntax-defs-group">
+  <p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/binary-expression"></a>
+  <span class="syntax-def-name">
+  binary-expression
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="LexicalStructure.html#//apple_ref/swift/grammar/binary-operator" data-renderer-version="2" data-id="//apple_ref/swift/grammar/binary-operator">binary-operator</a>&shy;</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/prefix-expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/prefix-expression">prefix-expression</a>&shy;</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-NoLink_412"></a>
+  <span class="syntax-def-name">
+  binary-expression
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/assignment-operator" data-renderer-version="2" data-id="//apple_ref/swift/grammar/assignment-operator">assignment-operator</a>&shy;</span><span class="optional"><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/try-operator" data-renderer-version="2" data-id="//apple_ref/swift/grammar/try-operator">try-operator</a>&shy;</span><sub class="subscript">opt</sub>&shy;</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/prefix-expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/prefix-expression">prefix-expression</a>&shy;</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-NoLink_413"></a>
+  <span class="syntax-def-name">
+  binary-expression
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/conditional-operator" data-renderer-version="2" data-id="//apple_ref/swift/grammar/conditional-operator">conditional-operator</a>&shy;</span><span class="optional"><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/try-operator" data-renderer-version="2" data-id="//apple_ref/swift/grammar/try-operator">try-operator</a>&shy;</span><sub class="subscript">opt</sub>&shy;</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/prefix-expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/prefix-expression">prefix-expression</a>&shy;</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-NoLink_414"></a>
+  <span class="syntax-def-name">
+  binary-expression
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/type-casting-operator" data-renderer-version="2" data-id="//apple_ref/swift/grammar/type-casting-operator">type-casting-operator</a>&shy;</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/binary-expressions"></a>
+  <span class="syntax-def-name">
+  binary-expressions
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/binary-expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/binary-expression">binary-expression</a>&shy;</span><span class="optional"><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/binary-expressions" data-renderer-version="2" data-id="//apple_ref/swift/grammar/binary-expressions">binary-expressions</a>&shy;</span><sub class="subscript">opt</sub>&shy;</span>
+</p>
+</div>
+ </div>
+  <section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-ID386"></a>
+  <h3 class="section-name" tabindex="0">Assignment Operator</h3>
+  <p class="para">
+  The <em>assignment operator</em> sets a new value for a given expression. It has the following form:
+</p><span class="caption"></span>
+<div class="code-outline">
+  <ul class="code-outline-lines">
+    <li><pre class="code-voice"><em class="variable-text">expression</em> = <em class="variable-text">value</em></pre></li>
+  </ul>
+</div><p class="para">
+  The value of the <em>expression</em> is set to the value obtained by evaluating the <em>value</em>. If the <em>expression</em> is a tuple, the <em>value</em> must be a tuple with the same number of elements. (Nested tuples are allowed.) Assignment is performed from each part of the <em>value</em> to the corresponding part of the <em>expression</em>. For example:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice">(<span class="vc">a</span>, <span class="kt">_</span>, (<span class="vc">b</span>, <span class="vc">c</span>)) = (<span class="s">&quot;test&quot;</span>, <span class="m">9.45</span>, (<span class="m">12</span>, <span class="m">3</span>))</code></li>
+            <li><code class="code-voice"><span class="c">// a is &quot;test&quot;, b is 12, c is 3, and 9.45 is ignored</span></code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  The assignment operator does not return any value.
+</p><div class="syntax-defs">
+  <p class="syntax-defs-name">
+  Grammar of an assignment operator
+</p><div class="syntax-defs-group">
+  <p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/assignment-operator"></a>
+  <span class="syntax-def-name">
+  assignment-operator
+</span>
+<span class="arrow">
+  →
+</span><code class="literal">=&shy;</code>
+</p>
+</div>
+ </div>
+  
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-ID387"></a>
+  <h3 class="section-name" tabindex="0">Ternary Conditional Operator</h3>
+  <p class="para">
+  The <em>ternary conditional operator</em> evaluates to one of two given values based on the value of a condition. It has the following form:
+</p><span class="caption"></span>
+<div class="code-outline">
+  <ul class="code-outline-lines">
+    <li><pre class="code-voice"><em class="variable-text">condition</em> ? <em class="variable-text">expression used if true</em> : <em class="variable-text">expression used if false</em></pre></li>
+  </ul>
+</div><p class="para">
+  If the <em>condition</em> evaluates to <code class="code-voice">true</code>, the conditional operator evaluates the first expression and returns its value. Otherwise, it evaluates the second expression and returns its value. The unused expression is not evaluated.
+</p><p class="para">
+  For an example that uses the ternary conditional operator, see <span class="x-name"><a href="BasicOperators.html#//apple_ref/doc/uid/TP40014097-CH6-ID71" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH6-ID71">Ternary Conditional Operator</a></span>.
+</p><div class="syntax-defs">
+  <p class="syntax-defs-name">
+  Grammar of a conditional operator
+</p><div class="syntax-defs-group">
+  <p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/conditional-operator"></a>
+  <span class="syntax-def-name">
+  conditional-operator
+</span>
+<span class="arrow">
+  →
+</span><code class="literal">?&shy;</code><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/expression">expression</a>&shy;</span><code class="literal">:&shy;</code>
+</p>
+</div>
+ </div>
+  
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-ID388"></a>
+  <h3 class="section-name" tabindex="0">Type-Casting Operators</h3>
+  <p class="para">
+  There are four type-casting operators: the <code class="code-voice">is</code> operator, the <code class="code-voice">as</code> operator, the <code class="code-voice">as?</code> operator, and the <code class="code-voice">as!</code> operator.
+</p><p class="para">
+  They have the following form:
+</p><span class="caption"></span>
+<div class="code-outline">
+  <ul class="code-outline-lines">
+    <li><pre class="code-voice"><em class="variable-text">expression</em> <span class="kt">is</span> <em class="variable-text">type</em></pre></li><li><pre class="code-voice"><em class="variable-text">expression</em> <span class="kt">as</span> <em class="variable-text">type</em></pre></li><li><pre class="code-voice"><em class="variable-text">expression</em> <span class="kt">as</span>? <em class="variable-text">type</em></pre></li><li><pre class="code-voice"><em class="variable-text">expression</em> <span class="kt">as</span>! <em class="variable-text">type</em></pre></li>
+  </ul>
+</div><p class="para">
+  The <code class="code-voice">is</code> operator checks at runtime whether the <em>expression</em> can be cast to the specified <em>type</em>. It returns <code class="code-voice">true</code> if the <em>expression</em> can be cast to the specified <em>type</em>; otherwise, it returns <code class="code-voice">false</code>.
+</p><p class="para">
+  The <code class="code-voice">as</code> operator performs a cast when it is known at compile time that the cast always succeeds, such as upcasting or bridging. Upcasting lets you use an expression as an instance of its type’s supertype, without using an intermediate variable. The following approaches are equivalent:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">func</span> <span class="vc">f</span>(<span class="kt">_</span> <span class="vc">any</span>: <span class="kt">Any</span>) { <span class="vc">print</span>(<span class="s">&quot;Function for Any&quot;</span>) }</code></li>
+            <li><code class="code-voice"><span class="kt">func</span> <span class="vc">f</span>(<span class="kt">_</span> <span class="vc">int</span>: <span class="n"><!-- a href="" -->Int<!-- /a --></span>) { <span class="vc">print</span>(<span class="s">&quot;Function for Int&quot;</span>) }</code></li>
+            <li><code class="code-voice"><span class="kt">let</span> <span class="vc">x</span> = <span class="m">10</span></code></li>
+            <li><code class="code-voice"><span class="vc">f</span>(<span class="vc">x</span>)</code></li>
+            <li><code class="code-voice"><span class="c">// Prints &quot;Function for Int&quot;</span></code></li>
+            <li><code class="code-voice"> </code></li>
+            <li><code class="code-voice"><span class="kt">let</span> <span class="vc">y</span>: <span class="kt">Any</span> = <span class="vc">x</span></code></li>
+            <li><code class="code-voice"><span class="vc">f</span>(<span class="vc">y</span>)</code></li>
+            <li><code class="code-voice"><span class="c">// Prints &quot;Function for Any&quot;</span></code></li>
+            <li><code class="code-voice"> </code></li>
+            <li><code class="code-voice"><span class="vc">f</span>(<span class="vc">x</span> <span class="kt">as</span> <span class="kt">Any</span>)</code></li>
+            <li><code class="code-voice"><span class="c">// Prints &quot;Function for Any&quot;</span></code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  Bridging lets you use an expression of a Swift standard library type such as <code class="code-voice">String</code> as its corresponding Foundation type such as <code class="code-voice">NSString</code> without needing to create a new instance. For more information on bridging, see <a href="../BuildingCocoaApps/WorkingWithCocoaDataTypes.html#//apple_ref/doc/uid/TP40014216-CH6" data-renderer-version="2" target="_self">Working with Cocoa Data Types</a> in <em class="u-book"><a href="../BuildingCocoaApps/index.html#//apple_ref/doc/uid/TP40014216" data-renderer-version="2" target="_self">Using Swift with Cocoa and Objective-C (Swift 4)</a></em>.
+</p><p class="para">
+  The <code class="code-voice">as?</code> operator performs a conditional cast of the <em>expression</em> to the specified <em>type</em>. The <code class="code-voice">as?</code> operator returns an optional of the specified <em>type</em>. At runtime, if the cast succeeds, the value of <em>expression</em> is wrapped in an optional and returned; otherwise, the value returned is <code class="code-voice">nil</code>. If casting to the specified <em>type</em> is guaranteed to fail or is guaranteed to succeed, a compile-time error is raised.
+</p><p class="para">
+  The <code class="code-voice">as!</code> operator performs a forced cast of the <em>expression</em> to the specified <em>type</em>. The <code class="code-voice">as!</code> operator returns a value of the specified <em>type</em>, not an optional type. If the cast fails, a runtime error is raised. The behavior of <code class="code-voice">x as! T</code> is the same as the behavior of <code class="code-voice">(x as? T)!</code>.
+</p><p class="para">
+  For more information about type casting and to see examples that use the type-casting operators, see <span class="x-name"><a href="TypeCasting.html#//apple_ref/doc/uid/TP40014097-CH22-ID338" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH22-ID338">Type Casting</a></span>.
+</p><div class="syntax-defs">
+  <p class="syntax-defs-name">
+  Grammar of a type-casting operator
+</p><div class="syntax-defs-group">
+  <p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/type-casting-operator"></a>
+  <span class="syntax-def-name">
+  type-casting-operator
+</span>
+<span class="arrow">
+  →
+</span><code class="literal">is&shy;</code><span class="syntactic-cat"><a href="Types.html#//apple_ref/swift/grammar/type" data-renderer-version="2" data-id="//apple_ref/swift/grammar/type">type</a>&shy;</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-NoLink_422"></a>
+  <span class="syntax-def-name">
+  type-casting-operator
+</span>
+<span class="arrow">
+  →
+</span><code class="literal">as&shy;</code><span class="syntactic-cat"><a href="Types.html#//apple_ref/swift/grammar/type" data-renderer-version="2" data-id="//apple_ref/swift/grammar/type">type</a>&shy;</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-NoLink_423"></a>
+  <span class="syntax-def-name">
+  type-casting-operator
+</span>
+<span class="arrow">
+  →
+</span><code class="literal">as&shy;</code><code class="literal">?&shy;</code><span class="syntactic-cat"><a href="Types.html#//apple_ref/swift/grammar/type" data-renderer-version="2" data-id="//apple_ref/swift/grammar/type">type</a>&shy;</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-NoLink_424"></a>
+  <span class="syntax-def-name">
+  type-casting-operator
+</span>
+<span class="arrow">
+  →
+</span><code class="literal">as&shy;</code><code class="literal">!&shy;</code><span class="syntactic-cat"><a href="Types.html#//apple_ref/swift/grammar/type" data-renderer-version="2" data-id="//apple_ref/swift/grammar/type">type</a>&shy;</span>
+</p>
+</div>
+ </div>
+  
+</section>
+
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-ID389"></a>
+  <h3 class="section-name" tabindex="0">Primary Expressions</h3>
+  <p class="para">
+  <em>Primary expressions</em> are the most basic kind of expression. They can be used as expressions on their own, and they can be combined with other tokens to make prefix expressions, binary expressions, and postfix expressions.
+</p><div class="syntax-defs">
+  <p class="syntax-defs-name">
+  Grammar of a primary expression
+</p><div class="syntax-defs-group">
+  <p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/primary-expression"></a>
+  <span class="syntax-def-name">
+  primary-expression
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="LexicalStructure.html#//apple_ref/swift/grammar/identifier" data-renderer-version="2" data-id="//apple_ref/swift/grammar/identifier">identifier</a>&shy;</span><span class="optional"><span class="syntactic-cat"><a href="GenericParametersAndArguments.html#//apple_ref/swift/grammar/generic-argument-clause" data-renderer-version="2" data-id="//apple_ref/swift/grammar/generic-argument-clause">generic-argument-clause</a>&shy;</span><sub class="subscript">opt</sub>&shy;</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-NoLink_427"></a>
+  <span class="syntax-def-name">
+  primary-expression
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/literal-expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/literal-expression">literal-expression</a>&shy;</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-NoLink_428"></a>
+  <span class="syntax-def-name">
+  primary-expression
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/self-expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/self-expression">self-expression</a>&shy;</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-NoLink_429"></a>
+  <span class="syntax-def-name">
+  primary-expression
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/superclass-expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/superclass-expression">superclass-expression</a>&shy;</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-NoLink_430"></a>
+  <span class="syntax-def-name">
+  primary-expression
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/closure-expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/closure-expression">closure-expression</a>&shy;</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-NoLink_431"></a>
+  <span class="syntax-def-name">
+  primary-expression
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/parenthesized-expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/parenthesized-expression">parenthesized-expression</a>&shy;</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-NoLink_432"></a>
+  <span class="syntax-def-name">
+  primary-expression
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/tuple-expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/tuple-expression">tuple-expression</a>&shy;</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-NoLink_433"></a>
+  <span class="syntax-def-name">
+  primary-expression
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/implicit-member-expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/implicit-member-expression">implicit-member-expression</a>&shy;</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-NoLink_434"></a>
+  <span class="syntax-def-name">
+  primary-expression
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/wildcard-expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/wildcard-expression">wildcard-expression</a>&shy;</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-NoLink_435"></a>
+  <span class="syntax-def-name">
+  primary-expression
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/key-path-expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/key-path-expression">key-path-expression</a>&shy;</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-NoLink_436"></a>
+  <span class="syntax-def-name">
+  primary-expression
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/selector-expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/selector-expression">selector-expression</a>&shy;</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-NoLink_437"></a>
+  <span class="syntax-def-name">
+  primary-expression
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/key-path-string-expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/key-path-string-expression">key-path-string-expression</a>&shy;</span>
+</p>
+</div>
+ </div>
+  <section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-ID390"></a>
+  <h3 class="section-name" tabindex="0">Literal Expression</h3>
+  <p class="para">
+  A <em>literal expression</em> consists of either an ordinary literal (such as a string or a number), an array or dictionary literal, a playground literal, or one of the following special literals:
+</p><div class="tableholder">
+  
+  <table class="graybox" border="0" cellspacing="0" cellpadding="5">
+    <caption class="tablecaption"></caption>
+    <thead>
+        <tr>
+            <th scope="col" class="TableHeading_TableRow_TableCell"><p class="para">
+  Literal
+</p></th>
+            <th scope="col" class="TableHeading_TableRow_TableCell"><p class="para">
+  Type
+</p></th>
+            <th scope="col" class="TableHeading_TableRow_TableCell"><p class="para">
+  Value
+</p></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td scope="row"><p class="para">
+  <code class="code-voice">#file</code>
+</p></td>
+            <td><p class="para">
+  <code class="code-voice">String</code>
+</p></td>
+            <td><p class="para">
+  The name of the file in which it appears.
+</p></td>
+        </tr>
+        <tr>
+            <td scope="row"><p class="para">
+  <code class="code-voice">#line</code>
+</p></td>
+            <td><p class="para">
+  <code class="code-voice">Int</code>
+</p></td>
+            <td><p class="para">
+  The line number on which it appears.
+</p></td>
+        </tr>
+        <tr>
+            <td scope="row"><p class="para">
+  <code class="code-voice">#column</code>
+</p></td>
+            <td><p class="para">
+  <code class="code-voice">Int</code>
+</p></td>
+            <td><p class="para">
+  The column number in which it begins.
+</p></td>
+        </tr>
+        <tr>
+            <td scope="row"><p class="para">
+  <code class="code-voice">#function</code>
+</p></td>
+            <td><p class="para">
+  <code class="code-voice">String</code>
+</p></td>
+            <td><p class="para">
+  The name of the declaration in which it appears.
+</p></td>
+        </tr>
+    </tbody>
+  </table>
+</div><p class="para">
+  Inside a function, the value of <code class="code-voice">#function</code> is the name of that function, inside a method it is the name of that method, inside a property getter or setter it is the name of that property, inside special members like <code class="code-voice">init</code> or <code class="code-voice">subscript</code> it is the name of that keyword, and at the top level of a file it is the name of the current module.
+</p><p class="para">
+  When used as the default value of a function or method parameter, the special literal’s value is determined when the default value expression is evaluated at the call site.
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">func</span> <span class="vc">logFunctionName</span>(<span class="vc">string</span>: <span class="n"><!-- a href="" -->String<!-- /a --></span> = <span class="kt">#function</span>) {</code></li>
+            <li><code class="code-voice">    <span class="vc">print</span>(<span class="vc">string</span>)</code></li>
+            <li><code class="code-voice">}</code></li>
+            <li><code class="code-voice"><span class="kt">func</span> <span class="vc">myFunction</span>() {</code></li>
+            <li><code class="code-voice">    <span class="vc">logFunctionName</span>() <span class="c">// Prints &quot;myFunction()&quot;.</span></code></li>
+            <li><code class="code-voice">}</code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  An <em>array literal</em> is an ordered collection of values. It has the following form:
+</p><span class="caption"></span>
+<div class="code-outline">
+  <ul class="code-outline-lines">
+    <li><pre class="code-voice">[<em class="variable-text">value 1</em>, <em class="variable-text">value 2</em>, <em class="variable-text">...</em>]</pre></li>
+  </ul>
+</div><p class="para">
+  The last expression in the array can be followed by an optional comma. The value of an array literal has type <code class="code-voice">[T]</code>, where <code class="code-voice">T</code> is the type of the expressions inside it. If there are expressions of multiple types, <code class="code-voice">T</code> is their closest common supertype. Empty array literals are written using an empty pair of square brackets and can be used to create an empty array of a specified type.
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">var</span> <span class="vc">emptyArray</span>: [<span class="n"><!-- a href="" -->Double<!-- /a --></span>] = []</code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  A <em>dictionary literal</em> is an unordered collection of key-value pairs. It has the following form:
+</p><span class="caption"></span>
+<div class="code-outline">
+  <ul class="code-outline-lines">
+    <li><pre class="code-voice">[<em class="variable-text">key 1</em>: <em class="variable-text">value 1</em>, <em class="variable-text">key 2</em>: <em class="variable-text">value 2</em>, <em class="variable-text">...</em>]</pre></li>
+  </ul>
+</div><p class="para">
+  The last expression in the dictionary can be followed by an optional comma. The value of a dictionary literal has type <code class="code-voice">[Key: Value]</code>, where <code class="code-voice">Key</code> is the type of its key expressions and <code class="code-voice">Value</code> is the type of its value expressions. If there are expressions of multiple types, <code class="code-voice">Key</code> and <code class="code-voice">Value</code> are the closest common supertype for their respective values. An empty dictionary literal is written as a colon inside a pair of brackets (<code class="code-voice">[:]</code>) to distinguish it from an empty array literal. You can use an empty dictionary literal to create an empty dictionary literal of specified key and value types.
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">var</span> <span class="vc">emptyDictionary</span>: [<span class="n"><!-- a href="" -->String<!-- /a --></span>: <span class="n"><!-- a href="" -->Double<!-- /a --></span>] = [:]</code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  A <em>playground literal</em> is used by Xcode to create an interactive representation of a color, file, or image within the program editor. Playground literals in plain text outside of Xcode are represented using a special literal syntax.
+</p><p class="para">
+  For information on using playground literals in Xcode, see <a href="https://help.apple.com/xcode/">Xcode Help</a> &gt; Use playgrounds &gt; Add a literal.
+</p><div class="syntax-defs">
+  <p class="syntax-defs-name">
+  Grammar of a literal expression
+</p><div class="syntax-defs-group">
+  <p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/literal-expression"></a>
+  <span class="syntax-def-name">
+  literal-expression
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="LexicalStructure.html#//apple_ref/swift/grammar/literal" data-renderer-version="2" data-id="//apple_ref/swift/grammar/literal">literal</a>&shy;</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-NoLink_440"></a>
+  <span class="syntax-def-name">
+  literal-expression
+</span>
+<span class="arrow">
+  →
+</span><span class="alternative">
+  <span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/array-literal" data-renderer-version="2" data-id="//apple_ref/swift/grammar/array-literal">array-literal</a>&shy;</span>
+</span><span class="alternative">
+  <span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/dictionary-literal" data-renderer-version="2" data-id="//apple_ref/swift/grammar/dictionary-literal">dictionary-literal</a>&shy;</span>
+</span><span class="alternative">
+  <span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/playground-literal" data-renderer-version="2" data-id="//apple_ref/swift/grammar/playground-literal">playground-literal</a>&shy;</span>
+</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-NoLink_441"></a>
+  <span class="syntax-def-name">
+  literal-expression
+</span>
+<span class="arrow">
+  →
+</span><span class="alternative">
+  <code class="literal">#file&shy;</code>
+</span><span class="alternative">
+  <code class="literal">#line&shy;</code>
+</span><span class="alternative">
+  <code class="literal">#column&shy;</code>
+</span><span class="alternative">
+  <code class="literal">#function&shy;</code>
+</span>
+</p>
+</div><div class="syntax-defs-group">
+  <p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/array-literal"></a>
+  <span class="syntax-def-name">
+  array-literal
+</span>
+<span class="arrow">
+  →
+</span><code class="literal">[&shy;</code><span class="optional"><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/array-literal-items" data-renderer-version="2" data-id="//apple_ref/swift/grammar/array-literal-items">array-literal-items</a>&shy;</span><sub class="subscript">opt</sub>&shy;</span><code class="literal">]&shy;</code>
+</p><p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/array-literal-items"></a>
+  <span class="syntax-def-name">
+  array-literal-items
+</span>
+<span class="arrow">
+  →
+</span><span class="alternative">
+  <span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/array-literal-item" data-renderer-version="2" data-id="//apple_ref/swift/grammar/array-literal-item">array-literal-item</a>&shy;</span><span class="optional"><code class="literal">,&shy;</code><sub class="subscript">opt</sub>&shy;</span>
+</span><span class="alternative">
+  <span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/array-literal-item" data-renderer-version="2" data-id="//apple_ref/swift/grammar/array-literal-item">array-literal-item</a>&shy;</span><code class="literal">,&shy;</code><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/array-literal-items" data-renderer-version="2" data-id="//apple_ref/swift/grammar/array-literal-items">array-literal-items</a>&shy;</span>
+</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/array-literal-item"></a>
+  <span class="syntax-def-name">
+  array-literal-item
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/expression">expression</a>&shy;</span>
+</p>
+</div><div class="syntax-defs-group">
+  <p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/dictionary-literal"></a>
+  <span class="syntax-def-name">
+  dictionary-literal
+</span>
+<span class="arrow">
+  →
+</span><span class="alternative">
+  <code class="literal">[&shy;</code><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/dictionary-literal-items" data-renderer-version="2" data-id="//apple_ref/swift/grammar/dictionary-literal-items">dictionary-literal-items</a>&shy;</span><code class="literal">]&shy;</code>
+</span><span class="alternative">
+  <code class="literal">[&shy;</code><code class="literal">:&shy;</code><code class="literal">]&shy;</code>
+</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/dictionary-literal-items"></a>
+  <span class="syntax-def-name">
+  dictionary-literal-items
+</span>
+<span class="arrow">
+  →
+</span><span class="alternative">
+  <span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/dictionary-literal-item" data-renderer-version="2" data-id="//apple_ref/swift/grammar/dictionary-literal-item">dictionary-literal-item</a>&shy;</span><span class="optional"><code class="literal">,&shy;</code><sub class="subscript">opt</sub>&shy;</span>
+</span><span class="alternative">
+  <span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/dictionary-literal-item" data-renderer-version="2" data-id="//apple_ref/swift/grammar/dictionary-literal-item">dictionary-literal-item</a>&shy;</span><code class="literal">,&shy;</code><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/dictionary-literal-items" data-renderer-version="2" data-id="//apple_ref/swift/grammar/dictionary-literal-items">dictionary-literal-items</a>&shy;</span>
+</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/dictionary-literal-item"></a>
+  <span class="syntax-def-name">
+  dictionary-literal-item
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/expression">expression</a>&shy;</span><code class="literal">:&shy;</code><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/expression">expression</a>&shy;</span>
+</p>
+</div><div class="syntax-defs-group">
+  <p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/playground-literal"></a>
+  <span class="syntax-def-name">
+  playground-literal
+</span>
+<span class="arrow">
+  →
+</span><code class="literal">#colorLiteral&shy;</code><code class="literal">(&shy;</code><code class="literal">red&shy;</code><code class="literal">:&shy;</code><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/expression">expression</a>&shy;</span><code class="literal">,&shy;</code><code class="literal">green&shy;</code><code class="literal">:&shy;</code><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/expression">expression</a>&shy;</span><code class="literal">,&shy;</code><code class="literal">blue&shy;</code><code class="literal">:&shy;</code><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/expression">expression</a>&shy;</span><code class="literal">,&shy;</code><code class="literal">alpha&shy;</code><code class="literal">:&shy;</code><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/expression">expression</a>&shy;</span><code class="literal">)&shy;</code>
+</p><p class="syntax-def">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-NoLink_449"></a>
+  <span class="syntax-def-name">
+  playground-literal
+</span>
+<span class="arrow">
+  →
+</span><code class="literal">#fileLiteral&shy;</code><code class="literal">(&shy;</code><code class="literal">resourceName&shy;</code><code class="literal">:&shy;</code><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/expression">expression</a>&shy;</span><code class="literal">)&shy;</code>
+</p><p class="syntax-def">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-NoLink_450"></a>
+  <span class="syntax-def-name">
+  playground-literal
+</span>
+<span class="arrow">
+  →
+</span><code class="literal">#imageLiteral&shy;</code><code class="literal">(&shy;</code><code class="literal">resourceName&shy;</code><code class="literal">:&shy;</code><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/expression">expression</a>&shy;</span><code class="literal">)&shy;</code>
+</p>
+</div>
+ </div>
+  
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-ID391"></a>
+  <h3 class="section-name" tabindex="0">Self Expression</h3>
+  <p class="para">
+  The <code class="code-voice">self</code> expression is an explicit reference to the current type or instance of the type in which it occurs. It has the following forms:
+</p><span class="caption"></span>
+<div class="code-outline">
+  <ul class="code-outline-lines">
+    <li><pre class="code-voice"><span class="kt">self</span></pre></li><li><pre class="code-voice"><span class="kt">self</span>.<em class="variable-text">member name</em></pre></li><li><pre class="code-voice"><span class="kt">self</span>[<em class="variable-text">subscript index</em>]</pre></li><li><pre class="code-voice"><span class="kt">self</span>(<em class="variable-text">initializer arguments</em>)</pre></li><li><pre class="code-voice"><span class="kt">self</span>.<span class="kt">init</span>(<em class="variable-text">initializer arguments</em>)</pre></li>
+  </ul>
+</div><p class="para">
+  In an initializer, subscript, or instance method, <code class="code-voice">self</code> refers to the current instance of the type in which it occurs. In a type method, <code class="code-voice">self</code> refers to the current type in which it occurs.
+</p><p class="para">
+  The <code class="code-voice">self</code> expression is used to specify scope when accessing members, providing disambiguation when there is another variable of the same name in scope, such as a function parameter. For example:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">class</span> <span class="vc">SomeClass</span> {</code></li>
+            <li><code class="code-voice">    <span class="kt">var</span> <span class="vc">greeting</span>: <span class="n"><!-- a href="" -->String<!-- /a --></span></code></li>
+            <li><code class="code-voice">    <span class="kt">init</span>(<span class="vc">greeting</span>: <span class="n"><!-- a href="" -->String<!-- /a --></span>) {</code></li>
+            <li><code class="code-voice">        <span class="kt">self</span>.<span class="vc">greeting</span> = <span class="vc">greeting</span></code></li>
+            <li><code class="code-voice">    }</code></li>
+            <li><code class="code-voice">}</code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  In a mutating method of a value type, you can assign a new instance of that value type to <code class="code-voice">self</code>. For example:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">struct</span> <span class="vc">Point</span> {</code></li>
+            <li><code class="code-voice">    <span class="kt">var</span> <span class="vc">x</span> = <span class="m">0.0</span>, <span class="vc">y</span> = <span class="m">0.0</span></code></li>
+            <li><code class="code-voice">    <span class="kt">mutating</span> <span class="kt">func</span> <span class="vc">moveBy</span>(<span class="vc">x</span> <span class="vc">deltaX</span>: <span class="n"><!-- a href="" -->Double<!-- /a --></span>, <span class="vc">y</span> <span class="vc">deltaY</span>: <span class="n"><!-- a href="" -->Double<!-- /a --></span>) {</code></li>
+            <li><code class="code-voice">        <span class="kt">self</span> = <span class="vc">Point</span>(<span class="vc">x</span>: <span class="vc">x</span> + <span class="vc">deltaX</span>, <span class="vc">y</span>: <span class="vc">y</span> + <span class="vc">deltaY</span>)</code></li>
+            <li><code class="code-voice">    }</code></li>
+            <li><code class="code-voice">}</code></li>
+        </ol>
+      </div>
+  </div>
+</section><div class="syntax-defs">
+  <p class="syntax-defs-name">
+  Grammar of a self expression
+</p><div class="syntax-defs-group">
+  <p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/self-expression"></a>
+  <span class="syntax-def-name">
+  self-expression
+</span>
+<span class="arrow">
+  →
+</span><span class="alternative">
+  <code class="literal">self&shy;</code>
+</span><span class="alternative">
+  <span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/self-method-expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/self-method-expression">self-method-expression</a>&shy;</span>
+</span><span class="alternative">
+  <span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/self-subscript-expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/self-subscript-expression">self-subscript-expression</a>&shy;</span>
+</span><span class="alternative">
+  <span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/self-initializer-expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/self-initializer-expression">self-initializer-expression</a>&shy;</span>
+</span>
+</p>
+</div><div class="syntax-defs-group">
+  <p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/self-method-expression"></a>
+  <span class="syntax-def-name">
+  self-method-expression
+</span>
+<span class="arrow">
+  →
+</span><code class="literal">self&shy;</code><code class="literal">.&shy;</code><span class="syntactic-cat"><a href="LexicalStructure.html#//apple_ref/swift/grammar/identifier" data-renderer-version="2" data-id="//apple_ref/swift/grammar/identifier">identifier</a>&shy;</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/self-subscript-expression"></a>
+  <span class="syntax-def-name">
+  self-subscript-expression
+</span>
+<span class="arrow">
+  →
+</span><code class="literal">self&shy;</code><code class="literal">[&shy;</code><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/function-call-argument-list" data-renderer-version="2" data-id="//apple_ref/swift/grammar/function-call-argument-list">function-call-argument-list</a>&shy;</span><code class="literal">]&shy;</code>
+</p><p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/self-initializer-expression"></a>
+  <span class="syntax-def-name">
+  self-initializer-expression
+</span>
+<span class="arrow">
+  →
+</span><code class="literal">self&shy;</code><code class="literal">.&shy;</code><code class="literal">init&shy;</code>
+</p>
+</div>
+ </div>
+  
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-ID392"></a>
+  <h3 class="section-name" tabindex="0">Superclass Expression</h3>
+  <p class="para">
+  A <em>superclass expression</em> lets a class interact with its superclass. It has one of the following forms:
+</p><span class="caption"></span>
+<div class="code-outline">
+  <ul class="code-outline-lines">
+    <li><pre class="code-voice"><span class="kt">super</span>.<em class="variable-text">member name</em></pre></li><li><pre class="code-voice"><span class="kt">super</span>[<em class="variable-text">subscript index</em>]</pre></li><li><pre class="code-voice"><span class="kt">super</span>.<span class="kt">init</span>(<em class="variable-text">initializer arguments</em>)</pre></li>
+  </ul>
+</div><p class="para">
+  The first form is used to access a member of the superclass. The second form is used to access the superclass’s subscript implementation. The third form is used to access an initializer of the superclass.
+</p><p class="para">
+  Subclasses can use a superclass expression in their implementation of members, subscripting, and initializers to make use of the implementation in their superclass.
+</p><div class="syntax-defs">
+  <p class="syntax-defs-name">
+  Grammar of a superclass expression
+</p><div class="syntax-defs-group">
+  <p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/superclass-expression"></a>
+  <span class="syntax-def-name">
+  superclass-expression
+</span>
+<span class="arrow">
+  →
+</span><span class="alternative">
+  <span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/superclass-method-expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/superclass-method-expression">superclass-method-expression</a>&shy;</span>
+</span><span class="alternative">
+  <span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/superclass-subscript-expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/superclass-subscript-expression">superclass-subscript-expression</a>&shy;</span>
+</span><span class="alternative">
+  <span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/superclass-initializer-expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/superclass-initializer-expression">superclass-initializer-expression</a>&shy;</span>
+</span>
+</p>
+</div><div class="syntax-defs-group">
+  <p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/superclass-method-expression"></a>
+  <span class="syntax-def-name">
+  superclass-method-expression
+</span>
+<span class="arrow">
+  →
+</span><code class="literal">super&shy;</code><code class="literal">.&shy;</code><span class="syntactic-cat"><a href="LexicalStructure.html#//apple_ref/swift/grammar/identifier" data-renderer-version="2" data-id="//apple_ref/swift/grammar/identifier">identifier</a>&shy;</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/superclass-subscript-expression"></a>
+  <span class="syntax-def-name">
+  superclass-subscript-expression
+</span>
+<span class="arrow">
+  →
+</span><code class="literal">super&shy;</code><code class="literal">[&shy;</code><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/function-call-argument-list" data-renderer-version="2" data-id="//apple_ref/swift/grammar/function-call-argument-list">function-call-argument-list</a>&shy;</span><code class="literal">]&shy;</code>
+</p><p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/superclass-initializer-expression"></a>
+  <span class="syntax-def-name">
+  superclass-initializer-expression
+</span>
+<span class="arrow">
+  →
+</span><code class="literal">super&shy;</code><code class="literal">.&shy;</code><code class="literal">init&shy;</code>
+</p>
+</div>
+ </div>
+  
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-ID393"></a>
+  <h3 class="section-name" tabindex="0">Closure Expression</h3>
+  <p class="para">
+  A <em>closure expression</em> creates a closure, also known as a <em>lambda</em> or an <em>anonymous function</em> in other programming languages. Like a function declaration, a closure contains statements, and it captures constants and variables from its enclosing scope. It has the following form:
+</p><span class="caption"></span>
+<div class="code-outline">
+  <ul class="code-outline-lines">
+    <li><pre class="code-voice">{ (<em class="variable-text">parameters</em>) -&gt; <em class="variable-text">return type</em> <span class="kt">in</span></pre></li><li><pre class="code-voice">    <em class="variable-text">statements</em></pre></li><li><pre class="code-voice">}</pre></li>
+  </ul>
+</div><p class="para">
+  The <em>parameters</em> have the same form as the parameters in a function declaration, as described in <span class="x-name"><a href="Declarations.html#//apple_ref/doc/uid/TP40014097-CH34-ID362" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH34-ID362">Function Declaration</a></span>.
+</p><p class="para">
+  There are several special forms that allow closures to be written more concisely:
+</p><ul class="list-bullet">
+  <li class="item"><p class="para">
+  A closure can omit the types of its parameters, its return type, or both. If you omit the parameter names and both types, omit the <code class="code-voice">in</code> keyword before the statements. If the omitted types can’t be inferred, a compile-time error is raised.
+</p>
+</li><li class="item"><p class="para">
+  A closure may omit names for its parameters. Its parameters are then implicitly named <code class="code-voice">$</code> followed by their position: <code class="code-voice">$0</code>, <code class="code-voice">$1</code>, <code class="code-voice">$2</code>, and so on.
+</p>
+</li><li class="item"><p class="para">
+  A closure that consists of only a single expression is understood to return the value of that expression. The contents of this expression are also considered when performing type inference on the surrounding expression.
+</p>
+</li>
+</ul><p class="para">
+  The following closure expressions are equivalent:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="vc">myFunction</span> { (<span class="vc">x</span>: <span class="n"><!-- a href="" -->Int<!-- /a --></span>, <span class="vc">y</span>: <span class="n"><!-- a href="" -->Int<!-- /a --></span>) -&gt; <span class="n"><!-- a href="" -->Int<!-- /a --></span> <span class="kt">in</span></code></li>
+            <li><code class="code-voice">    <span class="kt">return</span> <span class="vc">x</span> + <span class="vc">y</span></code></li>
+            <li><code class="code-voice">}</code></li>
+            <li><code class="code-voice"> </code></li>
+            <li><code class="code-voice"><span class="vc">myFunction</span> { <span class="vc">x</span>, <span class="vc">y</span> <span class="kt">in</span></code></li>
+            <li><code class="code-voice">    <span class="kt">return</span> <span class="vc">x</span> + <span class="vc">y</span></code></li>
+            <li><code class="code-voice">}</code></li>
+            <li><code class="code-voice"> </code></li>
+            <li><code class="code-voice"><span class="vc">myFunction</span> { <span class="kt">return</span> <span class="vc">$0</span> + <span class="vc">$1</span> }</code></li>
+            <li><code class="code-voice"> </code></li>
+            <li><code class="code-voice"><span class="vc">myFunction</span> { <span class="vc">$0</span> + <span class="vc">$1</span> }</code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  For information about passing a closure as an argument to a function, see <span class="x-name"><a href="#//apple_ref/doc/uid/TP40014097-CH32-ID398" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH32-ID398">Function Call Expression</a></span>.
+</p><p class="para">
+  Closure expressions can be used without being stored in a variable or constant, such as when you immediately use a closure as part of a function call. The closure expressions passed to <code class="code-voice">myFunction</code> in code above are examples of this kind of immediate use. As a result, whether a closure expression is escaping or nonescaping depends on the surrounding context of the expression. A closure expression is nonescaping if it is called immediately or passed as a nonescaping function argument. Otherwise, the closure expression is escaping.
+</p><p class="para">
+  For more information about escaping closures, see <span class="x-name"><a href="Closures.html#//apple_ref/doc/uid/TP40014097-CH11-ID546" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH11-ID546">Escaping Closures</a></span>.
+</p>
+  <section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-ID544"></a>
+  <h3 class="section-name" tabindex="0">Capture Lists</h3>
+  <p class="para">
+  By default, a closure expression captures constants and variables from its surrounding scope with strong references to those values. You can use a <em>capture list</em> to explicitly control how values are captured in a closure.
+</p><p class="para">
+  A capture list is written as a comma-separated list of expressions surrounded by square brackets, before the list of parameters. If you use a capture list, you must also use the <code class="code-voice">in</code> keyword, even if you omit the parameter names, parameter types, and return type.
+</p><p class="para">
+  The entries in the capture list are initialized when the closure is created. For each entry in the capture list, a constant is initialized to the value of the constant or variable that has the same name in the surrounding scope. For example in the code below, <code class="code-voice">a</code> is included in the capture list but <code class="code-voice">b</code> is not, which gives them different behavior.
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">var</span> <span class="vc">a</span> = <span class="m">0</span></code></li>
+            <li><code class="code-voice"><span class="kt">var</span> <span class="vc">b</span> = <span class="m">0</span></code></li>
+            <li><code class="code-voice"><span class="kt">let</span> <span class="vc">closure</span> = { [<span class="vc">a</span>] <span class="kt">in</span></code></li>
+            <li><code class="code-voice">    <span class="vc">print</span>(<span class="vc">a</span>, <span class="vc">b</span>)</code></li>
+            <li><code class="code-voice">}</code></li>
+            <li><code class="code-voice"> </code></li>
+            <li><code class="code-voice"><span class="vc">a</span> = <span class="m">10</span></code></li>
+            <li><code class="code-voice"><span class="vc">b</span> = <span class="m">10</span></code></li>
+            <li><code class="code-voice"><span class="vc">closure</span>()</code></li>
+            <li><code class="code-voice"><span class="c">// Prints &quot;0 10&quot;</span></code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  There are two different things named <code class="code-voice">a</code>, the variable in the surrounding scope and the constant in the closure’s scope, but only one variable named <code class="code-voice">b</code>. The <code class="code-voice">a</code> in the inner scope is initialized with the value of the <code class="code-voice">a</code> in the outer scope when the closure is created, but their values are not connected in any special way. This means that a change to the value of <code class="code-voice">a</code> in the outer scope does not affect the value of <code class="code-voice">a</code> in the inner scope, nor does a change to <code class="code-voice">a</code> inside the closure affect the value of <code class="code-voice">a</code> outside the closure. In contrast, there is only one variable named <code class="code-voice">b</code>—the <code class="code-voice">b</code> in the outer scope—so changes from inside or outside the closure are visible in both places.
+</p><p class="para">
+  This distinction is not visible when the captured variable’s type has reference semantics. For example, there are two things named <code class="code-voice">x</code> in the code below, a variable in the outer scope and a constant in the inner scope, but they both refer to the same object because of reference semantics.
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">class</span> <span class="vc">SimpleClass</span> {</code></li>
+            <li><code class="code-voice">    <span class="kt">var</span> <span class="vc">value</span>: <span class="n"><!-- a href="" -->Int<!-- /a --></span> = <span class="m">0</span></code></li>
+            <li><code class="code-voice">}</code></li>
+            <li><code class="code-voice"><span class="kt">var</span> <span class="vc">x</span> = <span class="vc">SimpleClass</span>()</code></li>
+            <li><code class="code-voice"><span class="kt">var</span> <span class="vc">y</span> = <span class="vc">SimpleClass</span>()</code></li>
+            <li><code class="code-voice"><span class="kt">let</span> <span class="vc">closure</span> = { [<span class="vc">x</span>] <span class="kt">in</span></code></li>
+            <li><code class="code-voice">    <span class="vc">print</span>(<span class="vc">x</span>.<span class="vc">value</span>, <span class="vc">y</span>.<span class="vc">value</span>)</code></li>
+            <li><code class="code-voice">}</code></li>
+            <li><code class="code-voice"> </code></li>
+            <li><code class="code-voice"><span class="vc">x</span>.<span class="vc">value</span> = <span class="m">10</span></code></li>
+            <li><code class="code-voice"><span class="vc">y</span>.<span class="vc">value</span> = <span class="m">10</span></code></li>
+            <li><code class="code-voice"><span class="vc">closure</span>()</code></li>
+            <li><code class="code-voice"><span class="c">// Prints &quot;10 10&quot;</span></code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  If the type of the expression’s value is a class, you can mark the expression in a capture list with <code class="code-voice">weak</code> or <code class="code-voice">unowned</code> to capture a weak or unowned reference to the expression’s value.
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="vc">myFunction</span> { <span class="vc">print</span>(<span class="kt">self</span>.<span class="vc">title</span>) }                    <span class="c">// strong capture</span></code></li>
+            <li><code class="code-voice"><span class="vc">myFunction</span> { [<span class="vc">weak</span> <span class="kt">self</span>] <span class="kt">in</span> <span class="vc">print</span>(<span class="kt">self</span>!.<span class="vc">title</span>) }    <span class="c">// weak capture</span></code></li>
+            <li><code class="code-voice"><span class="vc">myFunction</span> { [<span class="vc">unowned</span> <span class="kt">self</span>] <span class="kt">in</span> <span class="vc">print</span>(<span class="kt">self</span>.<span class="vc">title</span>) }  <span class="c">// unowned capture</span></code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  You can also bind an arbitrary expression to a named value in a capture list. The expression is evaluated when the closure is created, and the value is captured with the specified strength. For example:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="c">// Weak capture of &quot;self.parent&quot; as &quot;parent&quot;</span></code></li>
+            <li><code class="code-voice"><span class="vc">myFunction</span> { [<span class="vc">weak</span> <span class="vc">parent</span> = <span class="kt">self</span>.<span class="vc">parent</span>] <span class="kt">in</span> <span class="vc">print</span>(<span class="vc">parent</span>!.<span class="vc">title</span>) }</code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  For more information and examples of closure expressions, see <span class="x-name"><a href="Closures.html#//apple_ref/doc/uid/TP40014097-CH11-ID95" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH11-ID95">Closure Expressions</a></span>. For more information and examples of capture lists, see <span class="x-name"><a href="AutomaticReferenceCounting.html#//apple_ref/doc/uid/TP40014097-CH20-ID57" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH20-ID57">Resolving Strong Reference Cycles for Closures</a></span>.
+</p><div class="syntax-defs">
+  <p class="syntax-defs-name">
+  Grammar of a closure expression
+</p><div class="syntax-defs-group">
+  <p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/closure-expression"></a>
+  <span class="syntax-def-name">
+  closure-expression
+</span>
+<span class="arrow">
+  →
+</span><code class="literal">{&shy;</code><span class="optional"><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/closure-signature" data-renderer-version="2" data-id="//apple_ref/swift/grammar/closure-signature">closure-signature</a>&shy;</span><sub class="subscript">opt</sub>&shy;</span><span class="optional"><span class="syntactic-cat"><a href="Statements.html#//apple_ref/swift/grammar/statements" data-renderer-version="2" data-id="//apple_ref/swift/grammar/statements">statements</a>&shy;</span><sub class="subscript">opt</sub>&shy;</span><code class="literal">}&shy;</code>
+</p>
+</div><div class="syntax-defs-group">
+  <p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/closure-signature"></a>
+  <span class="syntax-def-name">
+  closure-signature
+</span>
+<span class="arrow">
+  →
+</span><span class="optional"><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/capture-list" data-renderer-version="2" data-id="//apple_ref/swift/grammar/capture-list">capture-list</a>&shy;</span><sub class="subscript">opt</sub>&shy;</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/closure-parameter-clause" data-renderer-version="2" data-id="//apple_ref/swift/grammar/closure-parameter-clause">closure-parameter-clause</a>&shy;</span><span class="optional"><code class="literal">throws&shy;</code><sub class="subscript">opt</sub>&shy;</span><span class="optional"><span class="syntactic-cat"><a href="Declarations.html#//apple_ref/swift/grammar/function-result" data-renderer-version="2" data-id="//apple_ref/swift/grammar/function-result">function-result</a>&shy;</span><sub class="subscript">opt</sub>&shy;</span><code class="literal">in&shy;</code>
+</p><p class="syntax-def">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-NoLink_464"></a>
+  <span class="syntax-def-name">
+  closure-signature
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/capture-list" data-renderer-version="2" data-id="//apple_ref/swift/grammar/capture-list">capture-list</a>&shy;</span><code class="literal">in&shy;</code>
+</p>
+</div><div class="syntax-defs-group">
+  <p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/closure-parameter-clause"></a>
+  <span class="syntax-def-name">
+  closure-parameter-clause
+</span>
+<span class="arrow">
+  →
+</span><span class="alternative">
+  <code class="literal">(&shy;</code><code class="literal">)&shy;</code>
+</span><span class="alternative">
+  <code class="literal">(&shy;</code><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/closure-parameter-list" data-renderer-version="2" data-id="//apple_ref/swift/grammar/closure-parameter-list">closure-parameter-list</a>&shy;</span><code class="literal">)&shy;</code>
+</span><span class="alternative">
+  <span class="syntactic-cat"><a href="LexicalStructure.html#//apple_ref/swift/grammar/identifier-list" data-renderer-version="2" data-id="//apple_ref/swift/grammar/identifier-list">identifier-list</a>&shy;</span>
+</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/closure-parameter-list"></a>
+  <span class="syntax-def-name">
+  closure-parameter-list
+</span>
+<span class="arrow">
+  →
+</span><span class="alternative">
+  <span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/closure-parameter" data-renderer-version="2" data-id="//apple_ref/swift/grammar/closure-parameter">closure-parameter</a>&shy;</span>
+</span><span class="alternative">
+  <span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/closure-parameter" data-renderer-version="2" data-id="//apple_ref/swift/grammar/closure-parameter">closure-parameter</a>&shy;</span><code class="literal">,&shy;</code><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/closure-parameter-list" data-renderer-version="2" data-id="//apple_ref/swift/grammar/closure-parameter-list">closure-parameter-list</a>&shy;</span>
+</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/closure-parameter"></a>
+  <span class="syntax-def-name">
+  closure-parameter
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/closure-parameter-name" data-renderer-version="2" data-id="//apple_ref/swift/grammar/closure-parameter-name">closure-parameter-name</a>&shy;</span><span class="optional"><span class="syntactic-cat"><a href="Types.html#//apple_ref/swift/grammar/type-annotation" data-renderer-version="2" data-id="//apple_ref/swift/grammar/type-annotation">type-annotation</a>&shy;</span><sub class="subscript">opt</sub>&shy;</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-NoLink_468"></a>
+  <span class="syntax-def-name">
+  closure-parameter
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/closure-parameter-name" data-renderer-version="2" data-id="//apple_ref/swift/grammar/closure-parameter-name">closure-parameter-name</a>&shy;</span><span class="syntactic-cat"><a href="Types.html#//apple_ref/swift/grammar/type-annotation" data-renderer-version="2" data-id="//apple_ref/swift/grammar/type-annotation">type-annotation</a>&shy;</span><code class="literal">...&shy;</code>
+</p><p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/closure-parameter-name"></a>
+  <span class="syntax-def-name">
+  closure-parameter-name
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="LexicalStructure.html#//apple_ref/swift/grammar/identifier" data-renderer-version="2" data-id="//apple_ref/swift/grammar/identifier">identifier</a>&shy;</span>
+</p>
+</div><div class="syntax-defs-group">
+  <p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/capture-list"></a>
+  <span class="syntax-def-name">
+  capture-list
+</span>
+<span class="arrow">
+  →
+</span><code class="literal">[&shy;</code><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/capture-list-items" data-renderer-version="2" data-id="//apple_ref/swift/grammar/capture-list-items">capture-list-items</a>&shy;</span><code class="literal">]&shy;</code>
+</p><p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/capture-list-items"></a>
+  <span class="syntax-def-name">
+  capture-list-items
+</span>
+<span class="arrow">
+  →
+</span><span class="alternative">
+  <span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/capture-list-item" data-renderer-version="2" data-id="//apple_ref/swift/grammar/capture-list-item">capture-list-item</a>&shy;</span>
+</span><span class="alternative">
+  <span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/capture-list-item" data-renderer-version="2" data-id="//apple_ref/swift/grammar/capture-list-item">capture-list-item</a>&shy;</span><code class="literal">,&shy;</code><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/capture-list-items" data-renderer-version="2" data-id="//apple_ref/swift/grammar/capture-list-items">capture-list-items</a>&shy;</span>
+</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/capture-list-item"></a>
+  <span class="syntax-def-name">
+  capture-list-item
+</span>
+<span class="arrow">
+  →
+</span><span class="optional"><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/capture-specifier" data-renderer-version="2" data-id="//apple_ref/swift/grammar/capture-specifier">capture-specifier</a>&shy;</span><sub class="subscript">opt</sub>&shy;</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/expression">expression</a>&shy;</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/capture-specifier"></a>
+  <span class="syntax-def-name">
+  capture-specifier
+</span>
+<span class="arrow">
+  →
+</span><span class="alternative">
+  <code class="literal">weak&shy;</code>
+</span><span class="alternative">
+  <code class="literal">unowned&shy;</code>
+</span><span class="alternative">
+  <code class="literal">unowned(safe)&shy;</code>
+</span><span class="alternative">
+  <code class="literal">unowned(unsafe)&shy;</code>
+</span>
+</p>
+</div>
+ </div>
+  
+</section>
+
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-ID394"></a>
+  <h3 class="section-name" tabindex="0">Implicit Member Expression</h3>
+  <p class="para">
+  An <em>implicit member expression</em> is an abbreviated way to access a member of a type, such as an enumeration case or a type method, in a context where type inference can determine the implied type. It has the following form:
+</p><span class="caption"></span>
+<div class="code-outline">
+  <ul class="code-outline-lines">
+    <li><pre class="code-voice">.<em class="variable-text">member name</em></pre></li>
+  </ul>
+</div><p class="para">
+  For example:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">var</span> <span class="vc">x</span> = <span class="vc">MyEnumeration</span>.<span class="vc">someValue</span></code></li>
+            <li><code class="code-voice"><span class="vc">x</span> = .<span class="vc">anotherValue</span></code></li>
+        </ol>
+      </div>
+  </div>
+</section><div class="syntax-defs">
+  <p class="syntax-defs-name">
+  Grammar of a implicit member expression
+</p><div class="syntax-defs-group">
+  <p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/implicit-member-expression"></a>
+  <span class="syntax-def-name">
+  implicit-member-expression
+</span>
+<span class="arrow">
+  →
+</span><code class="literal">.&shy;</code><span class="syntactic-cat"><a href="LexicalStructure.html#//apple_ref/swift/grammar/identifier" data-renderer-version="2" data-id="//apple_ref/swift/grammar/identifier">identifier</a>&shy;</span>
+</p>
+</div>
+ </div>
+  
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-ID395"></a>
+  <h3 class="section-name" tabindex="0">Parenthesized Expression</h3>
+  <p class="para">
+  A <em>parenthesized expression</em> consists of an expression surrounded by parentheses. You can use parentheses to specify the precedence of operations by explicitly grouping expressions. Grouping parentheses don’t change an expression’s type—for example, the type of <code class="code-voice">(1)</code> is simply <code class="code-voice">Int</code>.
+</p><div class="syntax-defs">
+  <p class="syntax-defs-name">
+  Grammar of a parenthesized expression
+</p><div class="syntax-defs-group">
+  <p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/parenthesized-expression"></a>
+  <span class="syntax-def-name">
+  parenthesized-expression
+</span>
+<span class="arrow">
+  →
+</span><code class="literal">(&shy;</code><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/expression">expression</a>&shy;</span><code class="literal">)&shy;</code>
+</p>
+</div>
+ </div>
+  
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-ID552"></a>
+  <h3 class="section-name" tabindex="0">Tuple Expression</h3>
+  <p class="para">
+  A <em>tuple expression</em> consists of a comma-separated list of expressions surrounded by parentheses. Each expression can have an optional identifier before it, separated by a colon (<code class="code-voice">:</code>). It has the following form:
+</p><span class="caption"></span>
+<div class="code-outline">
+  <ul class="code-outline-lines">
+    <li><pre class="code-voice">(<em class="variable-text">identifier 1</em>: <em class="variable-text">expression 1</em>, <em class="variable-text">identifier 2</em>: <em class="variable-text">expression 2</em>, <em class="variable-text">...</em>)</pre></li>
+  </ul>
+</div><p class="para">
+  A tuple expression can contain zero expressions, or it can contain two or more expressions. A single expression inside parentheses is a parenthesized expression.
+</p><div class="note">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-NoLink_478"></a>
+  <aside class="aside">
+    <p class="aside-title">Note
+    </p>
+    	<p class="para">Both an empty tuple expression and an empty tuple type are written <code class="code-voice">()</code> in Swift. Because <code class="code-voice">Void</code> is a type alias for <code class="code-voice">()</code>, you can use it to write an empty tuple type. However, like all type aliases, <code class="code-voice">Void</code> is always a type—you can’t use it to write an empty tuple expression.
+    	</p>
+    
+  </aside>
+</div><div class="syntax-defs">
+  <p class="syntax-defs-name">
+  Grammar of a tuple expression
+</p><div class="syntax-defs-group">
+  <p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/tuple-expression"></a>
+  <span class="syntax-def-name">
+  tuple-expression
+</span>
+<span class="arrow">
+  →
+</span><span class="alternative">
+  <code class="literal">(&shy;</code><code class="literal">)&shy;</code>
+</span><span class="alternative">
+  <code class="literal">(&shy;</code><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/tuple-element" data-renderer-version="2" data-id="//apple_ref/swift/grammar/tuple-element">tuple-element</a>&shy;</span><code class="literal">,&shy;</code><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/tuple-element-list" data-renderer-version="2" data-id="//apple_ref/swift/grammar/tuple-element-list">tuple-element-list</a>&shy;</span><code class="literal">)&shy;</code>
+</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/tuple-element-list"></a>
+  <span class="syntax-def-name">
+  tuple-element-list
+</span>
+<span class="arrow">
+  →
+</span><span class="alternative">
+  <span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/tuple-element" data-renderer-version="2" data-id="//apple_ref/swift/grammar/tuple-element">tuple-element</a>&shy;</span>
+</span><span class="alternative">
+  <span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/tuple-element" data-renderer-version="2" data-id="//apple_ref/swift/grammar/tuple-element">tuple-element</a>&shy;</span><code class="literal">,&shy;</code><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/tuple-element-list" data-renderer-version="2" data-id="//apple_ref/swift/grammar/tuple-element-list">tuple-element-list</a>&shy;</span>
+</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/tuple-element"></a>
+  <span class="syntax-def-name">
+  tuple-element
+</span>
+<span class="arrow">
+  →
+</span><span class="alternative">
+  <span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/expression">expression</a>&shy;</span>
+</span><span class="alternative">
+  <span class="syntactic-cat"><a href="LexicalStructure.html#//apple_ref/swift/grammar/identifier" data-renderer-version="2" data-id="//apple_ref/swift/grammar/identifier">identifier</a>&shy;</span><code class="literal">:&shy;</code><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/expression">expression</a>&shy;</span>
+</span>
+</p>
+</div>
+ </div>
+  
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-ID396"></a>
+  <h3 class="section-name" tabindex="0">Wildcard Expression</h3>
+  <p class="para">
+  A <em>wildcard expression</em> is used to explicitly ignore a value during an assignment. For example, in the following assignment 10 is assigned to <code class="code-voice">x</code> and 20 is ignored:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice">(<span class="vc">x</span>, <span class="kt">_</span>) = (<span class="m">10</span>, <span class="m">20</span>)</code></li>
+            <li><code class="code-voice"><span class="c">// x is 10, and 20 is ignored</span></code></li>
+        </ol>
+      </div>
+  </div>
+</section><div class="syntax-defs">
+  <p class="syntax-defs-name">
+  Grammar of a wildcard expression
+</p><div class="syntax-defs-group">
+  <p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/wildcard-expression"></a>
+  <span class="syntax-def-name">
+  wildcard-expression
+</span>
+<span class="arrow">
+  →
+</span><code class="literal">_&shy;</code>
+</p>
+</div>
+ </div>
+  
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-ID563"></a>
+  <h3 class="section-name" tabindex="0">Key-Path Expression</h3>
+  <p class="para">
+  A key-path expression lets you refer to a property for use in key-value coding and key-value observing APIs. It has the following form:
+</p><span class="caption"></span>
+<div class="code-outline">
+  <ul class="code-outline-lines">
+    <li><pre class="code-voice">\<em class="variable-text">type name</em>.<em class="variable-text">property names</em></pre></li>
+  </ul>
+</div><p class="para">
+  The <em>property names</em> must be a reference to a property. At compile time, the key-path expression is replaced by a <code class="code-voice u-api"><a href="https://developer.apple.com/documentation/swift/keypath" class="urlLink">KeyPath</a></code> value. Key paths can be used to access properties by passing them to the <code class="code-voice">subscript(keyPath:)</code> subscript. (This subscript is available on all Swift types.) For example:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">struct</span> <span class="vc">SomeStructure</span> {</code></li>
+            <li><code class="code-voice">    <span class="kt">var</span> <span class="vc">someProperty</span>: <span class="n"><!-- a href="" -->Int<!-- /a --></span></code></li>
+            <li><code class="code-voice">}</code></li>
+            <li><code class="code-voice"> </code></li>
+            <li><code class="code-voice"><span class="kt">let</span> <span class="vc">s</span> = <span class="vc">SomeStructure</span>(<span class="vc">someProperty</span>: <span class="m">12</span>)</code></li>
+            <li><code class="code-voice"><span class="kt">let</span> <span class="vc">keyPath</span> = \<span class="vc">SomeStructure</span>.<span class="vc">someProperty</span></code></li>
+            <li><code class="code-voice"> </code></li>
+            <li><code class="code-voice"><span class="kt">let</span> <span class="vc">value</span> = <span class="vc">s</span>[<span class="vc">keyPath</span>: <span class="vc">keyPath</span>]</code></li>
+            <li><code class="code-voice"><span class="c">// value is 12</span></code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  The <em>type name</em> can be omitted in contexts where type inference can determine the implied type. For example, the following code uses <code class="code-voice">\.someProperty</code>:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">class</span> <span class="vc">SomeClass</span>: <span class="n"><!-- a href="" -->NSObject<!-- /a --></span> {</code></li>
+            <li><code class="code-voice">    <span class="kt">@objc</span> <span class="kt">var</span> <span class="vc">someProperty</span>: <span class="n"><!-- a href="" -->Int<!-- /a --></span></code></li>
+            <li><code class="code-voice">    <span class="kt">init</span>(<span class="vc">someProperty</span>: <span class="n"><!-- a href="" -->Int<!-- /a --></span>) {</code></li>
+            <li><code class="code-voice">        <span class="kt">self</span>.<span class="vc">someProperty</span> = <span class="vc">someProperty</span></code></li>
+            <li><code class="code-voice">    }</code></li>
+            <li><code class="code-voice">}</code></li>
+            <li><code class="code-voice"> </code></li>
+            <li><code class="code-voice"><span class="kt">let</span> <span class="vc">c</span> = <span class="vc">SomeClass</span>(<span class="vc">someProperty</span>: <span class="m">10</span>)</code></li>
+            <li><code class="code-voice"><span class="vc">c</span>.<span class="vc">observe</span>(\.<span class="vc">someProperty</span>) { <span class="vc">object</span>, <span class="vc">change</span> <span class="kt">in</span></code></li>
+            <li><code class="code-voice">    <span class="c">// ...</span></code></li>
+            <li><code class="code-voice">}</code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  The <em>property names</em> can contain multiple property names, separated by periods, which lets you access a property of the given property’s value. For example, the following code uses <code class="code-voice">\OuterStructure.outerProperty.someProperty</code>:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">struct</span> <span class="vc">OuterStructure</span> {</code></li>
+            <li><code class="code-voice">    <span class="kt">var</span> <span class="vc">outerProperty</span>: <span class="n"><!-- a href="" -->SomeStructure<!-- /a --></span></code></li>
+            <li><code class="code-voice">    <span class="kt">init</span>(<span class="vc">someProperty</span>: <span class="n"><!-- a href="" -->Int<!-- /a --></span>) {</code></li>
+            <li><code class="code-voice">        <span class="kt">self</span>.<span class="vc">outerProperty</span> = <span class="vc">SomeStructure</span>(<span class="vc">someProperty</span>: <span class="vc">someProperty</span>)</code></li>
+            <li><code class="code-voice">    }</code></li>
+            <li><code class="code-voice">}</code></li>
+            <li><code class="code-voice"> </code></li>
+            <li><code class="code-voice"><span class="kt">let</span> <span class="vc">nested</span> = <span class="vc">OuterStructure</span>(<span class="vc">someProperty</span>: <span class="m">24</span>)</code></li>
+            <li><code class="code-voice"><span class="kt">let</span> <span class="vc">nestedKeyPath</span> = \<span class="vc">OuterStructure</span>.<span class="vc">outerProperty</span>.<span class="vc">someProperty</span></code></li>
+            <li><code class="code-voice"> </code></li>
+            <li><code class="code-voice"><span class="kt">let</span> <span class="vc">nestedValue</span> = <span class="vc">nested</span>[<span class="vc">keyPath</span>: <span class="vc">nestedKeyPath</span>]</code></li>
+            <li><code class="code-voice"><span class="c">// nestedValue is 24</span></code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  Key paths can use optional chaining and forced unwrapping. For example, the following code uses optional chaining in a key path to access a property of an optional string:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">let</span> <span class="vc">message</span>: <span class="n"><!-- a href="" -->String<!-- /a --></span>? = <span class="s">&quot;hello&quot;</span></code></li>
+            <li><code class="code-voice"><span class="vc">print</span>(<span class="vc">message</span>?.<span class="vc">count</span> <span class="kt">as</span> <span class="kt">Any</span>)</code></li>
+            <li><code class="code-voice"><span class="c">// Prints &quot;Optional(5)&quot;</span></code></li>
+            <li><code class="code-voice"> </code></li>
+            <li><code class="code-voice"><span class="c">// Do the same thing using a key path.</span></code></li>
+            <li><code class="code-voice"><span class="kt">let</span> <span class="vc">count</span> = <span class="vc">message</span>[<span class="vc">keyPath</span>: \.?.<span class="vc">count</span>]</code></li>
+            <li><code class="code-voice"><span class="vc">print</span>(<span class="vc">count</span> <span class="kt">as</span> <span class="kt">Any</span>)</code></li>
+            <li><code class="code-voice"><span class="c">// Prints &quot;Optional(5)&quot;</span></code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  For more information about using key paths in Swift code that interacts with Objective-C APIs, see <a href="../BuildingCocoaApps/InteractingWithObjective-CAPIs.html#//apple_ref/doc/uid/TP40014216-CH4-ID205" data-renderer-version="2" target="_self">Keys and Key Paths</a> in <em class="u-book"><a href="../BuildingCocoaApps/index.html#//apple_ref/doc/uid/TP40014216" data-renderer-version="2" target="_self">Using Swift with Cocoa and Objective-C (Swift 4)</a></em>. For information about key-value coding and key-value observing, see <em class="u-book"><a href="../../../Cocoa/Conceptual/KeyValueCoding/index.html#//apple_ref/doc/uid/10000107i" data-renderer-version="2" target="_self">Key-Value Coding Programming Guide</a></em> and <em class="u-book"><a href="../../../Cocoa/Conceptual/KeyValueObserving/KeyValueObserving.html#//apple_ref/doc/uid/10000177i" data-renderer-version="1" target="_self">Key-Value Observing Programming Guide</a></em>.
+</p><div class="syntax-defs">
+  <p class="syntax-defs-name">
+  Grammar of a key-path expression
+</p><div class="syntax-defs-group">
+  <p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/key-path-expression"></a>
+  <span class="syntax-def-name">
+  key-path-expression
+</span>
+<span class="arrow">
+  →
+</span><code class="literal">\&shy;</code><span class="optional"><span class="syntactic-cat"><a href="Types.html#//apple_ref/swift/grammar/type" data-renderer-version="2" data-id="//apple_ref/swift/grammar/type">type</a>&shy;</span><sub class="subscript">opt</sub>&shy;</span><code class="literal">.&shy;</code><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/key-path-components" data-renderer-version="2" data-id="//apple_ref/swift/grammar/key-path-components">key-path-components</a>&shy;</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/key-path-components"></a>
+  <span class="syntax-def-name">
+  key-path-components
+</span>
+<span class="arrow">
+  →
+</span><span class="alternative">
+  <span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/key-path-component" data-renderer-version="2" data-id="//apple_ref/swift/grammar/key-path-component">key-path-component</a>&shy;</span>
+</span><span class="alternative">
+  <span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/key-path-component" data-renderer-version="2" data-id="//apple_ref/swift/grammar/key-path-component">key-path-component</a>&shy;</span><code class="literal">.&shy;</code><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/key-path-components" data-renderer-version="2" data-id="//apple_ref/swift/grammar/key-path-components">key-path-components</a>&shy;</span>
+</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/key-path-component"></a>
+  <span class="syntax-def-name">
+  key-path-component
+</span>
+<span class="arrow">
+  →
+</span><span class="alternative">
+  <span class="syntactic-cat"><a href="LexicalStructure.html#//apple_ref/swift/grammar/identifier" data-renderer-version="2" data-id="//apple_ref/swift/grammar/identifier">identifier</a>&shy;</span><span class="optional"><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/key-path-postfixes" data-renderer-version="2" data-id="//apple_ref/swift/grammar/key-path-postfixes">key-path-postfixes</a>&shy;</span><sub class="subscript">opt</sub>&shy;</span>
+</span><span class="alternative">
+  <span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/key-path-postfixes" data-renderer-version="2" data-id="//apple_ref/swift/grammar/key-path-postfixes">key-path-postfixes</a>&shy;</span>
+</span>
+</p>
+</div><div class="syntax-defs-group">
+  <p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/key-path-postfixes"></a>
+  <span class="syntax-def-name">
+  key-path-postfixes
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/key-path-postfix" data-renderer-version="2" data-id="//apple_ref/swift/grammar/key-path-postfix">key-path-postfix</a>&shy;</span><span class="optional"><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/key-path-postfixes" data-renderer-version="2" data-id="//apple_ref/swift/grammar/key-path-postfixes">key-path-postfixes</a>&shy;</span><sub class="subscript">opt</sub>&shy;</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/key-path-postfix"></a>
+  <span class="syntax-def-name">
+  key-path-postfix
+</span>
+<span class="arrow">
+  →
+</span><span class="alternative">
+  <code class="literal">?&shy;</code>
+</span><span class="alternative">
+  <code class="literal">!&shy;</code>
+</span>
+</p>
+</div>
+ </div>
+  
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-ID547"></a>
+  <h3 class="section-name" tabindex="0">Selector Expression</h3>
+  <p class="para">
+  A selector expression lets you access the selector used to refer to a method or to a property’s getter or setter in Objective-C. It has the following form:
+</p><span class="caption"></span>
+<div class="code-outline">
+  <ul class="code-outline-lines">
+    <li><pre class="code-voice"><span class="kt">#selector</span>(<em class="variable-text">method name</em>)</pre></li><li><pre class="code-voice"><span class="kt">#selector</span>(<span class="vc">getter</span>: <em class="variable-text">property name</em>)</pre></li><li><pre class="code-voice"><span class="kt">#selector</span>(<span class="vc">setter</span>: <em class="variable-text">property name</em>)</pre></li>
+  </ul>
+</div><p class="para">
+  The <em>method name</em> and <em>property name</em> must be a reference to a method or a property that is available in the Objective-C runtime. The value of a selector expression is an instance of the <code class="code-voice">Selector</code> type. For example:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">class</span> <span class="vc">SomeClass</span>: <span class="n"><!-- a href="" -->NSObject<!-- /a --></span> {</code></li>
+            <li><code class="code-voice">    <span class="kt">@objc</span> <span class="kt">let</span> <span class="vc">property</span>: <span class="n"><!-- a href="" -->String<!-- /a --></span></code></li>
+            <li><code class="code-voice">    <span class="kt">@objc</span>(<span class="vc">doSomethingWithInt</span>:)</code></li>
+            <li><code class="code-voice">    <span class="kt">func</span> <span class="vc">doSomething</span>(<span class="kt">_</span> <span class="vc">x</span>: <span class="n"><!-- a href="" -->Int<!-- /a --></span>) {}</code></li>
+            <li><code class="code-voice">    </code></li>
+            <li><code class="code-voice">    <span class="kt">init</span>(<span class="vc">property</span>: <span class="n"><!-- a href="" -->String<!-- /a --></span>) {</code></li>
+            <li><code class="code-voice">        <span class="kt">self</span>.<span class="vc">property</span> = <span class="vc">property</span></code></li>
+            <li><code class="code-voice">    }</code></li>
+            <li><code class="code-voice">}</code></li>
+            <li><code class="code-voice"><span class="kt">let</span> <span class="vc">selectorForMethod</span> = <span class="kt">#selector</span>(<span class="vc">SomeClass</span>.<span class="vc">doSomething</span>(<span class="kt">_</span>:))</code></li>
+            <li><code class="code-voice"><span class="kt">let</span> <span class="vc">selectorForPropertyGetter</span> = <span class="kt">#selector</span>(<span class="vc">getter</span>: <span class="vc">SomeClass</span>.<span class="vc">property</span>)</code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  When creating a selector for a property’s getter, the <em>property name</em> can be a reference to a variable or constant property. In contrast, when creating a selector for a property’s setter, the <em>property name</em> must be a reference to a variable property only.
+</p><p class="para">
+  The <em>method name</em> can contain parentheses for grouping, as well the <code class="code-voice">as</code> operator to disambiguate between methods that share a name but have different type signatures. For example:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">extension</span> <span class="n"><!-- a href="" -->SomeClass<!-- /a --></span> {</code></li>
+            <li><code class="code-voice">    <span class="kt">@objc</span>(<span class="vc">doSomethingWithString</span>:)</code></li>
+            <li><code class="code-voice">    <span class="kt">func</span> <span class="vc">doSomething</span>(<span class="kt">_</span> <span class="vc">x</span>: <span class="n"><!-- a href="" -->String<!-- /a --></span>) { }</code></li>
+            <li><code class="code-voice">}</code></li>
+            <li><code class="code-voice"><span class="kt">let</span> <span class="vc">anotherSelector</span> = <span class="kt">#selector</span>(<span class="vc">SomeClass</span>.<span class="vc">doSomething</span>(<span class="kt">_</span>:) <span class="kt">as</span> (<span class="n"><!-- a href="" -->SomeClass<!-- /a --></span>) -&gt; (<span class="n"><!-- a href="" -->String<!-- /a --></span>) -&gt; <span class="n"><!-- a href="" -->Void<!-- /a --></span>)</code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  Because a selector is created at compile time, not at runtime, the compiler can check that a method or property exists and that they’re exposed to the Objective-C runtime.
+</p><div class="note">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-NoLink_491"></a>
+  <aside class="aside">
+    <p class="aside-title">Note
+    </p>
+    	<p class="para">Although the <em>method name</em> and the <em>property name</em> are expressions, they’re never evaluated.
+    	</p>
+    
+  </aside>
+</div><p class="para">
+  For more information about using selectors in Swift code that interacts with Objective-C APIs, see <a href="../BuildingCocoaApps/InteractingWithObjective-CAPIs.html#//apple_ref/doc/uid/TP40014216-CH4-ID59" data-renderer-version="2" target="_self">Objective-C Selectors</a> in <em class="u-book"><a href="../BuildingCocoaApps/index.html#//apple_ref/doc/uid/TP40014216" data-renderer-version="2" target="_self">Using Swift with Cocoa and Objective-C (Swift 4)</a></em>.
+</p><div class="syntax-defs">
+  <p class="syntax-defs-name">
+  Grammar of a selector expression
+</p><div class="syntax-defs-group">
+  <p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/selector-expression"></a>
+  <span class="syntax-def-name">
+  selector-expression
+</span>
+<span class="arrow">
+  →
+</span><code class="literal">#selector&shy;</code><code class="literal">(&shy;</code><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/expression">expression</a>&shy;</span><code class="literal">)&shy;</code>
+</p><p class="syntax-def">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-NoLink_494"></a>
+  <span class="syntax-def-name">
+  selector-expression
+</span>
+<span class="arrow">
+  →
+</span><code class="literal">#selector&shy;</code><code class="literal">(&shy;</code><code class="literal">getter:&shy;</code><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/expression">expression</a>&shy;</span><code class="literal">)&shy;</code>
+</p><p class="syntax-def">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-NoLink_495"></a>
+  <span class="syntax-def-name">
+  selector-expression
+</span>
+<span class="arrow">
+  →
+</span><code class="literal">#selector&shy;</code><code class="literal">(&shy;</code><code class="literal">setter:&shy;</code><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/expression">expression</a>&shy;</span><code class="literal">)&shy;</code>
+</p>
+</div>
+ </div>
+  
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-ID549"></a>
+  <h3 class="section-name" tabindex="0">Key-Path String Expression</h3>
+  <p class="para">
+  A key-path string expression lets you access the string used to refer to a property in Objective-C, for use in key-value coding and key-value observing APIs. It has the following form:
+</p><span class="caption"></span>
+<div class="code-outline">
+  <ul class="code-outline-lines">
+    <li><pre class="code-voice"><span class="kt">#keyPath</span>(<em class="variable-text">property name</em>)</pre></li>
+  </ul>
+</div><p class="para">
+  The <em>property name</em> must be a reference to a property that is available in the Objective-C runtime. At compile time, the key-path string expression is replaced by a string literal. For example:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">class</span> <span class="vc">SomeClass</span>: <span class="n"><!-- a href="" -->NSObject<!-- /a --></span> {</code></li>
+            <li><code class="code-voice">    <span class="kt">@objc</span> <span class="kt">var</span> <span class="vc">someProperty</span>: <span class="n"><!-- a href="" -->Int<!-- /a --></span></code></li>
+            <li><code class="code-voice">    <span class="kt">init</span>(<span class="vc">someProperty</span>: <span class="n"><!-- a href="" -->Int<!-- /a --></span>) {</code></li>
+            <li><code class="code-voice">        <span class="kt">self</span>.<span class="vc">someProperty</span> = <span class="vc">someProperty</span></code></li>
+            <li><code class="code-voice">    }</code></li>
+            <li><code class="code-voice">}</code></li>
+            <li><code class="code-voice"> </code></li>
+            <li><code class="code-voice"><span class="kt">let</span> <span class="vc">c</span> = <span class="vc">SomeClass</span>(<span class="vc">someProperty</span>: <span class="m">12</span>)</code></li>
+            <li><code class="code-voice"><span class="kt">let</span> <span class="vc">keyPath</span> = <span class="kt">#keyPath</span>(<span class="vc">SomeClass</span>.<span class="vc">someProperty</span>)</code></li>
+            <li><code class="code-voice"> </code></li>
+            <li><code class="code-voice"><span class="kt">if</span> <span class="kt">let</span> <span class="vc">value</span> = <span class="vc">c</span>.<span class="vc">value</span>(<span class="vc">forKey</span>: <span class="vc">keyPath</span>) {</code></li>
+            <li><code class="code-voice">    <span class="vc">print</span>(<span class="vc">value</span>)</code></li>
+            <li><code class="code-voice">}</code></li>
+            <li><code class="code-voice"><span class="c">// Prints &quot;12&quot;</span></code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  When you use a key-path string expression within a class, you can refer to a property of that class by writing just the property name, without the class name.
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">extension</span> <span class="n"><!-- a href="" -->SomeClass<!-- /a --></span> {</code></li>
+            <li><code class="code-voice">    <span class="kt">func</span> <span class="vc">getSomeKeyPath</span>() -&gt; <span class="n"><!-- a href="" -->String<!-- /a --></span> {</code></li>
+            <li><code class="code-voice">        <span class="kt">return</span> <span class="kt">#keyPath</span>(<span class="vc">someProperty</span>)</code></li>
+            <li><code class="code-voice">    }</code></li>
+            <li><code class="code-voice">}</code></li>
+            <li><code class="code-voice"><span class="vc">print</span>(<span class="vc">keyPath</span> == <span class="vc">c</span>.<span class="vc">getSomeKeyPath</span>())</code></li>
+            <li><code class="code-voice"><span class="c">// Prints &quot;true&quot;</span></code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  Because the key path string is created at compile time, not at runtime, the compiler can check that the property exists and that the property is exposed to the Objective-C runtime.
+</p><p class="para">
+  For more information about using key paths in Swift code that interacts with Objective-C APIs, see <a href="../BuildingCocoaApps/InteractingWithObjective-CAPIs.html#//apple_ref/doc/uid/TP40014216-CH4-ID205" data-renderer-version="2" target="_self">Keys and Key Paths</a> in <em class="u-book"><a href="../BuildingCocoaApps/index.html#//apple_ref/doc/uid/TP40014216" data-renderer-version="2" target="_self">Using Swift with Cocoa and Objective-C (Swift 4)</a></em>. For information about key-value coding and key-value observing, see <em class="u-book"><a href="../../../Cocoa/Conceptual/KeyValueCoding/index.html#//apple_ref/doc/uid/10000107i" data-renderer-version="2" target="_self">Key-Value Coding Programming Guide</a></em> and <em class="u-book"><a href="../../../Cocoa/Conceptual/KeyValueObserving/KeyValueObserving.html#//apple_ref/doc/uid/10000177i" data-renderer-version="1" target="_self">Key-Value Observing Programming Guide</a></em>.
+</p><div class="note">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-NoLink_496"></a>
+  <aside class="aside">
+    <p class="aside-title">Note
+    </p>
+    	<p class="para">Although the <em>property name</em> is an expression, it is never evaluated.
+    	</p>
+    
+  </aside>
+</div><div class="syntax-defs">
+  <p class="syntax-defs-name">
+  Grammar of a key-path string expression
+</p><div class="syntax-defs-group">
+  <p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/key-path-string-expression"></a>
+  <span class="syntax-def-name">
+  key-path-string-expression
+</span>
+<span class="arrow">
+  →
+</span><code class="literal">#keyPath&shy;</code><code class="literal">(&shy;</code><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/expression">expression</a>&shy;</span><code class="literal">)&shy;</code>
+</p>
+</div>
+ </div>
+  
+</section>
+
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-ID397"></a>
+  <h3 class="section-name" tabindex="0">Postfix Expressions</h3>
+  <p class="para">
+  <em>Postfix expressions</em> are formed by applying a postfix operator or other postfix syntax to an expression. Syntactically, every primary expression is also a postfix expression.
+</p><p class="para">
+  For information about the behavior of these operators, see <span class="x-name"><a href="BasicOperators.html#//apple_ref/doc/uid/TP40014097-CH6-ID60" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH6-ID60">Basic Operators</a></span> and <span class="x-name"><a href="AdvancedOperators.html#//apple_ref/doc/uid/TP40014097-CH27-ID28" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH27-ID28">Advanced Operators</a></span>.
+</p><p class="para">
+  For information about the operators provided by the Swift standard library, see <a href="https://developer.apple.com/documentation/swift/operator_declarations">Operator Declarations</a>.
+</p><div class="syntax-defs">
+  <p class="syntax-defs-name">
+  Grammar of a postfix expression
+</p><div class="syntax-defs-group">
+  <p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/postfix-expression"></a>
+  <span class="syntax-def-name">
+  postfix-expression
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/primary-expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/primary-expression">primary-expression</a>&shy;</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-NoLink_501"></a>
+  <span class="syntax-def-name">
+  postfix-expression
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/postfix-expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/postfix-expression">postfix-expression</a>&shy;</span><span class="syntactic-cat"><a href="LexicalStructure.html#//apple_ref/swift/grammar/postfix-operator" data-renderer-version="2" data-id="//apple_ref/swift/grammar/postfix-operator">postfix-operator</a>&shy;</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-NoLink_502"></a>
+  <span class="syntax-def-name">
+  postfix-expression
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/function-call-expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/function-call-expression">function-call-expression</a>&shy;</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-NoLink_503"></a>
+  <span class="syntax-def-name">
+  postfix-expression
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/initializer-expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/initializer-expression">initializer-expression</a>&shy;</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-NoLink_504"></a>
+  <span class="syntax-def-name">
+  postfix-expression
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/explicit-member-expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/explicit-member-expression">explicit-member-expression</a>&shy;</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-NoLink_505"></a>
+  <span class="syntax-def-name">
+  postfix-expression
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/postfix-self-expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/postfix-self-expression">postfix-self-expression</a>&shy;</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-NoLink_506"></a>
+  <span class="syntax-def-name">
+  postfix-expression
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/subscript-expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/subscript-expression">subscript-expression</a>&shy;</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-NoLink_507"></a>
+  <span class="syntax-def-name">
+  postfix-expression
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/forced-value-expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/forced-value-expression">forced-value-expression</a>&shy;</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-NoLink_508"></a>
+  <span class="syntax-def-name">
+  postfix-expression
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/optional-chaining-expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/optional-chaining-expression">optional-chaining-expression</a>&shy;</span>
+</p>
+</div>
+ </div>
+  <section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-ID398"></a>
+  <h3 class="section-name" tabindex="0">Function Call Expression</h3>
+  <p class="para">
+  A <em>function call expression</em> consists of a function name followed by a comma-separated list of the function’s arguments in parentheses. Function call expressions have the following form:
+</p><span class="caption"></span>
+<div class="code-outline">
+  <ul class="code-outline-lines">
+    <li><pre class="code-voice"><em class="variable-text">function name</em>(<em class="variable-text">argument value 1</em>, <em class="variable-text">argument value 2</em>)</pre></li>
+  </ul>
+</div><p class="para">
+  The <em>function name</em> can be any expression whose value is of a function type.
+</p><p class="para">
+  If the function definition includes names for its parameters, the function call must include names before its argument values separated by a colon (<code class="code-voice">:</code>). This kind of function call expression has the following form:
+</p><span class="caption"></span>
+<div class="code-outline">
+  <ul class="code-outline-lines">
+    <li><pre class="code-voice"><em class="variable-text">function name</em>(<em class="variable-text">argument name 1</em>: <em class="variable-text">argument value 1</em>, <em class="variable-text">argument name 2</em>: <em class="variable-text">argument value 2</em>)</pre></li>
+  </ul>
+</div><p class="para">
+  A function call expression can include a trailing closure in the form of a closure expression immediately after the closing parenthesis. The trailing closure is understood as an argument to the function, added after the last parenthesized argument. The following function calls are equivalent:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="c">// someFunction takes an integer and a closure as its arguments</span></code></li>
+            <li><code class="code-voice"><span class="vc">someFunction</span>(<span class="vc">x</span>: <span class="vc">x</span>, <span class="vc">f</span>: {<span class="vc">$0</span> == <span class="m">13</span>})</code></li>
+            <li><code class="code-voice"><span class="vc">someFunction</span>(<span class="vc">x</span>: <span class="vc">x</span>) {<span class="vc">$0</span> == <span class="m">13</span>}</code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  If the trailing closure is the function’s only argument, the parentheses can be omitted.
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="c">// someMethod takes a closure as its only argument</span></code></li>
+            <li><code class="code-voice"><span class="vc">myData</span>.<span class="vc">someMethod</span>() {<span class="vc">$0</span> == <span class="m">13</span>}</code></li>
+            <li><code class="code-voice"><span class="vc">myData</span>.<span class="vc">someMethod</span> {<span class="vc">$0</span> == <span class="m">13</span>}</code></li>
+        </ol>
+      </div>
+  </div>
+</section><div class="syntax-defs">
+  <p class="syntax-defs-name">
+  Grammar of a function call expression
+</p><div class="syntax-defs-group">
+  <p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/function-call-expression"></a>
+  <span class="syntax-def-name">
+  function-call-expression
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/postfix-expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/postfix-expression">postfix-expression</a>&shy;</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/function-call-argument-clause" data-renderer-version="2" data-id="//apple_ref/swift/grammar/function-call-argument-clause">function-call-argument-clause</a>&shy;</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-NoLink_511"></a>
+  <span class="syntax-def-name">
+  function-call-expression
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/postfix-expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/postfix-expression">postfix-expression</a>&shy;</span><span class="optional"><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/function-call-argument-clause" data-renderer-version="2" data-id="//apple_ref/swift/grammar/function-call-argument-clause">function-call-argument-clause</a>&shy;</span><sub class="subscript">opt</sub>&shy;</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/trailing-closure" data-renderer-version="2" data-id="//apple_ref/swift/grammar/trailing-closure">trailing-closure</a>&shy;</span>
+</p>
+</div><div class="syntax-defs-group">
+  <p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/function-call-argument-clause"></a>
+  <span class="syntax-def-name">
+  function-call-argument-clause
+</span>
+<span class="arrow">
+  →
+</span><span class="alternative">
+  <code class="literal">(&shy;</code><code class="literal">)&shy;</code>
+</span><span class="alternative">
+  <code class="literal">(&shy;</code><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/function-call-argument-list" data-renderer-version="2" data-id="//apple_ref/swift/grammar/function-call-argument-list">function-call-argument-list</a>&shy;</span><code class="literal">)&shy;</code>
+</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/function-call-argument-list"></a>
+  <span class="syntax-def-name">
+  function-call-argument-list
+</span>
+<span class="arrow">
+  →
+</span><span class="alternative">
+  <span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/function-call-argument" data-renderer-version="2" data-id="//apple_ref/swift/grammar/function-call-argument">function-call-argument</a>&shy;</span>
+</span><span class="alternative">
+  <span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/function-call-argument" data-renderer-version="2" data-id="//apple_ref/swift/grammar/function-call-argument">function-call-argument</a>&shy;</span><code class="literal">,&shy;</code><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/function-call-argument-list" data-renderer-version="2" data-id="//apple_ref/swift/grammar/function-call-argument-list">function-call-argument-list</a>&shy;</span>
+</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/function-call-argument"></a>
+  <span class="syntax-def-name">
+  function-call-argument
+</span>
+<span class="arrow">
+  →
+</span><span class="alternative">
+  <span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/expression">expression</a>&shy;</span>
+</span><span class="alternative">
+  <span class="syntactic-cat"><a href="LexicalStructure.html#//apple_ref/swift/grammar/identifier" data-renderer-version="2" data-id="//apple_ref/swift/grammar/identifier">identifier</a>&shy;</span><code class="literal">:&shy;</code><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/expression">expression</a>&shy;</span>
+</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-NoLink_515"></a>
+  <span class="syntax-def-name">
+  function-call-argument
+</span>
+<span class="arrow">
+  →
+</span><span class="alternative">
+  <span class="syntactic-cat"><a href="LexicalStructure.html#//apple_ref/swift/grammar/operator" data-renderer-version="2" data-id="//apple_ref/swift/grammar/operator">operator</a>&shy;</span>
+</span><span class="alternative">
+  <span class="syntactic-cat"><a href="LexicalStructure.html#//apple_ref/swift/grammar/identifier" data-renderer-version="2" data-id="//apple_ref/swift/grammar/identifier">identifier</a>&shy;</span><code class="literal">:&shy;</code><span class="syntactic-cat"><a href="LexicalStructure.html#//apple_ref/swift/grammar/operator" data-renderer-version="2" data-id="//apple_ref/swift/grammar/operator">operator</a>&shy;</span>
+</span>
+</p>
+</div><div class="syntax-defs-group">
+  <p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/trailing-closure"></a>
+  <span class="syntax-def-name">
+  trailing-closure
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/closure-expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/closure-expression">closure-expression</a>&shy;</span>
+</p>
+</div>
+ </div>
+  
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-ID399"></a>
+  <h3 class="section-name" tabindex="0">Initializer Expression</h3>
+  <p class="para">
+  An <em>initializer expression</em> provides access to a type’s initializer. It has the following form:
+</p><span class="caption"></span>
+<div class="code-outline">
+  <ul class="code-outline-lines">
+    <li><pre class="code-voice"><em class="variable-text">expression</em>.<span class="kt">init</span>(<em class="variable-text">initializer arguments</em>)</pre></li>
+  </ul>
+</div><p class="para">
+  You use the initializer expression in a function call expression to initialize a new instance of a type. You also use an initializer expression to delegate to the initializer of a superclass.
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">class</span> <span class="vc">SomeSubClass</span>: <span class="n"><!-- a href="" -->SomeSuperClass<!-- /a --></span> {</code></li>
+            <li><code class="code-voice">    <span class="kt">override</span> <span class="kt">init</span>() {</code></li>
+            <li><code class="code-voice">        <span class="c">// subclass initialization goes here</span></code></li>
+            <li><code class="code-voice">        <span class="kt">super</span>.<span class="kt">init</span>()</code></li>
+            <li><code class="code-voice">    }</code></li>
+            <li><code class="code-voice">}</code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  Like a function, an initializer can be used as a value. For example:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="c">// Type annotation is required because String has multiple initializers.</span></code></li>
+            <li><code class="code-voice"><span class="kt">let</span> <span class="vc">initializer</span>: (<span class="n"><!-- a href="" -->Int<!-- /a --></span>) -&gt; <span class="n"><!-- a href="" -->String<!-- /a --></span> = <span class="vc">String</span>.<span class="kt">init</span></code></li>
+            <li><code class="code-voice"><span class="kt">let</span> <span class="vc">oneTwoThree</span> = [<span class="m">1</span>, <span class="m">2</span>, <span class="m">3</span>].<span class="vc">map</span>(<span class="vc">initializer</span>).<span class="vc">reduce</span>(<span class="s">&quot;&quot;</span>, +)</code></li>
+            <li><code class="code-voice"><span class="vc">print</span>(<span class="vc">oneTwoThree</span>)</code></li>
+            <li><code class="code-voice"><span class="c">// Prints &quot;123&quot;</span></code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  If you specify a type by name, you can access the type’s initializer without using an initializer expression. In all other cases, you must use an initializer expression.
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">let</span> <span class="vc">s1</span> = <span class="vc">SomeType</span>.<span class="kt">init</span>(<span class="vc">data</span>: <span class="m">3</span>)  <span class="c">// Valid</span></code></li>
+            <li><code class="code-voice"><span class="kt">let</span> <span class="vc">s2</span> = <span class="vc">SomeType</span>(<span class="vc">data</span>: <span class="m">1</span>)       <span class="c">// Also valid</span></code></li>
+            <li><code class="code-voice"> </code></li>
+            <li><code class="code-voice"><span class="kt">let</span> <span class="vc">s3</span> = <span class="vc">type</span>(<span class="vc">of</span>: <span class="vc">someValue</span>).<span class="kt">init</span>(<span class="vc">data</span>: <span class="m">7</span>)  <span class="c">// Valid</span></code></li>
+            <li><code class="code-voice"><span class="kt">let</span> <span class="vc">s4</span> = <span class="vc">type</span>(<span class="vc">of</span>: <span class="vc">someValue</span>)(<span class="vc">data</span>: <span class="m">5</span>)       <span class="c">// Error</span></code></li>
+        </ol>
+      </div>
+  </div>
+</section><div class="syntax-defs">
+  <p class="syntax-defs-name">
+  Grammar of an initializer expression
+</p><div class="syntax-defs-group">
+  <p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/initializer-expression"></a>
+  <span class="syntax-def-name">
+  initializer-expression
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/postfix-expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/postfix-expression">postfix-expression</a>&shy;</span><code class="literal">.&shy;</code><code class="literal">init&shy;</code>
+</p><p class="syntax-def">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-NoLink_519"></a>
+  <span class="syntax-def-name">
+  initializer-expression
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/postfix-expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/postfix-expression">postfix-expression</a>&shy;</span><code class="literal">.&shy;</code><code class="literal">init&shy;</code><code class="literal">(&shy;</code><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/argument-names" data-renderer-version="2" data-id="//apple_ref/swift/grammar/argument-names">argument-names</a>&shy;</span><code class="literal">)&shy;</code>
+</p>
+</div>
+ </div>
+  
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-ID400"></a>
+  <h3 class="section-name" tabindex="0">Explicit Member Expression</h3>
+  <p class="para">
+  An <em>explicit member expression</em> allows access to the members of a named type, a tuple, or a module. It consists of a period (<code class="code-voice">.</code>) between the item and the identifier of its member.
+</p><span class="caption"></span>
+<div class="code-outline">
+  <ul class="code-outline-lines">
+    <li><pre class="code-voice"><em class="variable-text">expression</em>.<em class="variable-text">member name</em></pre></li>
+  </ul>
+</div><p class="para">
+  The members of a named type are named as part of the type’s declaration or extension. For example:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">class</span> <span class="vc">SomeClass</span> {</code></li>
+            <li><code class="code-voice">    <span class="kt">var</span> <span class="vc">someProperty</span> = <span class="m">42</span></code></li>
+            <li><code class="code-voice">}</code></li>
+            <li><code class="code-voice"><span class="kt">let</span> <span class="vc">c</span> = <span class="vc">SomeClass</span>()</code></li>
+            <li><code class="code-voice"><span class="kt">let</span> <span class="vc">y</span> = <span class="vc">c</span>.<span class="vc">someProperty</span>  <span class="c">// Member access</span></code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  The members of a tuple are implicitly named using integers in the order they appear, starting from zero. For example:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">var</span> <span class="vc">t</span> = (<span class="m">10</span>, <span class="m">20</span>, <span class="m">30</span>)</code></li>
+            <li><code class="code-voice"><span class="vc">t</span>.<span class="m">0</span> = <span class="vc">t</span>.<span class="m">1</span></code></li>
+            <li><code class="code-voice"><span class="c">// Now t is (20, 20, 30)</span></code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  The members of a module access the top-level declarations of that module.
+</p><p class="para">
+  To distinguish between methods or initializers whose names differ only by the names of their arguments, include the argument names in parentheses, with each argument name followed by a colon (<code class="code-voice">:</code>). Write an underscore (<code class="code-voice">_</code>) for an argument with no name. To distinguish between overloaded methods, use a type annotation. For example:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">class</span> <span class="vc">SomeClass</span> {</code></li>
+            <li><code class="code-voice">    <span class="kt">func</span> <span class="vc">someMethod</span>(<span class="vc">x</span>: <span class="n"><!-- a href="" -->Int<!-- /a --></span>, <span class="vc">y</span>: <span class="n"><!-- a href="" -->Int<!-- /a --></span>) {}</code></li>
+            <li><code class="code-voice">    <span class="kt">func</span> <span class="vc">someMethod</span>(<span class="vc">x</span>: <span class="n"><!-- a href="" -->Int<!-- /a --></span>, <span class="vc">z</span>: <span class="n"><!-- a href="" -->Int<!-- /a --></span>) {}</code></li>
+            <li><code class="code-voice">    <span class="kt">func</span> <span class="vc">overloadedMethod</span>(<span class="vc">x</span>: <span class="n"><!-- a href="" -->Int<!-- /a --></span>, <span class="vc">y</span>: <span class="n"><!-- a href="" -->Int<!-- /a --></span>) {}</code></li>
+            <li><code class="code-voice">    <span class="kt">func</span> <span class="vc">overloadedMethod</span>(<span class="vc">x</span>: <span class="n"><!-- a href="" -->Int<!-- /a --></span>, <span class="vc">y</span>: <span class="n"><!-- a href="" -->Bool<!-- /a --></span>) {}</code></li>
+            <li><code class="code-voice">}</code></li>
+            <li><code class="code-voice"><span class="kt">let</span> <span class="vc">instance</span> = <span class="vc">SomeClass</span>()</code></li>
+            <li><code class="code-voice"> </code></li>
+            <li><code class="code-voice"><span class="kt">let</span> <span class="vc">a</span> = <span class="vc">instance</span>.<span class="vc">someMethod</span>              <span class="c">// Ambiguous</span></code></li>
+            <li><code class="code-voice"><span class="kt">let</span> <span class="vc">b</span> = <span class="vc">instance</span>.<span class="vc">someMethod</span>(<span class="vc">x</span>:<span class="vc">y</span>:)        <span class="c">// Unambiguous</span></code></li>
+            <li><code class="code-voice"> </code></li>
+            <li><code class="code-voice"><span class="kt">let</span> <span class="vc">d</span> = <span class="vc">instance</span>.<span class="vc">overloadedMethod</span>        <span class="c">// Ambiguous</span></code></li>
+            <li><code class="code-voice"><span class="kt">let</span> <span class="vc">d</span> = <span class="vc">instance</span>.<span class="vc">overloadedMethod</span>(<span class="vc">x</span>:<span class="vc">y</span>:)  <span class="c">// Still ambiguous</span></code></li>
+            <li><code class="code-voice"><span class="kt">let</span> <span class="vc">d</span>: (<span class="n"><!-- a href="" -->Int<!-- /a --></span>, <span class="n"><!-- a href="" -->Bool<!-- /a --></span>) -&gt; <span class="n"><!-- a href="" -->Void<!-- /a --></span>  = <span class="vc">instance</span>.<span class="vc">overloadedMethod</span>(<span class="vc">x</span>:<span class="vc">y</span>:)  <span class="c">// Unambiguous</span></code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  If a period appears at the beginning of a line, it is understood as part of an explicit member expression, not as an implicit member expression. For example, the following listing shows chained method calls split over several lines:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">let</span> <span class="vc">x</span> = [<span class="m">10</span>, <span class="m">3</span>, <span class="m">20</span>, <span class="m">15</span>, <span class="m">4</span>]</code></li>
+            <li><code class="code-voice">    .<span class="vc">sorted</span>()</code></li>
+            <li><code class="code-voice">    .<span class="vc">filter</span> { <span class="vc">$0</span> &gt; <span class="m">5</span> }</code></li>
+            <li><code class="code-voice">    .<span class="vc">map</span> { <span class="vc">$0</span> * <span class="m">100</span> }</code></li>
+        </ol>
+      </div>
+  </div>
+</section><div class="syntax-defs">
+  <p class="syntax-defs-name">
+  Grammar of an explicit member expression
+</p><div class="syntax-defs-group">
+  <p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/explicit-member-expression"></a>
+  <span class="syntax-def-name">
+  explicit-member-expression
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/postfix-expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/postfix-expression">postfix-expression</a>&shy;</span><code class="literal">.&shy;</code><span class="syntactic-cat"><a href="LexicalStructure.html#//apple_ref/swift/grammar/decimal-digits" data-renderer-version="2" data-id="//apple_ref/swift/grammar/decimal-digits">decimal-digits</a>&shy;</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-NoLink_522"></a>
+  <span class="syntax-def-name">
+  explicit-member-expression
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/postfix-expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/postfix-expression">postfix-expression</a>&shy;</span><code class="literal">.&shy;</code><span class="syntactic-cat"><a href="LexicalStructure.html#//apple_ref/swift/grammar/identifier" data-renderer-version="2" data-id="//apple_ref/swift/grammar/identifier">identifier</a>&shy;</span><span class="optional"><span class="syntactic-cat"><a href="GenericParametersAndArguments.html#//apple_ref/swift/grammar/generic-argument-clause" data-renderer-version="2" data-id="//apple_ref/swift/grammar/generic-argument-clause">generic-argument-clause</a>&shy;</span><sub class="subscript">opt</sub>&shy;</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-NoLink_523"></a>
+  <span class="syntax-def-name">
+  explicit-member-expression
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/postfix-expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/postfix-expression">postfix-expression</a>&shy;</span><code class="literal">.&shy;</code><span class="syntactic-cat"><a href="LexicalStructure.html#//apple_ref/swift/grammar/identifier" data-renderer-version="2" data-id="//apple_ref/swift/grammar/identifier">identifier</a>&shy;</span><code class="literal">(&shy;</code><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/argument-names" data-renderer-version="2" data-id="//apple_ref/swift/grammar/argument-names">argument-names</a>&shy;</span><code class="literal">)&shy;</code>
+</p>
+</div><div class="syntax-defs-group">
+  <p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/argument-names"></a>
+  <span class="syntax-def-name">
+  argument-names
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/argument-name" data-renderer-version="2" data-id="//apple_ref/swift/grammar/argument-name">argument-name</a>&shy;</span><span class="optional"><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/argument-names" data-renderer-version="2" data-id="//apple_ref/swift/grammar/argument-names">argument-names</a>&shy;</span><sub class="subscript">opt</sub>&shy;</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/argument-name"></a>
+  <span class="syntax-def-name">
+  argument-name
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="LexicalStructure.html#//apple_ref/swift/grammar/identifier" data-renderer-version="2" data-id="//apple_ref/swift/grammar/identifier">identifier</a>&shy;</span><code class="literal">:&shy;</code>
+</p>
+</div>
+ </div>
+  
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-ID401"></a>
+  <h3 class="section-name" tabindex="0">Postfix Self Expression</h3>
+  <p class="para">
+  A postfix <code class="code-voice">self</code> expression consists of an expression or the name of a type, immediately followed by <code class="code-voice">.self</code>. It has the following forms:
+</p><span class="caption"></span>
+<div class="code-outline">
+  <ul class="code-outline-lines">
+    <li><pre class="code-voice"><em class="variable-text">expression</em>.<span class="kt">self</span></pre></li><li><pre class="code-voice"><em class="variable-text">type</em>.<span class="kt">self</span></pre></li>
+  </ul>
+</div><p class="para">
+  The first form evaluates to the value of the <em>expression</em>. For example, <code class="code-voice">x.self</code> evaluates to <code class="code-voice">x</code>.
+</p><p class="para">
+  The second form evaluates to the value of the <em>type</em>. Use this form to access a type as a value. For example, because <code class="code-voice">SomeClass.self</code> evaluates to the <code class="code-voice">SomeClass</code> type itself, you can pass it to a function or method that accepts a type-level argument.
+</p><div class="syntax-defs">
+  <p class="syntax-defs-name">
+  Grammar of a self expression
+</p><div class="syntax-defs-group">
+  <p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/postfix-self-expression"></a>
+  <span class="syntax-def-name">
+  postfix-self-expression
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/postfix-expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/postfix-expression">postfix-expression</a>&shy;</span><code class="literal">.&shy;</code><code class="literal">self&shy;</code>
+</p>
+</div>
+ </div>
+  
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-ID403"></a>
+  <h3 class="section-name" tabindex="0">Subscript Expression</h3>
+  <p class="para">
+  A <em>subscript expression</em> provides subscript access using the getter and setter of the corresponding subscript declaration. It has the following form:
+</p><span class="caption"></span>
+<div class="code-outline">
+  <ul class="code-outline-lines">
+    <li><pre class="code-voice"><em class="variable-text">expression</em>[<em class="variable-text">index expressions</em>]</pre></li>
+  </ul>
+</div><p class="para">
+  To evaluate the value of a subscript expression, the subscript getter for the <em>expression</em>’s type is called with the <em>index expressions</em> passed as the subscript parameters. To set its value, the subscript setter is called in the same way.
+</p><p class="para">
+  For information about subscript declarations, see <span class="x-name"><a href="Declarations.html#//apple_ref/doc/uid/TP40014097-CH34-ID373" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH34-ID373">Protocol Subscript Declaration</a></span>.
+</p><div class="syntax-defs">
+  <p class="syntax-defs-name">
+  Grammar of a subscript expression
+</p><div class="syntax-defs-group">
+  <p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/subscript-expression"></a>
+  <span class="syntax-def-name">
+  subscript-expression
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/postfix-expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/postfix-expression">postfix-expression</a>&shy;</span><code class="literal">[&shy;</code><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/function-call-argument-list" data-renderer-version="2" data-id="//apple_ref/swift/grammar/function-call-argument-list">function-call-argument-list</a>&shy;</span><code class="literal">]&shy;</code>
+</p>
+</div>
+ </div>
+  
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-ID404"></a>
+  <h3 class="section-name" tabindex="0">Forced-Value Expression</h3>
+  <p class="para">
+  A <em>forced-value expression</em> unwraps an optional value that you are certain is not <code class="code-voice">nil</code>. It has the following form:
+</p><span class="caption"></span>
+<div class="code-outline">
+  <ul class="code-outline-lines">
+    <li><pre class="code-voice"><em class="variable-text">expression</em>!</pre></li>
+  </ul>
+</div><p class="para">
+  If the value of the <em>expression</em> is not <code class="code-voice">nil</code>, the optional value is unwrapped and returned with the corresponding nonoptional type. Otherwise, a runtime error is raised.
+</p><p class="para">
+  The unwrapped value of a forced-value expression can be modified, either by mutating the value itself, or by assigning to one of the value’s members. For example:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">var</span> <span class="vc">x</span>: <span class="n"><!-- a href="" -->Int<!-- /a --></span>? = <span class="m">0</span></code></li>
+            <li><code class="code-voice"><span class="vc">x</span>! += <span class="m">1</span></code></li>
+            <li><code class="code-voice"><span class="c">// x is now 1</span></code></li>
+            <li><code class="code-voice"> </code></li>
+            <li><code class="code-voice"><span class="kt">var</span> <span class="vc">someDictionary</span> = [<span class="s">&quot;a&quot;</span>: [<span class="m">1</span>, <span class="m">2</span>, <span class="m">3</span>], <span class="s">&quot;b&quot;</span>: [<span class="m">10</span>, <span class="m">20</span>]]</code></li>
+            <li><code class="code-voice"><span class="vc">someDictionary</span>[<span class="s">&quot;a&quot;</span>]![<span class="m">0</span>] = <span class="m">100</span></code></li>
+            <li><code class="code-voice"><span class="c">// someDictionary is now [&quot;b&quot;: [10, 20], &quot;a&quot;: [100, 2, 3]]</span></code></li>
+        </ol>
+      </div>
+  </div>
+</section><div class="syntax-defs">
+  <p class="syntax-defs-name">
+  Grammar of a forced-value expression
+</p><div class="syntax-defs-group">
+  <p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/forced-value-expression"></a>
+  <span class="syntax-def-name">
+  forced-value-expression
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/postfix-expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/postfix-expression">postfix-expression</a>&shy;</span><code class="literal">!&shy;</code>
+</p>
+</div>
+ </div>
+  
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH32-ID405"></a>
+  <h3 class="section-name" tabindex="0">Optional-Chaining Expression</h3>
+  <p class="para">
+  An <em>optional-chaining expression</em> provides a simplified syntax for using optional values in postfix expressions. It has the following form:
+</p><span class="caption"></span>
+<div class="code-outline">
+  <ul class="code-outline-lines">
+    <li><pre class="code-voice"><em class="variable-text">expression</em>?</pre></li>
+  </ul>
+</div><p class="para">
+  The postfix <code class="code-voice">?</code> operator makes an optional-chaining expression from an expression without changing the expression’s value.
+</p><p class="para">
+  Optional-chaining expressions must appear within a postfix expression, and they cause the postfix expression to be evaluated in a special way. If the value of the optional-chaining expression is <code class="code-voice">nil</code>, all of the other operations in the postfix expression are ignored and the entire postfix expression evaluates to <code class="code-voice">nil</code>. If the value of the optional-chaining expression is not <code class="code-voice">nil</code>, the value of the optional-chaining expression is unwrapped and used to evaluate the rest of the postfix expression. In either case, the value of the postfix expression is still of an optional type.
+</p><p class="para">
+  If a postfix expression that contains an optional-chaining expression is nested inside other postfix expressions, only the outermost expression returns an optional type. In the example below, when <code class="code-voice">c</code> is not <code class="code-voice">nil</code>, its value is unwrapped and used to evaluate <code class="code-voice">.property</code>, the value of which is used to evaluate <code class="code-voice">.performAction()</code>. The entire expression <code class="code-voice">c?.property.performAction()</code> has a value of an optional type.
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">var</span> <span class="vc">c</span>: <span class="n"><!-- a href="" -->SomeClass<!-- /a --></span>?</code></li>
+            <li><code class="code-voice"><span class="kt">var</span> <span class="vc">result</span>: <span class="n"><!-- a href="" -->Bool<!-- /a --></span>? = <span class="vc">c</span>?.<span class="vc">property</span>.<span class="vc">performAction</span>()</code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  The following example shows the behavior of the example above without using optional chaining.
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">var</span> <span class="vc">result</span>: <span class="n"><!-- a href="" -->Bool<!-- /a --></span>?</code></li>
+            <li><code class="code-voice"><span class="kt">if</span> <span class="kt">let</span> <span class="vc">unwrappedC</span> = <span class="vc">c</span> {</code></li>
+            <li><code class="code-voice">    <span class="vc">result</span> = <span class="vc">unwrappedC</span>.<span class="vc">property</span>.<span class="vc">performAction</span>()</code></li>
+            <li><code class="code-voice">}</code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  The unwrapped value of an optional-chaining expression can be modified, either by mutating the value itself, or by assigning to one of the value’s members. If the value of the optional-chaining expression is <code class="code-voice">nil</code>, the expression on the right-hand side of the assignment operator is not evaluated. For example:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">func</span> <span class="vc">someFunctionWithSideEffects</span>() -&gt; <span class="n"><!-- a href="" -->Int<!-- /a --></span> {</code></li>
+            <li><code class="code-voice">    <span class="kt">return</span> <span class="m">42</span>  <span class="c">// No actual side effects.</span></code></li>
+            <li><code class="code-voice">}</code></li>
+            <li><code class="code-voice"><span class="kt">var</span> <span class="vc">someDictionary</span> = [<span class="s">&quot;a&quot;</span>: [<span class="m">1</span>, <span class="m">2</span>, <span class="m">3</span>], <span class="s">&quot;b&quot;</span>: [<span class="m">10</span>, <span class="m">20</span>]]</code></li>
+            <li><code class="code-voice"> </code></li>
+            <li><code class="code-voice"><span class="vc">someDictionary</span>[<span class="s">&quot;not here&quot;</span>]?[<span class="m">0</span>] = <span class="vc">someFunctionWithSideEffects</span>()</code></li>
+            <li><code class="code-voice"><span class="c">// someFunctionWithSideEffects is not evaluated</span></code></li>
+            <li><code class="code-voice"><span class="c">// someDictionary is still [&quot;b&quot;: [10, 20], &quot;a&quot;: [1, 2, 3]]</span></code></li>
+            <li><code class="code-voice"> </code></li>
+            <li><code class="code-voice"><span class="vc">someDictionary</span>[<span class="s">&quot;a&quot;</span>]?[<span class="m">0</span>] = <span class="vc">someFunctionWithSideEffects</span>()</code></li>
+            <li><code class="code-voice"><span class="c">// someFunctionWithSideEffects is evaluated and returns 42</span></code></li>
+            <li><code class="code-voice"><span class="c">// someDictionary is now [&quot;b&quot;: [10, 20], &quot;a&quot;: [42, 2, 3]]</span></code></li>
+        </ol>
+      </div>
+  </div>
+</section><div class="syntax-defs">
+  <p class="syntax-defs-name">
+  Grammar of an optional-chaining expression
+</p><div class="syntax-defs-group">
+  <p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/optional-chaining-expression"></a>
+  <span class="syntax-def-name">
+  optional-chaining-expression
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/postfix-expression" data-renderer-version="2" data-id="//apple_ref/swift/grammar/postfix-expression">postfix-expression</a>&shy;</span><code class="literal">?&shy;</code>
+</p>
+</div>
+ </div>
+  
+</section>
+
+</section>
+
+  	
+ 	<section id="next_previous" class="">
+    		<p class="previous-link"><a href="Types.html#//apple_ref/doc/uid/TP40014097-CH31-ID445" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH31-ID445">Types</a></p>
+  			<p class="next-link"><a href="Statements.html#//apple_ref/doc/uid/TP40014097-CH33-ID428" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH33-ID428">Statements</a></p>
+
+    <p class="copyright">Copyright &#x00a9; 2017 Apple Inc. All rights reserved. 
+  <a class="link" href="http://www.apple.com/legal/terms/site.html" target="_blank" rel="external">Terms of Use</a> | 
+  <a class="link" href="http://www.apple.com/privacy/" target="_blank" rel="external">Privacy Policy</a> | 
+  Updated: 2017-09-19
+</p>
+  </section>
+</article>
+
+    </div>
+    <div id='big_button'></div>
+    <footer id="footer">
+  <div class="content-wrapper">
+  	<div id="leave_feedback" class="button" role="button" tabindex="0">Feedback</div>
+  </div>
+  <script src="../../../../Resources/1274/JavaScript/devpubs-1.6.3.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../../../Resources/1274/JavaScript/feedback-1.6.3.js" type="text/javascript" charset="utf-8"></script>
+  <div id="_omniture_top">
+<!-- SiteCatalyst code version: H.8. Copyright 1997-2006 Omniture, Inc. -->
+<script type="text/javascript">
+/* RSID: */
+var s_account="appleglobal,appleusdeveloper,dappdeveloperlib"
+</script>
+
+<script type="text/javascript" src="https://www.apple.com/metrics/scripts/s_code_h.js"></script>
+<script type="text/javascript">
+s.pageName=AC.Tracking.pageName();
+s.channel="www.us.developer"
+
+/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+var s_code=s.t();if(s_code)document.write(s_code)</script>
+<!-- End SiteCatalyst code version: H.8. -->
+</div>
+
+</footer>
+
+    
+  </body>
+    <div id="blackout">
+    <div id="preload"></div>
+</div>
+<div id="modal" aria-hidden="true">
+    <div id="closebox" tabindex="0" aria-label="Close feedback form" role="button"></div>
+    <div id="sending" class="hidden">
+        <h2 tabindex="0">Sending feedback&hellip;</h2>
+        <div id="sending_img"></div>
+    </div>
+    <div id="error" class="hidden">
+        <h2 tabindex="0">We&rsquo;re sorry, an error has occurred.</h2>
+        <p>Please try submitting your feedback later.</p>
+        <div id="error_icon"></div>
+    </div>
+    <div id="success" class="hidden">
+        <h2 tabindex="0">Thank you for providing feedback!</h2>
+        <p>Your input helps improve our developer documentation.</p>
+        <div id="thank_you_icon"></div>
+    </div>
+    
+    <form id="feedback" action="#" method="post">
+        <div class="left-leaf">
+            <h2 id="helpful_title" data-asterisk="a1" tabindex="0">How helpful is this document?</h2>     
+            <sup id="a1" class="asterisk" aria-hidden="true">*</sup>
+
+            <div id="star_group" role="radiogroup" aria-required="true">
+                <label> 
+                    <input class="radio" type="radio" name="helped" value="1" /> 
+                    Very helpful
+                </label>
+                <label> 
+                    <input class="radio" type="radio" name="helped" value="2" /> 
+                    Somewhat helpful
+                </label>
+                <label>
+                    <input class="radio" type="radio" name="helped" value="3" /> 
+                    Not helpful
+                </label>
+            </div>
+        </div>
+        <div class="right-leaf">
+            <h2>How can we improve this document?</h2>
+            <div id="improve" class="checkboxes">
+                <label>
+                    <input type="checkbox" name="typo" /> 
+                    Fix typos or links
+                </label>
+                <label>
+                    <input type="checkbox" name="infoIncorrect" /> 
+                    Fix incorrect information
+                </label>
+                <label>
+                    <input type="checkbox" name="needs_examples" /> 
+                    Add or update code samples
+                </label>
+                <label>
+                    <input type="checkbox" name="needs_art" /> 
+                    Add or update illustrations
+                </label>
+                <label>
+                    <input type="checkbox" name="missingInfo" /> 
+                    Add information about...
+                </label>
+            </div>
+        </div>
+
+        <textarea id="comment" name="problem" cols="70" rows="8" placeholder="Please tell us more about your experience with this document" data-asterisk="a2" required></textarea>
+        <sup id="a2" class="asterisk" aria-hidden="true">*</sup>
+
+        <p class="fineprint">
+            <em aria-hidden="true"><span>*</span> Required information</em>
+        </p> 
+
+        <input id="submit" type="button" value="Send" />
+
+        <section id="legal">
+            <p>
+                To submit a product bug or enhancement request, please visit the 
+                <a href="https://developer.apple.com/bugreporter/" target="_blank">Bug Reporter</a> 
+                page.
+            </p>
+            <p>
+                Please read <a href="http://www.apple.com/legal/policies/ideas.html" target="_blank">Apple's Unsolicited Idea Submission Policy</a> 
+                before you send us your feedback.
+            </p> 
+        </section>
+    </form>
+</div>
+
+</div>
+</html>

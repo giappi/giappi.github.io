@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>  
+  <title>The Swift Programming Language (Swift 4): Classes and Structures</title>
+  <link rel="stylesheet" type="text/css" href="../../../../Resources/1274/CSS/style-1.6.3.css" />
+  <link rel="stylesheet" type="text/css" href="../../../../Resources/1274/CSS/feedback-1.6.3.css" />
+  <meta charset='utf-8'> 
+<meta id="j-version" name="j-version" content="" />
+<meta id="build" name="build" content="32e73169b28e462967e02f4e96a19a99" />
+<meta id="document-version" name="document-version" content="10.1.2" />
+<meta id="book-assignments" name="book-assignments" content="{Type/Guide}, {Topic/Swift}" />
+<meta scheme="apple_ref" id="identifier" name="identifier" content="//apple_ref/doc/uid/TP40014097" />
+<meta id="chapterId" name="chapterId" content="TP40014097-CH13">
+<meta id="book-title" name="book-title" content="The Swift Programming Language (Swift 4)" />
+<meta id="book-resource-type" name="book-resource-type" content="Guide" />
+<meta id="book-root" name="book-root" content="./" />
+<meta id="book-json" name="book-json" content="book.json">
+<meta id="date" name="date" content="2017-09-19" />
+<meta id="description" name="description" content="The definitive guide to Swift, Apple’s programming language for building iOS, macOS, watchOS, and tvOS apps." />
+<meta id="IndexTitle" name="IndexTitle" content="" />
+<meta id="resources-uri" name="resources-uri" content="../../../../Resources/1274">
+<link id="book-index-page" rel="Start" title="" type="text/html" href="./index.html">
+<!-- , next_chapter: next_chapter, previous_chapter: previous_chapter -->
+<link id="next-page" rel="Next" type="text/html" href="">
+<link id="previous-page" rel="Prev" type="text/html" href="">
+<meta id="devcenter" name="devcenter" content="<!-- DEVCENTER_NAME -->" />
+<meta id="devcenter-url" name="devcenter-url" content="<!-- DEVCENTER_URL -->" />
+<meta id="reflib" name="reflib" content="<!-- REFLIB_NAME -->" />
+
+<meta id="xcode-display" name="xcode-display" content="render" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta id="platforms" name="platforms" content="Xcode Developer Tools">
+</head>
+
+  <body id="conceptual_flow_with_tasks" class="jazz">
+    
+    <header id="ios_header" class="hideOnPrint hideInXcode">
+  <div class="content-wrapper">
+    <p class="header-text">
+    	<a href="../../../../navigation/">Guides and Sample Code
+ 		</a>
+ </p>
+    <p id="wwdr"><img id="apple_logo" src="../../../../Resources/1274/Images/apple2.png" height="14px" width="12px" aria-hidden="true" /><a href="https://developer.apple.com">Developer</a></p>
+  </div>
+</header>
+
+    <section id="valence">
+  <div class="content-wrapper">
+    <p id="hierarchial_navigation">
+      <span id="book_title">The Swift Programming Language (Swift 4)</span>
+    </p>
+    <form id="search" class="hideInXcode" method="get" action="/search/index.php" accept-charset="utf-8" autocomplete="off">
+  <input type="search" id="ssi_SearchField" placeholder="Search Guides and Sample Code" name="q" autocomplete="off" tabindex="2" />
+</form>
+
+      
+   
+   
+
+
+
+
+    <span class="download-text hideInXcode">
+      <a href="https://itunes.apple.com/us/book/the-swift-programming-language/id881256329?mt=11">iBooks</a>
+    </span>
+
+    
+
+    <img id="shortstack" src="../../../../Resources/1274/Images/shortstack_2x.png"/>
+  </div>
+</section>
+    <div class="content-wrapper">
+      <nav id="navigator" class="book-parts hideInXcode" role="navigation">
+    <ul class="nav-parts">
+        <li data-id="//apple_ref/doc/uid/TP40014097-CH1-ID2"
+            class="part-name">
+            <a href="index.html#//apple_ref/doc/uid/TP40014097-CH3-ID0" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH3-ID0">Welcome to Swift</a>
+          <ul class="nav-chapters">
+              <li class="nav-chapter">
+              	<a href="index.html#//apple_ref/doc/uid/TP40014097-CH3-ID0" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH3-ID0">About Swift</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Compatibility.html#//apple_ref/doc/uid/TP40014097-CH45-ID561" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH45-ID561">Version Compatibility</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="GuidedTour.html#//apple_ref/doc/uid/TP40014097-CH2-ID1" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH2-ID1">A Swift Tour</a>
+              </li>
+          </ul>
+        </li>
+        <li data-id="//apple_ref/doc/uid/TP40014097-CH4-ID233"
+            class="part-name nav-part-active open-part">
+            <a href="TheBasics.html#//apple_ref/doc/uid/TP40014097-CH5-ID309" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH5-ID309">Language Guide</a>
+          <ul class="nav-chapters">
+              <li class="nav-chapter">
+              	<a href="TheBasics.html#//apple_ref/doc/uid/TP40014097-CH5-ID309" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH5-ID309">The Basics</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="BasicOperators.html#//apple_ref/doc/uid/TP40014097-CH6-ID60" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH6-ID60">Basic Operators</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="StringsAndCharacters.html#//apple_ref/doc/uid/TP40014097-CH7-ID285" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH7-ID285">Strings and Characters</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="CollectionTypes.html#//apple_ref/doc/uid/TP40014097-CH8-ID105" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH8-ID105">Collection Types</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="ControlFlow.html#//apple_ref/doc/uid/TP40014097-CH9-ID120" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH9-ID120">Control Flow</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Functions.html#//apple_ref/doc/uid/TP40014097-CH10-ID158" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH10-ID158">Functions</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Closures.html#//apple_ref/doc/uid/TP40014097-CH11-ID94" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH11-ID94">Closures</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Enumerations.html#//apple_ref/doc/uid/TP40014097-CH12-ID145" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH12-ID145">Enumerations</a>
+              </li>
+              <li class="nav-chapter nav-current-chapter">
+              	<a href="#//apple_ref/doc/uid/TP40014097-CH13-ID82" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH13-ID82">Classes and Structures</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Properties.html#//apple_ref/doc/uid/TP40014097-CH14-ID254" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH14-ID254">Properties</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Methods.html#//apple_ref/doc/uid/TP40014097-CH15-ID234" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH15-ID234">Methods</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Subscripts.html#//apple_ref/doc/uid/TP40014097-CH16-ID305" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH16-ID305">Subscripts</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Inheritance.html#//apple_ref/doc/uid/TP40014097-CH17-ID193" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH17-ID193">Inheritance</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Initialization.html#//apple_ref/doc/uid/TP40014097-CH18-ID203" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH18-ID203">Initialization</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Deinitialization.html#//apple_ref/doc/uid/TP40014097-CH19-ID142" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH19-ID142">Deinitialization</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="OptionalChaining.html#//apple_ref/doc/uid/TP40014097-CH21-ID245" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH21-ID245">Optional Chaining</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="ErrorHandling.html#//apple_ref/doc/uid/TP40014097-CH42-ID508" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH42-ID508">Error Handling</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="TypeCasting.html#//apple_ref/doc/uid/TP40014097-CH22-ID338" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH22-ID338">Type Casting</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="NestedTypes.html#//apple_ref/doc/uid/TP40014097-CH23-ID242" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH23-ID242">Nested Types</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Extensions.html#//apple_ref/doc/uid/TP40014097-CH24-ID151" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH24-ID151">Extensions</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Protocols.html#//apple_ref/doc/uid/TP40014097-CH25-ID267" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH25-ID267">Protocols</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Generics.html#//apple_ref/doc/uid/TP40014097-CH26-ID179" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH26-ID179">Generics</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="AutomaticReferenceCounting.html#//apple_ref/doc/uid/TP40014097-CH20-ID48" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH20-ID48">Automatic Reference Counting</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="MemorySafety.html#//apple_ref/doc/uid/TP40014097-CH46-ID567" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH46-ID567">Memory Safety</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="AccessControl.html#//apple_ref/doc/uid/TP40014097-CH41-ID3" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH41-ID3">Access Control</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="AdvancedOperators.html#//apple_ref/doc/uid/TP40014097-CH27-ID28" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH27-ID28">Advanced Operators</a>
+              </li>
+          </ul>
+        </li>
+        <li data-id="//apple_ref/doc/uid/TP40014097-CH28-ID427"
+            class="part-name">
+            <a href="AboutTheLanguageReference.html#//apple_ref/doc/uid/TP40014097-CH29-ID345" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH29-ID345">Language Reference</a>
+          <ul class="nav-chapters">
+              <li class="nav-chapter">
+              	<a href="AboutTheLanguageReference.html#//apple_ref/doc/uid/TP40014097-CH29-ID345" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH29-ID345">About the Language Reference</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="LexicalStructure.html#//apple_ref/doc/uid/TP40014097-CH30-ID410" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH30-ID410">Lexical Structure</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Types.html#//apple_ref/doc/uid/TP40014097-CH31-ID445" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH31-ID445">Types</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Expressions.html#//apple_ref/doc/uid/TP40014097-CH32-ID383" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH32-ID383">Expressions</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Statements.html#//apple_ref/doc/uid/TP40014097-CH33-ID428" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH33-ID428">Statements</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Declarations.html#//apple_ref/doc/uid/TP40014097-CH34-ID351" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH34-ID351">Declarations</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Attributes.html#//apple_ref/doc/uid/TP40014097-CH35-ID347" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH35-ID347">Attributes</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Patterns.html#//apple_ref/doc/uid/TP40014097-CH36-ID419" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH36-ID419">Patterns</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="GenericParametersAndArguments.html#//apple_ref/doc/uid/TP40014097-CH37-ID406" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH37-ID406">Generic Parameters and Arguments</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="zzSummaryOfTheGrammar.html#//apple_ref/doc/uid/TP40014097-CH38-ID458" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH38-ID458">Summary of the Grammar</a>
+              </li>
+          </ul>
+        </li>
+        <li data-id="//apple_ref/doc/uid/TP40014097-CH39-ID460"
+            class="part-name">
+            <a href="RevisionHistory.html#//apple_ref/doc/uid/TP40014097-CH40-ID459" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH40-ID459">Revision History</a>
+          <ul class="nav-chapters">
+              <li class="nav-chapter">
+              	<a href="RevisionHistory.html#//apple_ref/doc/uid/TP40014097-CH40-ID459" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH40-ID459">Document Revision History</a>
+              </li>
+          </ul>
+        </li>
+    </ul>
+</nav>
+
+      <menu id="bashful" type="toolbar">
+  <div class="shield"></div>
+  <menuitem id="jump_to" class="menu-bar-item closed">
+  <span>On This Page</span>
+  <div class="chevron">
+    <div class="chevy chevron-left"></div>
+    <div class="chevy chevron-right"></div>
+  </div>
+  <menu type="list" class="details">
+      <ul class="list-bullet">
+          <li class="item">
+            <a href="#//apple_ref/doc/uid/TP40014097-CH13-ID83">Comparing Classes and Structures</a>
+          </li>
+          <li class="item">
+            <a href="#//apple_ref/doc/uid/TP40014097-CH13-ID88">Structures and Enumerations Are Value Types</a>
+          </li>
+          <li class="item">
+            <a href="#//apple_ref/doc/uid/TP40014097-CH13-ID89">Classes Are Reference Types</a>
+          </li>
+          <li class="item">
+            <a href="#//apple_ref/doc/uid/TP40014097-CH13-ID92">Choosing Between Classes and Structures</a>
+          </li>
+          <li class="item">
+            <a href="#//apple_ref/doc/uid/TP40014097-CH13-ID93">Assignment and Copy Behavior for Strings, Arrays, and Dictionaries</a>
+          </li>
+      </ul>
+  </menu>
+</menuitem>
+
+</menu>
+<div class="pixel-line"></div>
+<div class="rubber-band-gap"></div>
+<article class="chapter">
+  <a name="//apple_ref/doc/uid/TP40014097-CH13"></a><a name="//apple_ref/doc/uid/TP40014097-CH13-ID82"></a>
+
+  <h2 class='chapter-name'>Classes and Structures</h2>
+
+
+  
+  	<section class="section">
+  		<p class="para">
+  <em>Classes</em> and <em>structures</em> are general-purpose, flexible constructs that become the building blocks of your program’s code. You define properties and methods to add functionality to your classes and structures by using exactly the same syntax as for constants, variables, and functions.
+</p>
+<p class="para">
+  Unlike other programming languages, Swift does not require you to create separate interface and implementation files for custom classes and structures. In Swift, you define a class or a structure in a single file, and the external interface to that class or structure is automatically made available for other code to use.
+</p>
+<div class="note">
+  <a name="//apple_ref/doc/uid/TP40014097-CH13-NoLink_104"></a>
+  <aside class="aside">
+    <p class="aside-title">Note
+    </p>
+    	<p class="para">An instance of a <em>class</em> is traditionally known as an <em>object</em>. However, Swift classes and structures are much closer in functionality than in other languages, and much of this chapter describes functionality that can apply to instances of <em>either</em> a class or a structure type. Because of this, the more general term <em>instance</em> is used.
+    	</p>
+    
+  </aside>
+</div>
+
+		</section> 
+
+
+  <section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH13-ID83"></a>
+  <h3 class="section-name" tabindex="0">Comparing Classes and Structures</h3>
+  <p class="para">
+  Classes and structures in Swift have many things in common. Both can:
+</p><ul class="list-bullet">
+  <li class="item"><p class="para">
+  Define properties to store values
+</p>
+</li><li class="item"><p class="para">
+  Define methods to provide functionality
+</p>
+</li><li class="item"><p class="para">
+  Define subscripts to provide access to their values using subscript syntax
+</p>
+</li><li class="item"><p class="para">
+  Define initializers to set up their initial state
+</p>
+</li><li class="item"><p class="para">
+  Be extended to expand their functionality beyond a default implementation
+</p>
+</li><li class="item"><p class="para">
+  Conform to protocols to provide standard functionality of a certain kind
+</p>
+</li>
+</ul><p class="para">
+  For more information, see <span class="x-name"><a href="Properties.html#//apple_ref/doc/uid/TP40014097-CH14-ID254" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH14-ID254">Properties</a></span>, <span class="x-name"><a href="Methods.html#//apple_ref/doc/uid/TP40014097-CH15-ID234" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH15-ID234">Methods</a></span>, <span class="x-name"><a href="Subscripts.html#//apple_ref/doc/uid/TP40014097-CH16-ID305" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH16-ID305">Subscripts</a></span>, <span class="x-name"><a href="Initialization.html#//apple_ref/doc/uid/TP40014097-CH18-ID203" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH18-ID203">Initialization</a></span>, <span class="x-name"><a href="Extensions.html#//apple_ref/doc/uid/TP40014097-CH24-ID151" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH24-ID151">Extensions</a></span>, and <span class="x-name"><a href="Protocols.html#//apple_ref/doc/uid/TP40014097-CH25-ID267" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH25-ID267">Protocols</a></span>.
+</p><p class="para">
+  Classes have additional capabilities that structures do not:
+</p><ul class="list-bullet">
+  <li class="item"><p class="para">
+  Inheritance enables one class to inherit the characteristics of another.
+</p>
+</li><li class="item"><p class="para">
+  Type casting enables you to check and interpret the type of a class instance at runtime.
+</p>
+</li><li class="item"><p class="para">
+  Deinitializers enable an instance of a class to free up any resources it has assigned.
+</p>
+</li><li class="item"><p class="para">
+  Reference counting allows more than one reference to a class instance.
+</p>
+</li>
+</ul><p class="para">
+  For more information, see <span class="x-name"><a href="Inheritance.html#//apple_ref/doc/uid/TP40014097-CH17-ID193" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH17-ID193">Inheritance</a></span>, <span class="x-name"><a href="TypeCasting.html#//apple_ref/doc/uid/TP40014097-CH22-ID338" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH22-ID338">Type Casting</a></span>, <span class="x-name"><a href="Deinitialization.html#//apple_ref/doc/uid/TP40014097-CH19-ID142" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH19-ID142">Deinitialization</a></span>, and <span class="x-name"><a href="AutomaticReferenceCounting.html#//apple_ref/doc/uid/TP40014097-CH20-ID48" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH20-ID48">Automatic Reference Counting</a></span>.
+</p><div class="note">
+  <a name="//apple_ref/doc/uid/TP40014097-CH13-NoLink_105"></a>
+  <aside class="aside">
+    <p class="aside-title">Note
+    </p>
+    	<p class="para">Structures are always copied when they are passed around in your code, and do not use reference counting.
+    	</p>
+    
+  </aside>
+</div>
+  <section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH13-ID84"></a>
+  <h3 class="section-name" tabindex="0">Definition Syntax</h3>
+  <p class="para">
+  Classes and structures have a similar definition syntax. You introduce classes with the <code class="code-voice">class</code> keyword and structures with the <code class="code-voice">struct</code> keyword. Both place their entire definition within a pair of braces:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">class</span> <span class="vc">SomeClass</span> {</code></li>
+            <li><code class="code-voice">    <span class="c">// class definition goes here</span></code></li>
+            <li><code class="code-voice">}</code></li>
+            <li><code class="code-voice"><span class="kt">struct</span> <span class="vc">SomeStructure</span> {</code></li>
+            <li><code class="code-voice">    <span class="c">// structure definition goes here</span></code></li>
+            <li><code class="code-voice">}</code></li>
+        </ol>
+      </div>
+  </div>
+</section><div class="note">
+  <a name="//apple_ref/doc/uid/TP40014097-CH13-NoLink_106"></a>
+  <aside class="aside">
+    <p class="aside-title">Note
+    </p>
+    	<p class="para">Whenever you define a new class or structure, you effectively define a brand new Swift type. Give types <code class="code-voice">UpperCamelCase</code> names (such as <code class="code-voice">SomeClass</code> and <code class="code-voice">SomeStructure</code> here) to match the capitalization of standard Swift types (such as <code class="code-voice">String</code>, <code class="code-voice">Int</code>, and <code class="code-voice">Bool</code>). Conversely, always give properties and methods <code class="code-voice">lowerCamelCase</code> names (such as <code class="code-voice">frameRate</code> and <code class="code-voice">incrementCount</code>) to differentiate them from type names.
+    	</p>
+    
+  </aside>
+</div><p class="para">
+  Here’s an example of a structure definition and a class definition:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">struct</span> <span class="vc">Resolution</span> {</code></li>
+            <li><code class="code-voice">    <span class="kt">var</span> <span class="vc">width</span> = <span class="m">0</span></code></li>
+            <li><code class="code-voice">    <span class="kt">var</span> <span class="vc">height</span> = <span class="m">0</span></code></li>
+            <li><code class="code-voice">}</code></li>
+            <li><code class="code-voice"><span class="kt">class</span> <span class="vc">VideoMode</span> {</code></li>
+            <li><code class="code-voice">    <span class="kt">var</span> <span class="vc">resolution</span> = <span class="vc">Resolution</span>()</code></li>
+            <li><code class="code-voice">    <span class="kt">var</span> <span class="vc">interlaced</span> = <span class="kt">false</span></code></li>
+            <li><code class="code-voice">    <span class="kt">var</span> <span class="vc">frameRate</span> = <span class="m">0.0</span></code></li>
+            <li><code class="code-voice">    <span class="kt">var</span> <span class="vc">name</span>: <span class="n"><!-- a href="" -->String<!-- /a --></span>?</code></li>
+            <li><code class="code-voice">}</code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  The example above defines a new structure called <code class="code-voice">Resolution</code>, to describe a pixel-based display resolution. This structure has two stored properties called <code class="code-voice">width</code> and <code class="code-voice">height</code>. Stored properties are constants or variables that are bundled up and stored as part of the class or structure. These two properties are inferred to be of type <code class="code-voice">Int</code> by setting them to an initial integer value of <code class="code-voice">0</code>.
+</p><p class="para">
+  The example above also defines a new class called <code class="code-voice">VideoMode</code>, to describe a specific video mode for video display. This class has four variable stored properties. The first, <code class="code-voice">resolution</code>, is initialized with a new <code class="code-voice">Resolution</code> structure instance, which infers a property type of <code class="code-voice">Resolution</code>. For the other three properties, new <code class="code-voice">VideoMode</code> instances will be initialized with an <code class="code-voice">interlaced</code> setting of <code class="code-voice">false</code> (meaning “noninterlaced video”), a playback frame rate of <code class="code-voice">0.0</code>, and an optional <code class="code-voice">String</code> value called <code class="code-voice">name</code>. The <code class="code-voice">name</code> property is automatically given a default value of <code class="code-voice">nil</code>, or “no <code class="code-voice">name</code> value”, because it is of an optional type.
+</p>
+  
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH13-ID85"></a>
+  <h3 class="section-name" tabindex="0">Class and Structure Instances</h3>
+  <p class="para">
+  The <code class="code-voice">Resolution</code> structure definition and the <code class="code-voice">VideoMode</code> class definition only describe what a <code class="code-voice">Resolution</code> or <code class="code-voice">VideoMode</code> will look like. They themselves do not describe a specific resolution or video mode. To do that, you need to create an instance of the structure or class.
+</p><p class="para">
+  The syntax for creating instances is very similar for both structures and classes:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">let</span> <span class="vc">someResolution</span> = <span class="vc">Resolution</span>()</code></li>
+            <li><code class="code-voice"><span class="kt">let</span> <span class="vc">someVideoMode</span> = <span class="vc">VideoMode</span>()</code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  Structures and classes both use initializer syntax for new instances. The simplest form of initializer syntax uses the type name of the class or structure followed by empty parentheses, such as <code class="code-voice">Resolution()</code> or <code class="code-voice">VideoMode()</code>. This creates a new instance of the class or structure, with any properties initialized to their default values. Class and structure initialization is described in more detail in <span class="x-name"><a href="Initialization.html#//apple_ref/doc/uid/TP40014097-CH18-ID203" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH18-ID203">Initialization</a></span>.
+</p>
+  
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH13-ID86"></a>
+  <h3 class="section-name" tabindex="0">Accessing Properties</h3>
+  <p class="para">
+  You can access the properties of an instance using <em>dot syntax</em>. In dot syntax, you write the property name immediately after the instance name, separated by a period (<code class="code-voice">.</code>), without any spaces:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="vc">print</span>(<span class="s">&quot;The width of someResolution is </span>\(<span class="vc">someResolution</span>.<span class="vc">width</span>)<span class="s">&quot;</span>)</code></li>
+            <li><code class="code-voice"><span class="c">// Prints &quot;The width of someResolution is 0&quot;</span></code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  In this example, <code class="code-voice">someResolution.width</code> refers to the <code class="code-voice">width</code> property of <code class="code-voice">someResolution</code>, and returns its default initial value of <code class="code-voice">0</code>.
+</p><p class="para">
+  You can drill down into sub-properties, such as the <code class="code-voice">width</code> property in the <code class="code-voice">resolution</code> property of a <code class="code-voice">VideoMode</code>:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="vc">print</span>(<span class="s">&quot;The width of someVideoMode is </span>\(<span class="vc">someVideoMode</span>.<span class="vc">resolution</span>.<span class="vc">width</span>)<span class="s">&quot;</span>)</code></li>
+            <li><code class="code-voice"><span class="c">// Prints &quot;The width of someVideoMode is 0&quot;</span></code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  You can also use dot syntax to assign a new value to a variable property:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="vc">someVideoMode</span>.<span class="vc">resolution</span>.<span class="vc">width</span> = <span class="m">1280</span></code></li>
+            <li><code class="code-voice"><span class="vc">print</span>(<span class="s">&quot;The width of someVideoMode is now </span>\(<span class="vc">someVideoMode</span>.<span class="vc">resolution</span>.<span class="vc">width</span>)<span class="s">&quot;</span>)</code></li>
+            <li><code class="code-voice"><span class="c">// Prints &quot;The width of someVideoMode is now 1280&quot;</span></code></li>
+        </ol>
+      </div>
+  </div>
+</section><div class="note">
+  <a name="//apple_ref/doc/uid/TP40014097-CH13-NoLink_107"></a>
+  <aside class="aside">
+    <p class="aside-title">Note
+    </p>
+    	<p class="para">Unlike Objective-C, Swift enables you to set sub-properties of a structure property directly. In the last example above, the <code class="code-voice">width</code> property of the <code class="code-voice">resolution</code> property of <code class="code-voice">someVideoMode</code> is set directly, without your needing to set the entire <code class="code-voice">resolution</code> property to a new value.
+    	</p>
+    
+  </aside>
+</div>
+  
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH13-ID87"></a>
+  <h3 class="section-name" tabindex="0">Memberwise Initializers for Structure Types</h3>
+  <p class="para">
+  All structures have an automatically-generated <em>memberwise initializer</em>, which you can use to initialize the member properties of new structure instances. Initial values for the properties of the new instance can be passed to the memberwise initializer by name:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">let</span> <span class="vc">vga</span> = <span class="vc">Resolution</span>(<span class="vc">width</span>: <span class="m">640</span>, <span class="vc">height</span>: <span class="m">480</span>)</code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  Unlike structures, class instances do not receive a default memberwise initializer. Initializers are described in more detail in <span class="x-name"><a href="Initialization.html#//apple_ref/doc/uid/TP40014097-CH18-ID203" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH18-ID203">Initialization</a></span>.
+</p>
+  
+</section>
+
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH13-ID88"></a>
+  <h3 class="section-name" tabindex="0">Structures and Enumerations Are Value Types</h3>
+  <p class="para">
+  A <em>value type</em> is a type whose value is <em>copied</em> when it is assigned to a variable or constant, or when it is passed to a function.
+</p><p class="para">
+  You’ve actually been using value types extensively throughout the previous chapters. In fact, all of the basic types in Swift—integers, floating-point numbers, Booleans, strings, arrays and dictionaries—are value types, and are implemented as structures behind the scenes.
+</p><p class="para">
+  All structures and enumerations are value types in Swift. This means that any structure and enumeration instances you create—and any value types they have as properties—are always copied when they are passed around in your code.
+</p><p class="para">
+  Consider this example, which uses the <code class="code-voice">Resolution</code> structure from the previous example:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">let</span> <span class="vc">hd</span> = <span class="vc">Resolution</span>(<span class="vc">width</span>: <span class="m">1920</span>, <span class="vc">height</span>: <span class="m">1080</span>)</code></li>
+            <li><code class="code-voice"><span class="kt">var</span> <span class="vc">cinema</span> = <span class="vc">hd</span></code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  This example declares a constant called <code class="code-voice">hd</code> and sets it to a <code class="code-voice">Resolution</code> instance initialized with the width and height of full HD video (<code class="code-voice">1920</code> pixels wide by <code class="code-voice">1080</code> pixels high).
+</p><p class="para">
+  It then declares a variable called <code class="code-voice">cinema</code> and sets it to the current value of <code class="code-voice">hd</code>. Because <code class="code-voice">Resolution</code> is a structure, a <em>copy</em> of the existing instance is made, and this new copy is assigned to <code class="code-voice">cinema</code>. Even though <code class="code-voice">hd</code> and <code class="code-voice">cinema</code> now have the same width and height, they are two completely different instances behind the scenes.
+</p><p class="para">
+  Next, the <code class="code-voice">width</code> property of <code class="code-voice">cinema</code> is amended to be the width of the slightly-wider 2K standard used for digital cinema projection (<code class="code-voice">2048</code> pixels wide and <code class="code-voice">1080</code> pixels high):
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="vc">cinema</span>.<span class="vc">width</span> = <span class="m">2048</span></code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  Checking the <code class="code-voice">width</code> property of <code class="code-voice">cinema</code> shows that it has indeed changed to be <code class="code-voice">2048</code>:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="vc">print</span>(<span class="s">&quot;cinema is now </span>\(<span class="vc">cinema</span>.<span class="vc">width</span>)<span class="s"> pixels wide&quot;</span>)</code></li>
+            <li><code class="code-voice"><span class="c">// Prints &quot;cinema is now 2048 pixels wide&quot;</span></code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  However, the <code class="code-voice">width</code> property of the original <code class="code-voice">hd</code> instance still has the old value of <code class="code-voice">1920</code>:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="vc">print</span>(<span class="s">&quot;hd is still </span>\(<span class="vc">hd</span>.<span class="vc">width</span>)<span class="s"> pixels wide&quot;</span>)</code></li>
+            <li><code class="code-voice"><span class="c">// Prints &quot;hd is still 1920 pixels wide&quot;</span></code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  When <code class="code-voice">cinema</code> was given the current value of <code class="code-voice">hd</code>, the <em>values</em> stored in <code class="code-voice">hd</code> were copied into the new <code class="code-voice">cinema</code> instance. The end result is two completely separate instances, which just happened to contain the same numeric values. Because they are separate instances, setting the width of <code class="code-voice">cinema</code> to <code class="code-voice">2048</code> doesn’t affect the width stored in <code class="code-voice">hd</code>.
+</p><p class="para">
+  The same behavior applies to enumerations:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">enum</span> <span class="vc">CompassPoint</span> {</code></li>
+            <li><code class="code-voice">    <span class="kt">case</span> <span class="vc">north</span>, <span class="vc">south</span>, <span class="vc">east</span>, <span class="vc">west</span></code></li>
+            <li><code class="code-voice">}</code></li>
+            <li><code class="code-voice"><span class="kt">var</span> <span class="vc">currentDirection</span> = <span class="vc">CompassPoint</span>.<span class="vc">west</span></code></li>
+            <li><code class="code-voice"><span class="kt">let</span> <span class="vc">rememberedDirection</span> = <span class="vc">currentDirection</span></code></li>
+            <li><code class="code-voice"><span class="vc">currentDirection</span> = .<span class="vc">east</span></code></li>
+            <li><code class="code-voice"><span class="kt">if</span> <span class="vc">rememberedDirection</span> == .<span class="vc">west</span> {</code></li>
+            <li><code class="code-voice">    <span class="vc">print</span>(<span class="s">&quot;The remembered direction is still .west&quot;</span>)</code></li>
+            <li><code class="code-voice">}</code></li>
+            <li><code class="code-voice"><span class="c">// Prints &quot;The remembered direction is still .west&quot;</span></code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  When <code class="code-voice">rememberedDirection</code> is assigned the value of <code class="code-voice">currentDirection</code>, it is actually set to a copy of that value. Changing the value of <code class="code-voice">currentDirection</code> thereafter does not affect the copy of the original value that was stored in <code class="code-voice">rememberedDirection</code>.
+</p>
+  
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH13-ID89"></a>
+  <h3 class="section-name" tabindex="0">Classes Are Reference Types</h3>
+  <p class="para">
+  Unlike value types, <em>reference types</em> are <em>not</em> copied when they are assigned to a variable or constant, or when they are passed to a function. Rather than a copy, a reference to the same existing instance is used instead.
+</p><p class="para">
+  Here’s an example, using the <code class="code-voice">VideoMode</code> class defined above:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">let</span> <span class="vc">tenEighty</span> = <span class="vc">VideoMode</span>()</code></li>
+            <li><code class="code-voice"><span class="vc">tenEighty</span>.<span class="vc">resolution</span> = <span class="vc">hd</span></code></li>
+            <li><code class="code-voice"><span class="vc">tenEighty</span>.<span class="vc">interlaced</span> = <span class="kt">true</span></code></li>
+            <li><code class="code-voice"><span class="vc">tenEighty</span>.<span class="vc">name</span> = <span class="s">&quot;1080i&quot;</span></code></li>
+            <li><code class="code-voice"><span class="vc">tenEighty</span>.<span class="vc">frameRate</span> = <span class="m">25.0</span></code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  This example declares a new constant called <code class="code-voice">tenEighty</code> and sets it to refer to a new instance of the <code class="code-voice">VideoMode</code> class. The video mode is assigned a copy of the HD resolution of <code class="code-voice">1920</code> by <code class="code-voice">1080</code> from before. It is set to be interlaced, and is given a name of <code class="code-voice">&quot;1080i&quot;</code>. Finally, it is set to a frame rate of <code class="code-voice">25.0</code> frames per second.
+</p><p class="para">
+  Next, <code class="code-voice">tenEighty</code> is assigned to a new constant, called <code class="code-voice">alsoTenEighty</code>, and the frame rate of <code class="code-voice">alsoTenEighty</code> is modified:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">let</span> <span class="vc">alsoTenEighty</span> = <span class="vc">tenEighty</span></code></li>
+            <li><code class="code-voice"><span class="vc">alsoTenEighty</span>.<span class="vc">frameRate</span> = <span class="m">30.0</span></code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  Because classes are reference types, <code class="code-voice">tenEighty</code> and <code class="code-voice">alsoTenEighty</code> actually both refer to the <em>same</em> <code class="code-voice">VideoMode</code> instance. Effectively, they are just two different names for the same single instance.
+</p><p class="para">
+  Checking the <code class="code-voice">frameRate</code> property of <code class="code-voice">tenEighty</code> shows that it correctly reports the new frame rate of <code class="code-voice">30.0</code> from the underlying <code class="code-voice">VideoMode</code> instance:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="vc">print</span>(<span class="s">&quot;The frameRate property of tenEighty is now </span>\(<span class="vc">tenEighty</span>.<span class="vc">frameRate</span>)<span class="s">&quot;</span>)</code></li>
+            <li><code class="code-voice"><span class="c">// Prints &quot;The frameRate property of tenEighty is now 30.0&quot;</span></code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  Note that <code class="code-voice">tenEighty</code> and <code class="code-voice">alsoTenEighty</code> are declared as <em>constants</em>, rather than variables. However, you can still change <code class="code-voice">tenEighty.frameRate</code> and <code class="code-voice">alsoTenEighty.frameRate</code> because the values of the <code class="code-voice">tenEighty</code> and <code class="code-voice">alsoTenEighty</code> constants themselves do not actually change. <code class="code-voice">tenEighty</code> and <code class="code-voice">alsoTenEighty</code> themselves do not “store” the <code class="code-voice">VideoMode</code> instance—instead, they both <em>refer</em> to a <code class="code-voice">VideoMode</code> instance behind the scenes. It is the <code class="code-voice">frameRate</code> property of the underlying <code class="code-voice">VideoMode</code> that is changed, not the values of the constant references to that <code class="code-voice">VideoMode</code>.
+</p>
+  <section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH13-ID90"></a>
+  <h3 class="section-name" tabindex="0">Identity Operators</h3>
+  <p class="para">
+  Because classes are reference types, it is possible for multiple constants and variables to refer to the same single instance of a class behind the scenes. (The same is not true for structures and enumerations, because they are always copied when they are assigned to a constant or variable, or passed to a function.)
+</p><p class="para">
+  It can sometimes be useful to find out if two constants or variables refer to exactly the same instance of a class. To enable this, Swift provides two identity operators:
+</p><ul class="list-bullet">
+  <li class="item"><p class="para">
+  Identical to (<code class="code-voice">===</code>)
+</p>
+</li><li class="item"><p class="para">
+  Not identical to (<code class="code-voice">!==</code>)
+</p>
+</li>
+</ul><p class="para">
+  Use these operators to check whether two constants or variables refer to the same single instance:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">if</span> <span class="vc">tenEighty</span> === <span class="vc">alsoTenEighty</span> {</code></li>
+            <li><code class="code-voice">    <span class="vc">print</span>(<span class="s">&quot;tenEighty and alsoTenEighty refer to the same VideoMode instance.&quot;</span>)</code></li>
+            <li><code class="code-voice">}</code></li>
+            <li><code class="code-voice"><span class="c">// Prints &quot;tenEighty and alsoTenEighty refer to the same VideoMode instance.&quot;</span></code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  Note that “identical to” (represented by three equals signs, or <code class="code-voice">===</code>) does not mean the same thing as “equal to” (represented by two equals signs, or <code class="code-voice">==</code>):
+</p><ul class="list-bullet">
+  <li class="item"><p class="para">
+  “Identical to” means that two constants or variables of class type refer to exactly the same class instance.
+</p>
+</li><li class="item"><p class="para">
+  “Equal to” means that two instances are considered “equal” or “equivalent” in value, for some appropriate meaning of “equal”, as defined by the type’s designer.
+</p>
+</li>
+</ul><p class="para">
+  When you define your own custom classes and structures, it is your responsibility to decide what qualifies as two instances being “equal”. The process of defining your own implementations of the “equal to” and “not equal to” operators is described in <span class="x-name"><a href="AdvancedOperators.html#//apple_ref/doc/uid/TP40014097-CH27-ID45" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH27-ID45">Equivalence Operators</a></span>.
+</p>
+  
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH13-ID91"></a>
+  <h3 class="section-name" tabindex="0">Pointers</h3>
+  <p class="para">
+  If you have experience with C, C++, or Objective-C, you may know that these languages use <em>pointers</em> to refer to addresses in memory. A Swift constant or variable that refers to an instance of some reference type is similar to a pointer in C, but is not a direct pointer to an address in memory, and does not require you to write an asterisk (<code class="code-voice">*</code>) to indicate that you are creating a reference. Instead, these references are defined like any other constant or variable in Swift.
+</p>
+  
+</section>
+
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH13-ID92"></a>
+  <h3 class="section-name" tabindex="0">Choosing Between Classes and Structures</h3>
+  <p class="para">
+  You can use both classes and structures to define custom data types to use as the building blocks of your program’s code.
+</p><p class="para">
+  However, structure instances are always passed by <em>value</em>, and class instances are always passed by <em>reference</em>. This means that they are suited to different kinds of tasks. As you consider the data constructs and functionality that you need for a project, decide whether each data construct should be defined as a class or as a structure.
+</p><p class="para">
+  As a general guideline, consider creating a structure when one or more of these conditions apply:
+</p><ul class="list-bullet">
+  <li class="item"><p class="para">
+  The structure’s primary purpose is to encapsulate a few relatively simple data values.
+</p>
+</li><li class="item"><p class="para">
+  It is reasonable to expect that the encapsulated values will be copied rather than referenced when you assign or pass around an instance of that structure.
+</p>
+</li><li class="item"><p class="para">
+  Any properties stored by the structure are themselves value types, which would also be expected to be copied rather than referenced.
+</p>
+</li><li class="item"><p class="para">
+  The structure does not need to inherit properties or behavior from another existing type.
+</p>
+</li>
+</ul><p class="para">
+  Examples of good candidates for structures include:
+</p><ul class="list-bullet">
+  <li class="item"><p class="para">
+  The size of a geometric shape, perhaps encapsulating a <code class="code-voice">width</code> property and a <code class="code-voice">height</code> property, both of type <code class="code-voice">Double</code>.
+</p>
+</li><li class="item"><p class="para">
+  A way to refer to ranges within a series, perhaps encapsulating a <code class="code-voice">start</code> property and a <code class="code-voice">length</code> property, both of type <code class="code-voice">Int</code>.
+</p>
+</li><li class="item"><p class="para">
+  A point in a 3D coordinate system, perhaps encapsulating <code class="code-voice">x</code>, <code class="code-voice">y</code> and <code class="code-voice">z</code> properties, each of type <code class="code-voice">Double</code>.
+</p>
+</li>
+</ul><p class="para">
+  In all other cases, define a class, and create instances of that class to be managed and passed by reference. In practice, this means that most custom data constructs should be classes, not structures.
+</p>
+  
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH13-ID93"></a>
+  <h3 class="section-name" tabindex="0">Assignment and Copy Behavior for Strings, Arrays, and Dictionaries</h3>
+  <p class="para">
+  In Swift, many basic data types such as <code class="code-voice">String</code>, <code class="code-voice">Array</code>, and <code class="code-voice">Dictionary</code> are implemented as structures. This means that data such as strings, arrays, and dictionaries are copied when they are assigned to a new constant or variable, or when they are passed to a function or method.
+</p><p class="para">
+  This behavior is different from Foundation: <code class="code-voice">NSString</code>, <code class="code-voice">NSArray</code>, and <code class="code-voice">NSDictionary</code> are implemented as classes, not structures. Strings, arrays, and dictionaries in Foundation are always assigned and passed around as a reference to an existing instance, rather than as a copy.
+</p><div class="note">
+  <a name="//apple_ref/doc/uid/TP40014097-CH13-NoLink_108"></a>
+  <aside class="aside">
+    <p class="aside-title">Note
+    </p>
+    	<p class="para">The description above refers to the “copying” of strings, arrays, and dictionaries. The behavior you see in your code will always be as if a copy took place. However, Swift only performs an <em>actual</em> copy behind the scenes when it is absolutely necessary to do so. Swift manages all value copying to ensure optimal performance, and you should not avoid assignment to try to preempt this optimization.
+    	</p>
+    
+  </aside>
+</div>
+  
+</section>
+
+  	
+ 	<section id="next_previous" class="">
+    		<p class="previous-link"><a href="Enumerations.html#//apple_ref/doc/uid/TP40014097-CH12-ID145" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH12-ID145">Enumerations</a></p>
+  			<p class="next-link"><a href="Properties.html#//apple_ref/doc/uid/TP40014097-CH14-ID254" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH14-ID254">Properties</a></p>
+
+    <p class="copyright">Copyright &#x00a9; 2017 Apple Inc. All rights reserved. 
+  <a class="link" href="http://www.apple.com/legal/terms/site.html" target="_blank" rel="external">Terms of Use</a> | 
+  <a class="link" href="http://www.apple.com/privacy/" target="_blank" rel="external">Privacy Policy</a> | 
+  Updated: 2017-09-19
+</p>
+  </section>
+</article>
+
+    </div>
+    <div id='big_button'></div>
+    <footer id="footer">
+  <div class="content-wrapper">
+  	<div id="leave_feedback" class="button" role="button" tabindex="0">Feedback</div>
+  </div>
+  <script src="../../../../Resources/1274/JavaScript/devpubs-1.6.3.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../../../Resources/1274/JavaScript/feedback-1.6.3.js" type="text/javascript" charset="utf-8"></script>
+  <div id="_omniture_top">
+<!-- SiteCatalyst code version: H.8. Copyright 1997-2006 Omniture, Inc. -->
+<script type="text/javascript">
+/* RSID: */
+var s_account="appleglobal,appleusdeveloper,dappdeveloperlib"
+</script>
+
+<script type="text/javascript" src="https://www.apple.com/metrics/scripts/s_code_h.js"></script>
+<script type="text/javascript">
+s.pageName=AC.Tracking.pageName();
+s.channel="www.us.developer"
+
+/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+var s_code=s.t();if(s_code)document.write(s_code)</script>
+<!-- End SiteCatalyst code version: H.8. -->
+</div>
+
+</footer>
+
+    
+  </body>
+    <div id="blackout">
+    <div id="preload"></div>
+</div>
+<div id="modal" aria-hidden="true">
+    <div id="closebox" tabindex="0" aria-label="Close feedback form" role="button"></div>
+    <div id="sending" class="hidden">
+        <h2 tabindex="0">Sending feedback&hellip;</h2>
+        <div id="sending_img"></div>
+    </div>
+    <div id="error" class="hidden">
+        <h2 tabindex="0">We&rsquo;re sorry, an error has occurred.</h2>
+        <p>Please try submitting your feedback later.</p>
+        <div id="error_icon"></div>
+    </div>
+    <div id="success" class="hidden">
+        <h2 tabindex="0">Thank you for providing feedback!</h2>
+        <p>Your input helps improve our developer documentation.</p>
+        <div id="thank_you_icon"></div>
+    </div>
+    
+    <form id="feedback" action="#" method="post">
+        <div class="left-leaf">
+            <h2 id="helpful_title" data-asterisk="a1" tabindex="0">How helpful is this document?</h2>     
+            <sup id="a1" class="asterisk" aria-hidden="true">*</sup>
+
+            <div id="star_group" role="radiogroup" aria-required="true">
+                <label> 
+                    <input class="radio" type="radio" name="helped" value="1" /> 
+                    Very helpful
+                </label>
+                <label> 
+                    <input class="radio" type="radio" name="helped" value="2" /> 
+                    Somewhat helpful
+                </label>
+                <label>
+                    <input class="radio" type="radio" name="helped" value="3" /> 
+                    Not helpful
+                </label>
+            </div>
+        </div>
+        <div class="right-leaf">
+            <h2>How can we improve this document?</h2>
+            <div id="improve" class="checkboxes">
+                <label>
+                    <input type="checkbox" name="typo" /> 
+                    Fix typos or links
+                </label>
+                <label>
+                    <input type="checkbox" name="infoIncorrect" /> 
+                    Fix incorrect information
+                </label>
+                <label>
+                    <input type="checkbox" name="needs_examples" /> 
+                    Add or update code samples
+                </label>
+                <label>
+                    <input type="checkbox" name="needs_art" /> 
+                    Add or update illustrations
+                </label>
+                <label>
+                    <input type="checkbox" name="missingInfo" /> 
+                    Add information about...
+                </label>
+            </div>
+        </div>
+
+        <textarea id="comment" name="problem" cols="70" rows="8" placeholder="Please tell us more about your experience with this document" data-asterisk="a2" required></textarea>
+        <sup id="a2" class="asterisk" aria-hidden="true">*</sup>
+
+        <p class="fineprint">
+            <em aria-hidden="true"><span>*</span> Required information</em>
+        </p> 
+
+        <input id="submit" type="button" value="Send" />
+
+        <section id="legal">
+            <p>
+                To submit a product bug or enhancement request, please visit the 
+                <a href="https://developer.apple.com/bugreporter/" target="_blank">Bug Reporter</a> 
+                page.
+            </p>
+            <p>
+                Please read <a href="http://www.apple.com/legal/policies/ideas.html" target="_blank">Apple's Unsolicited Idea Submission Policy</a> 
+                before you send us your feedback.
+            </p> 
+        </section>
+    </form>
+</div>
+
+</div>
+</html>

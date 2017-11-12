@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>  
+  <title>The Swift Programming Language (Swift 4): Attributes</title>
+  <link rel="stylesheet" type="text/css" href="../../../../Resources/1274/CSS/style-1.6.3.css" />
+  <link rel="stylesheet" type="text/css" href="../../../../Resources/1274/CSS/feedback-1.6.3.css" />
+  <meta charset='utf-8'> 
+<meta id="j-version" name="j-version" content="" />
+<meta id="build" name="build" content="32e73169b28e462967e02f4e96a19a99" />
+<meta id="document-version" name="document-version" content="10.1.2" />
+<meta id="book-assignments" name="book-assignments" content="{Type/Guide}, {Topic/Swift}" />
+<meta scheme="apple_ref" id="identifier" name="identifier" content="//apple_ref/doc/uid/TP40014097" />
+<meta id="chapterId" name="chapterId" content="TP40014097-CH35">
+<meta id="book-title" name="book-title" content="The Swift Programming Language (Swift 4)" />
+<meta id="book-resource-type" name="book-resource-type" content="Guide" />
+<meta id="book-root" name="book-root" content="./" />
+<meta id="book-json" name="book-json" content="book.json">
+<meta id="date" name="date" content="2017-09-19" />
+<meta id="description" name="description" content="The definitive guide to Swift, Apple’s programming language for building iOS, macOS, watchOS, and tvOS apps." />
+<meta id="IndexTitle" name="IndexTitle" content="" />
+<meta id="resources-uri" name="resources-uri" content="../../../../Resources/1274">
+<link id="book-index-page" rel="Start" title="" type="text/html" href="./index.html">
+<!-- , next_chapter: next_chapter, previous_chapter: previous_chapter -->
+<link id="next-page" rel="Next" type="text/html" href="">
+<link id="previous-page" rel="Prev" type="text/html" href="">
+<meta id="devcenter" name="devcenter" content="<!-- DEVCENTER_NAME -->" />
+<meta id="devcenter-url" name="devcenter-url" content="<!-- DEVCENTER_URL -->" />
+<meta id="reflib" name="reflib" content="<!-- REFLIB_NAME -->" />
+
+<meta id="xcode-display" name="xcode-display" content="render" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta id="platforms" name="platforms" content="Xcode Developer Tools">
+</head>
+
+  <body id="conceptual_flow_with_tasks" class="jazz">
+    
+    <header id="ios_header" class="hideOnPrint hideInXcode">
+  <div class="content-wrapper">
+    <p class="header-text">
+    	<a href="../../../../navigation/">Guides and Sample Code
+ 		</a>
+ </p>
+    <p id="wwdr"><img id="apple_logo" src="../../../../Resources/1274/Images/apple2.png" height="14px" width="12px" aria-hidden="true" /><a href="https://developer.apple.com">Developer</a></p>
+  </div>
+</header>
+
+    <section id="valence">
+  <div class="content-wrapper">
+    <p id="hierarchial_navigation">
+      <span id="book_title">The Swift Programming Language (Swift 4)</span>
+    </p>
+    <form id="search" class="hideInXcode" method="get" action="/search/index.php" accept-charset="utf-8" autocomplete="off">
+  <input type="search" id="ssi_SearchField" placeholder="Search Guides and Sample Code" name="q" autocomplete="off" tabindex="2" />
+</form>
+
+      
+   
+   
+
+
+
+
+    <span class="download-text hideInXcode">
+      <a href="https://itunes.apple.com/us/book/the-swift-programming-language/id881256329?mt=11">iBooks</a>
+    </span>
+
+    
+
+    <img id="shortstack" src="../../../../Resources/1274/Images/shortstack_2x.png"/>
+  </div>
+</section>
+    <div class="content-wrapper">
+      <nav id="navigator" class="book-parts hideInXcode" role="navigation">
+    <ul class="nav-parts">
+        <li data-id="//apple_ref/doc/uid/TP40014097-CH1-ID2"
+            class="part-name">
+            <a href="index.html#//apple_ref/doc/uid/TP40014097-CH3-ID0" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH3-ID0">Welcome to Swift</a>
+          <ul class="nav-chapters">
+              <li class="nav-chapter">
+              	<a href="index.html#//apple_ref/doc/uid/TP40014097-CH3-ID0" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH3-ID0">About Swift</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Compatibility.html#//apple_ref/doc/uid/TP40014097-CH45-ID561" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH45-ID561">Version Compatibility</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="GuidedTour.html#//apple_ref/doc/uid/TP40014097-CH2-ID1" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH2-ID1">A Swift Tour</a>
+              </li>
+          </ul>
+        </li>
+        <li data-id="//apple_ref/doc/uid/TP40014097-CH4-ID233"
+            class="part-name">
+            <a href="TheBasics.html#//apple_ref/doc/uid/TP40014097-CH5-ID309" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH5-ID309">Language Guide</a>
+          <ul class="nav-chapters">
+              <li class="nav-chapter">
+              	<a href="TheBasics.html#//apple_ref/doc/uid/TP40014097-CH5-ID309" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH5-ID309">The Basics</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="BasicOperators.html#//apple_ref/doc/uid/TP40014097-CH6-ID60" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH6-ID60">Basic Operators</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="StringsAndCharacters.html#//apple_ref/doc/uid/TP40014097-CH7-ID285" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH7-ID285">Strings and Characters</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="CollectionTypes.html#//apple_ref/doc/uid/TP40014097-CH8-ID105" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH8-ID105">Collection Types</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="ControlFlow.html#//apple_ref/doc/uid/TP40014097-CH9-ID120" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH9-ID120">Control Flow</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Functions.html#//apple_ref/doc/uid/TP40014097-CH10-ID158" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH10-ID158">Functions</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Closures.html#//apple_ref/doc/uid/TP40014097-CH11-ID94" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH11-ID94">Closures</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Enumerations.html#//apple_ref/doc/uid/TP40014097-CH12-ID145" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH12-ID145">Enumerations</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="ClassesAndStructures.html#//apple_ref/doc/uid/TP40014097-CH13-ID82" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH13-ID82">Classes and Structures</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Properties.html#//apple_ref/doc/uid/TP40014097-CH14-ID254" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH14-ID254">Properties</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Methods.html#//apple_ref/doc/uid/TP40014097-CH15-ID234" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH15-ID234">Methods</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Subscripts.html#//apple_ref/doc/uid/TP40014097-CH16-ID305" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH16-ID305">Subscripts</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Inheritance.html#//apple_ref/doc/uid/TP40014097-CH17-ID193" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH17-ID193">Inheritance</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Initialization.html#//apple_ref/doc/uid/TP40014097-CH18-ID203" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH18-ID203">Initialization</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Deinitialization.html#//apple_ref/doc/uid/TP40014097-CH19-ID142" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH19-ID142">Deinitialization</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="OptionalChaining.html#//apple_ref/doc/uid/TP40014097-CH21-ID245" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH21-ID245">Optional Chaining</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="ErrorHandling.html#//apple_ref/doc/uid/TP40014097-CH42-ID508" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH42-ID508">Error Handling</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="TypeCasting.html#//apple_ref/doc/uid/TP40014097-CH22-ID338" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH22-ID338">Type Casting</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="NestedTypes.html#//apple_ref/doc/uid/TP40014097-CH23-ID242" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH23-ID242">Nested Types</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Extensions.html#//apple_ref/doc/uid/TP40014097-CH24-ID151" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH24-ID151">Extensions</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Protocols.html#//apple_ref/doc/uid/TP40014097-CH25-ID267" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH25-ID267">Protocols</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Generics.html#//apple_ref/doc/uid/TP40014097-CH26-ID179" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH26-ID179">Generics</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="AutomaticReferenceCounting.html#//apple_ref/doc/uid/TP40014097-CH20-ID48" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH20-ID48">Automatic Reference Counting</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="MemorySafety.html#//apple_ref/doc/uid/TP40014097-CH46-ID567" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH46-ID567">Memory Safety</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="AccessControl.html#//apple_ref/doc/uid/TP40014097-CH41-ID3" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH41-ID3">Access Control</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="AdvancedOperators.html#//apple_ref/doc/uid/TP40014097-CH27-ID28" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH27-ID28">Advanced Operators</a>
+              </li>
+          </ul>
+        </li>
+        <li data-id="//apple_ref/doc/uid/TP40014097-CH28-ID427"
+            class="part-name nav-part-active open-part">
+            <a href="AboutTheLanguageReference.html#//apple_ref/doc/uid/TP40014097-CH29-ID345" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH29-ID345">Language Reference</a>
+          <ul class="nav-chapters">
+              <li class="nav-chapter">
+              	<a href="AboutTheLanguageReference.html#//apple_ref/doc/uid/TP40014097-CH29-ID345" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH29-ID345">About the Language Reference</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="LexicalStructure.html#//apple_ref/doc/uid/TP40014097-CH30-ID410" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH30-ID410">Lexical Structure</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Types.html#//apple_ref/doc/uid/TP40014097-CH31-ID445" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH31-ID445">Types</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Expressions.html#//apple_ref/doc/uid/TP40014097-CH32-ID383" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH32-ID383">Expressions</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Statements.html#//apple_ref/doc/uid/TP40014097-CH33-ID428" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH33-ID428">Statements</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Declarations.html#//apple_ref/doc/uid/TP40014097-CH34-ID351" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH34-ID351">Declarations</a>
+              </li>
+              <li class="nav-chapter nav-current-chapter">
+              	<a href="#//apple_ref/doc/uid/TP40014097-CH35-ID347" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH35-ID347">Attributes</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Patterns.html#//apple_ref/doc/uid/TP40014097-CH36-ID419" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH36-ID419">Patterns</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="GenericParametersAndArguments.html#//apple_ref/doc/uid/TP40014097-CH37-ID406" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH37-ID406">Generic Parameters and Arguments</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="zzSummaryOfTheGrammar.html#//apple_ref/doc/uid/TP40014097-CH38-ID458" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH38-ID458">Summary of the Grammar</a>
+              </li>
+          </ul>
+        </li>
+        <li data-id="//apple_ref/doc/uid/TP40014097-CH39-ID460"
+            class="part-name">
+            <a href="RevisionHistory.html#//apple_ref/doc/uid/TP40014097-CH40-ID459" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH40-ID459">Revision History</a>
+          <ul class="nav-chapters">
+              <li class="nav-chapter">
+              	<a href="RevisionHistory.html#//apple_ref/doc/uid/TP40014097-CH40-ID459" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH40-ID459">Document Revision History</a>
+              </li>
+          </ul>
+        </li>
+    </ul>
+</nav>
+
+      <menu id="bashful" type="toolbar">
+  <div class="shield"></div>
+  <menuitem id="jump_to" class="menu-bar-item closed">
+  <span>On This Page</span>
+  <div class="chevron">
+    <div class="chevy chevron-left"></div>
+    <div class="chevy chevron-right"></div>
+  </div>
+  <menu type="list" class="details">
+      <ul class="list-bullet">
+          <li class="item">
+            <a href="#//apple_ref/doc/uid/TP40014097-CH35-ID348">Declaration Attributes</a>
+          </li>
+          <li class="item">
+            <a href="#//apple_ref/doc/uid/TP40014097-CH35-ID350">Type Attributes</a>
+          </li>
+      </ul>
+  </menu>
+</menuitem>
+
+</menu>
+<div class="pixel-line"></div>
+<div class="rubber-band-gap"></div>
+<article class="chapter">
+  <a name="//apple_ref/doc/uid/TP40014097-CH35"></a><a name="//apple_ref/doc/uid/TP40014097-CH35-ID347"></a>
+
+  <h2 class='chapter-name'>Attributes</h2>
+
+
+  
+  	<section class="section">
+  		<p class="para">
+  <em>Attributes</em> provide more information about a declaration or type. There are two kinds of attributes in Swift, those that apply to declarations and those that apply to types.
+</p>
+<p class="para">
+  You specify an attribute by writing the <code class="code-voice">@</code> symbol followed by the attribute’s name and any arguments that the attribute accepts:
+</p>
+
+<span class="caption"></span>
+<div class="code-outline">
+  <ul class="code-outline-lines">
+    <li><pre class="code-voice">@<em class="variable-text">attribute name</em></pre></li><li><pre class="code-voice">@<em class="variable-text">attribute name</em>(<em class="variable-text">attribute arguments</em>)</pre></li>
+  </ul>
+</div><p class="para">
+  Some declaration attributes accept arguments that specify more information about the attribute and how it applies to a particular declaration. These <em>attribute arguments</em> are enclosed in parentheses, and their format is defined by the attribute they belong to.
+</p>
+
+		</section> 
+
+
+  <section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH35-ID348"></a>
+  <h3 class="section-name" tabindex="0">Declaration Attributes</h3>
+  <p class="para">
+  You can apply a declaration attribute to declarations only.
+</p><dl class="term-definition termdef">
+	<tr>
+  <td scope="row"><dt class="term"><code class="code-voice">available</code></dt></td>
+  <td><dd class='definition'><p class="para">
+  Apply this attribute to indicate a declaration’s lifecycle relative to certain Swift language versions or certain platforms and operating system versions.
+</p><p class="para">
+  The <code class="code-voice">available</code> attribute always appears with a list of two or more comma-separated attribute arguments. These arguments begin with one of the following platform or language names:
+</p><ul class="list-bullet">
+  <li class="item"><p class="para">
+  <code class="code-voice">iOS</code>
+</p>
+</li><li class="item"><p class="para">
+  <code class="code-voice">iOSApplicationExtension</code>
+</p>
+</li><li class="item"><p class="para">
+  <code class="code-voice">macOS</code>
+</p>
+</li><li class="item"><p class="para">
+  <code class="code-voice">macOSApplicationExtension</code>
+</p>
+</li><li class="item"><p class="para">
+  <code class="code-voice">watchOS</code>
+</p>
+</li><li class="item"><p class="para">
+  <code class="code-voice">watchOSApplicationExtension</code>
+</p>
+</li><li class="item"><p class="para">
+  <code class="code-voice">tvOS</code>
+</p>
+</li><li class="item"><p class="para">
+  <code class="code-voice">tvOSApplicationExtension</code>
+</p>
+</li><li class="item"><p class="para">
+  <code class="code-voice">swift</code>
+</p>
+</li>
+</ul><p class="para">
+  You can also use an asterisk (<code class="code-voice">*</code>) to indicate the availability of the declaration on all of the platform names listed above. An <code class="code-voice">available</code> attribute specifying a Swift version availability can’t use the asterisk.
+</p><p class="para">
+  The remaining arguments can appear in any order and specify additional information about the declaration’s lifecycle, including important milestones.
+</p><ul class="list-bullet">
+  <li class="item"><p class="para">
+  The <code class="code-voice">unavailable</code> argument indicates that the declaration isn’t available on the specified platform. This argument can’t be used when specifying Swift version availability.
+</p>
+</li><li class="item"><p class="para">
+  The <code class="code-voice">introduced</code> argument indicates the first version of the specified platform or language in which the declaration was introduced. It has the following form:
+</p>
+
+<span class="caption"></span>
+<div class="code-outline">
+  <ul class="code-outline-lines">
+    <li><pre class="code-voice"><span class="vc">introduced</span>: <em class="variable-text">version number</em></pre></li>
+  </ul>
+</div><p class="para">
+  The <em>version number</em> consists of one to three positive integers, separated by periods.
+</p>
+</li><li class="item"><p class="para">
+  The <code class="code-voice">deprecated</code> argument indicates the first version of the specified platform or language in which the declaration was deprecated. It has the following form:
+</p>
+
+<span class="caption"></span>
+<div class="code-outline">
+  <ul class="code-outline-lines">
+    <li><pre class="code-voice"><span class="vc">deprecated</span>: <em class="variable-text">version number</em></pre></li>
+  </ul>
+</div><p class="para">
+  The optional <em>version number</em> consists of one to three positive integers, separated by periods. Omitting the version number indicates that the declaration is currently deprecated, without giving any information about when the deprecation occurred. If you omit the version number, omit the colon (<code class="code-voice">:</code>) as well.
+</p>
+</li><li class="item"><p class="para">
+  The <code class="code-voice">obsoleted</code> argument indicates the first version of the specified platform or language in which the declaration was obsoleted. When a declaration is obsoleted, it’s removed from the specified platform or language and can no longer be used. It has the following form:
+</p>
+
+<span class="caption"></span>
+<div class="code-outline">
+  <ul class="code-outline-lines">
+    <li><pre class="code-voice"><span class="vc">obsoleted</span>: <em class="variable-text">version number</em></pre></li>
+  </ul>
+</div><p class="para">
+  The <em>version number</em> consists of one to three positive integers, separated by periods.
+</p>
+</li><li class="item"><p class="para">
+  The <code class="code-voice">message</code> argument is used to provide a textual message that’s displayed by the compiler when emitting a warning or error about the use of a deprecated or obsoleted declaration. It has the following form:
+</p>
+
+<span class="caption"></span>
+<div class="code-outline">
+  <ul class="code-outline-lines">
+    <li><pre class="code-voice"><span class="vc">message</span>: <em class="variable-text">message</em></pre></li>
+  </ul>
+</div><p class="para">
+  The <em>message</em> consists of a string literal.
+</p>
+</li><li class="item"><p class="para">
+  The <code class="code-voice">renamed</code> argument is used to provide a textual message that indicates the new name for a declaration that’s been renamed. The new name is displayed by the compiler when emitting an error about the use of a renamed declaration. It has the following form:
+</p>
+
+<span class="caption"></span>
+<div class="code-outline">
+  <ul class="code-outline-lines">
+    <li><pre class="code-voice"><span class="vc">renamed</span>: <em class="variable-text">new name</em></pre></li>
+  </ul>
+</div><p class="para">
+  The <em>new name</em> consists of a string literal.
+</p>
+<p class="para">
+  You can use the <code class="code-voice">renamed</code> argument in conjunction with the <code class="code-voice">unavailable</code> argument and a type alias declaration to indicate to clients of your code that a declaration has been renamed. For example, this is useful when the name of a declaration is changed between releases of a framework or library.
+</p>
+<section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="c">// First release</span></code></li>
+            <li><code class="code-voice"><span class="kt">protocol</span> <span class="vc">MyProtocol</span> {</code></li>
+            <li><code class="code-voice">    <span class="c">// protocol definition</span></code></li>
+            <li><code class="code-voice">}</code></li>
+        </ol>
+      </div>
+  </div>
+</section>
+<section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="c">// Subsequent release renames MyProtocol</span></code></li>
+            <li><code class="code-voice"><span class="kt">protocol</span> <span class="vc">MyRenamedProtocol</span> {</code></li>
+            <li><code class="code-voice">    <span class="c">// protocol definition</span></code></li>
+            <li><code class="code-voice">}</code></li>
+            <li><code class="code-voice"> </code></li>
+            <li><code class="code-voice"><span class="kt">@available</span>(*, <span class="vc">unavailable</span>, <span class="vc">renamed</span>: <span class="s">&quot;MyRenamedProtocol&quot;</span>)</code></li>
+            <li><code class="code-voice"><span class="kt">typealias</span> <span class="vc">MyProtocol</span> = <span class="n"><!-- a href="" -->MyRenamedProtocol<!-- /a --></span></code></li>
+        </ol>
+      </div>
+  </div>
+</section>
+</li>
+</ul><p class="para">
+  You can apply multiple <code class="code-voice">available</code> attributes on a single declaration to specify the declaration’s availability on different platforms and different versions of Swift. The declaration that the <code class="code-voice">available</code> attribute applies to is ignored if the attribute specifies a platform or language version that doesn’t match the current target. If you use multiple <code class="code-voice">available</code> attributes the effective availability is the combination of the platform and Swift availabilities.
+</p><p class="para">
+  If an <code class="code-voice">available</code> attribute only specifies an <code class="code-voice">introduced</code> argument in addition to a platform or language name argument, the following shorthand syntax can be used instead:
+</p><span class="caption"></span>
+<div class="code-outline">
+  <ul class="code-outline-lines">
+    <li><pre class="code-voice">@available(<em class="variable-text">platform name</em> <em class="variable-text">version number</em>, *)</pre></li><li><pre class="code-voice">@available(<span class="vc">swift</span> <em class="variable-text">version number</em>)</pre></li>
+  </ul>
+</div><p class="para">
+  The shorthand syntax for <code class="code-voice">available</code> attributes allows for availability for multiple platforms to be expressed concisely. Although the two forms are functionally equivalent, the shorthand form is preferred whenever possible.
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">@available</span>(<span class="kt">iOS</span> <span class="m">10.0</span>, <span class="vc">macOS</span> <span class="m">10.12</span>, *)</code></li>
+            <li><code class="code-voice"><span class="kt">class</span> <span class="vc">MyClass</span> {</code></li>
+            <li><code class="code-voice">    <span class="c">// class definition</span></code></li>
+            <li><code class="code-voice">}</code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  An <code class="code-voice">available</code> attribute specifying a Swift version availability can’t additionally specify a declaration’s platform availability. Instead, use separate <code class="code-voice">available</code> attributes to specify a Swift version availability and one or more platform availabilities.
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">@available</span>(<span class="vc">swift</span> <span class="m">3.0</span>.<span class="m">2</span>)</code></li>
+            <li><code class="code-voice"><span class="kt">@available</span>(<span class="vc">macOS</span> <span class="m">10.12</span>, *)</code></li>
+            <li><code class="code-voice"><span class="kt">struct</span> <span class="vc">MyStruct</span> {</code></li>
+            <li><code class="code-voice">    <span class="c">// struct definition</span></code></li>
+            <li><code class="code-voice">}</code></li>
+        </ol>
+      </div>
+  </div>
+</section></dd></td>
+</tr>
+<tr>
+  <td scope="row"><dt class="term"><code class="code-voice">discardableResult</code></dt></td>
+  <td><dd class='definition'><p class="para">
+  Apply this attribute to a function or method declaration to suppress the compiler warning when the function or method that returns a value is called without using its result.
+</p></dd></td>
+</tr>
+<tr>
+  <td scope="row"><dt class="term"><code class="code-voice">GKInspectable</code></dt></td>
+  <td><dd class='definition'><p class="para">
+  Apply this attribute to expose a custom GameplayKit component property to the SpriteKit editor UI. Applying this attribute also implies the <code class="code-voice">objc</code> attribute.
+</p></dd></td>
+</tr>
+<tr>
+  <td scope="row"><dt class="term"><code class="code-voice">nonobjc</code></dt></td>
+  <td><dd class='definition'><p class="para">
+  Apply this attribute to a method, property, subscript, or initializer declaration to suppress an implicit <code class="code-voice">objc</code> attribute. The <code class="code-voice">nonobjc</code> attribute tells the compiler to make the declaration unavailable in Objective-C code, even though it’s possible to represent it in Objective-C.
+</p><p class="para">
+  Applying this attribute to an extension has the same effect as applying it to every member of that extension that isn’t explicitly marked with the <code class="code-voice">objc</code> attribute.
+</p><p class="para">
+  You use the <code class="code-voice">nonobjc</code> attribute to resolve circularity for bridging methods in a class marked with the <code class="code-voice">objc</code> attribute, and to allow overloading of methods and initializers in a class marked with the <code class="code-voice">objc</code> attribute.
+</p><p class="para">
+  A method marked with the <code class="code-voice">nonobjc</code> attribute can’t override a method marked with the <code class="code-voice">objc</code> attribute. However, a method marked with the <code class="code-voice">objc</code> attribute can override a method marked with the <code class="code-voice">nonobjc</code> attribute. Similarly, a method marked with the <code class="code-voice">nonobjc</code> attribute can’t satisfy a protocol requirement for a method marked with the <code class="code-voice">objc</code> attribute.
+</p></dd></td>
+</tr>
+<tr>
+  <td scope="row"><dt class="term"><code class="code-voice">NSApplicationMain</code></dt></td>
+  <td><dd class='definition'><p class="para">
+  Apply this attribute to a class to indicate that it’s the application delegate. Using this attribute is equivalent to calling the <code class="code-voice">NSApplicationMain(_:_:)</code> function.
+</p><p class="para">
+  If you don’t use this attribute, supply a <code class="code-voice">main.swift</code> file with code at the top level that calls the <code class="code-voice">NSApplicationMain(_:_:)</code> function as follows:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">import</span> <span class="vc">AppKit</span></code></li>
+            <li><code class="code-voice"><span class="vc">NSApplicationMain</span>(<span class="vc">CommandLine</span>.<span class="vc">argc</span>, <span class="vc">CommandLine</span>.<span class="vc">unsafeArgv</span>)</code></li>
+        </ol>
+      </div>
+  </div>
+</section></dd></td>
+</tr>
+<tr>
+  <td scope="row"><dt class="term"><code class="code-voice">NSCopying</code></dt></td>
+  <td><dd class='definition'><p class="para">
+  Apply this attribute to a stored variable property of a class. This attribute causes the property’s setter to be synthesized with a <em>copy</em> of the property’s value—returned by the <code class="code-voice">copyWithZone(_:)</code> method—instead of the value of the property itself. The type of the property must conform to the <code class="code-voice">NSCopying</code> protocol.
+</p><p class="para">
+  The <code class="code-voice">NSCopying</code> attribute behaves in a way similar to the Objective-C <code class="code-voice">copy</code> property attribute.
+</p></dd></td>
+</tr>
+<tr>
+  <td scope="row"><dt class="term"><code class="code-voice">NSManaged</code></dt></td>
+  <td><dd class='definition'><p class="para">
+  Apply this attribute to an instance method or stored variable property of a class that inherits from <code class="code-voice">NSManagedObject</code> to indicate that Core Data dynamically provides its implementation at runtime, based on the associated entity description. For a property marked with the <code class="code-voice">NSManaged</code> attribute, Core Data also provides the storage at runtime. Applying this attribute also implies the <code class="code-voice">objc</code> attribute.
+</p></dd></td>
+</tr>
+<tr>
+  <td scope="row"><dt class="term"><code class="code-voice">objc</code></dt></td>
+  <td><dd class='definition'><p class="para">
+  Apply this attribute to any declaration that can be represented in Objective-C—for example, nonnested classes, protocols, nongeneric enumerations (constrained to integer raw-value types), properties and methods (including getters and setters) of classes, protocols and optional members of a protocol, initializers, and subscripts. The <code class="code-voice">objc</code> attribute tells the compiler that a declaration is available to use in Objective-C code.
+</p><p class="para">
+  Applying this attribute to an extension has the same effect as applying it to every member of that extension that isn’t explicitly marked with the <code class="code-voice">nonobjc</code> attribute.
+</p><p class="para">
+  The compiler implicitly adds the <code class="code-voice">objc</code> attribute to subclasses of any class defined in Objective-C. However, the subclass must not be generic, and must not inherit from any generic classes. You can explicitly add the <code class="code-voice">objc</code> attribute to a subclass that meets these criteria, to specify its Objective-C name as discussed below. Protocols that are marked with the <code class="code-voice">objc</code> attribute can’t inherit from protocols that aren’t marked with this attribute.
+</p><p class="para">
+  The <code class="code-voice">objc</code> attribute is also implicitly added in the following cases:
+</p><ul class="list-bullet">
+  <li class="item"><p class="para">
+  The declaration is an override in a subclass, and the superclass’s declaration has the <code class="code-voice">objc</code> attribute.
+</p>
+</li><li class="item"><p class="para">
+  The declaration satisfies a requirement from a protocol that has the <code class="code-voice">objc</code> attribute.
+</p>
+</li><li class="item"><p class="para">
+  The declaration has the <code class="code-voice">IBAction</code>, <code class="code-voice">IBOutlet</code>, <code class="code-voice">IBDesignable</code>, <code class="code-voice">IBInspectable</code>, <code class="code-voice">NSManaged</code>, or <code class="code-voice">GKInspectable</code> attribute.
+</p>
+</li>
+</ul><p class="para">
+  If you apply the <code class="code-voice">objc</code> attribute to an enumeration, each enumeration case is exposed to Objective-C code as the concatenation of the enumeration name and the case name. The first letter of the case name is capitalized. For example, a case named <code class="code-voice">venus</code> in a Swift <code class="code-voice">Planet</code> enumeration is exposed to Objective-C code as a case named <code class="code-voice">PlanetVenus</code>.
+</p><p class="para">
+  The <code class="code-voice">objc</code> attribute optionally accepts a single attribute argument, which consists of an identifier. The identifier specifies the name to be exposed to Objective-C for the entity that the <code class="code-voice">objc</code> attribute applies to. You can use this argument to name classes, enumerations, enumeration cases, protocols, methods, getters, setters, and initializers. If you specify the Objective-C name for a class, protocol, or enumeration, include a three-letter prefix on the name, as described in <a href="../../../Cocoa/Conceptual/ProgrammingWithObjectiveC/Conventions/Conventions.html#//apple_ref/doc/uid/TP40011210-CH10-SW1" data-renderer-version="1" target="_self">Conventions</a> in <em class="u-book"><a href="../../../Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html#//apple_ref/doc/uid/TP40011210" data-renderer-version="1" target="_self">Programming with Objective-C</a></em>. The example below exposes the getter for the <code class="code-voice">enabled</code> property of the <code class="code-voice">ExampleClass</code> to Objective-C code as <code class="code-voice">isEnabled</code> rather than just as the name of the property itself.
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">class</span> <span class="vc">ExampleClass</span>: <span class="n"><!-- a href="" -->NSObject<!-- /a --></span> {</code></li>
+            <li><code class="code-voice">    <span class="kt">@objc</span> <span class="kt">var</span> <span class="vc">enabled</span>: <span class="n"><!-- a href="" -->Bool<!-- /a --></span> {</code></li>
+            <li><code class="code-voice">        <span class="kt">@objc</span>(<span class="vc">isEnabled</span>) <span class="kt">get</span> {</code></li>
+            <li><code class="code-voice">            <span class="c">// Return the appropriate value</span></code></li>
+            <li><code class="code-voice">        }</code></li>
+            <li><code class="code-voice">    }</code></li>
+            <li><code class="code-voice">}</code></li>
+        </ol>
+      </div>
+  </div>
+</section></dd></td>
+</tr>
+<tr>
+  <td scope="row"><dt class="term"><code class="code-voice">objcMembers</code></dt></td>
+  <td><dd class='definition'><p class="para">
+  Apply this attribute to any class declaration that can have the <code class="code-voice">objc</code> attribute. The <code class="code-voice">objc</code> attribute is implicitly added to Objective-C compatible members of the class, its extensions, its subclasses, and all of the extensions of its subclasses.
+</p><p class="para">
+  Most code should use the <code class="code-voice">objc</code> attribute instead, to expose only the declarations that are needed. If you need to expose many declarations, you can group them in an extension that has the <code class="code-voice">objc</code> attribute. The <code class="code-voice">objcMembers</code> attribute is a convenience for libraries that make heavy use of the introspection facilities of the Objective-C runtime. Applying the <code class="code-voice">objc</code> attribute when it isn’t needed can increase your binary size and adversely affect performance.
+</p></dd></td>
+</tr>
+<tr>
+  <td scope="row"><dt class="term"><code class="code-voice">testable</code></dt></td>
+  <td><dd class='definition'><p class="para">
+  Apply this attribute to <code class="code-voice">import</code> declarations for modules compiled with testing enabled to access any entities marked with the <code class="code-voice">internal</code> access-level modifier as if they were declared with the <code class="code-voice">public</code> access-level modifier. Tests can also access classes and class members that are marked with the <code class="code-voice">internal</code> or <code class="code-voice">public</code> access-level modifier as if they were declared with the <code class="code-voice">open</code> access-level modifier.
+</p></dd></td>
+</tr>
+<tr>
+  <td scope="row"><dt class="term"><code class="code-voice">UIApplicationMain</code></dt></td>
+  <td><dd class='definition'><p class="para">
+  Apply this attribute to a class to indicate that it’s the application delegate. Using this attribute is equivalent to calling the <code class="code-voice">UIApplicationMain</code> function and passing this class’s name as the name of the delegate class.
+</p><p class="para">
+  If you don’t use this attribute, supply a <code class="code-voice">main.swift</code> file with code at the top level that calls the <code class="code-voice u-api"><a href="https://developer.apple.com/documentation/uikit/1622933-uiapplicationmain" class="urlLink">UIApplicationMain(_:_:_:_:)</a></code> function. For example, if your app uses a custom subclass of <code class="code-voice">UIApplication</code> as its principal class, call the <code class="code-voice">UIApplicationMain(_:_:_:_:)</code> function instead of using this attribute.
+</p></dd></td>
+</tr>
+
+</dl>
+  <section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH35-ID349"></a>
+  <h3 class="section-name" tabindex="0">Declaration Attributes Used by Interface Builder</h3>
+  <p class="para">
+  Interface Builder attributes are declaration attributes used by Interface Builder to synchronize with Xcode. Swift provides the following Interface Builder attributes: <code class="code-voice">IBAction</code>, <code class="code-voice">IBOutlet</code>, <code class="code-voice">IBDesignable</code>, and <code class="code-voice">IBInspectable</code>. These attributes are conceptually the same as their Objective-C counterparts.
+</p><p class="para">
+  You apply the <code class="code-voice">IBOutlet</code> and <code class="code-voice">IBInspectable</code> attributes to property declarations of a class. You apply the <code class="code-voice">IBAction</code> attribute to method declarations of a class and the <code class="code-voice">IBDesignable</code> attribute to class declarations.
+</p><p class="para">
+  Applying the <code class="code-voice">IBAction</code>, <code class="code-voice">IBOutlet</code>, <code class="code-voice">IBDesignable</code>, or <code class="code-voice">IBInspectable</code> attribute also implies the <code class="code-voice">objc</code> attribute.
+</p>
+  
+</section>
+
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH35-ID350"></a>
+  <h3 class="section-name" tabindex="0">Type Attributes</h3>
+  <p class="para">
+  You can apply type attributes to types only.
+</p><dl class="term-definition termdef">
+	<tr>
+  <td scope="row"><dt class="term"><code class="code-voice">autoclosure</code></dt></td>
+  <td><dd class='definition'><p class="para">
+  This attribute is used to delay the evaluation of an expression by automatically wrapping that expression in a closure with no arguments. Apply this attribute to a parameter’s type in a method or function declaration, for a parameter of a function type that takes no arguments and that returns a value of the type of the expression. For an example of how to use the <code class="code-voice">autoclosure</code> attribute, see <span class="x-name"><a href="Closures.html#//apple_ref/doc/uid/TP40014097-CH11-ID543" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH11-ID543">Autoclosures</a></span> and <span class="x-name"><a href="Types.html#//apple_ref/doc/uid/TP40014097-CH31-ID449" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH31-ID449">Function Type</a></span>.
+</p></dd></td>
+</tr>
+<tr>
+  <td scope="row"><dt class="term"><code class="code-voice">convention</code></dt></td>
+  <td><dd class='definition'><p class="para">
+  Apply this attribute to the type of a function to indicate its calling conventions.
+</p><p class="para">
+  The <code class="code-voice">convention</code> attribute always appears with one of the attribute arguments below.
+</p><ul class="list-bullet">
+  <li class="item"><p class="para">
+  The <code class="code-voice">swift</code> argument is used to indicate a Swift function reference. This is the standard calling convention for function values in Swift.
+</p>
+</li><li class="item"><p class="para">
+  The <code class="code-voice">block</code> argument is used to indicate an Objective-C compatible block reference. The function value is represented as a reference to the block object, which is an <code class="code-voice">id</code>-compatible Objective-C object that embeds its invocation function within the object. The invocation function uses the C calling convention.
+</p>
+</li><li class="item"><p class="para">
+  The <code class="code-voice">c</code> argument is used to indicate a C function reference. The function value carries no context and uses the C calling convention.
+</p>
+</li>
+</ul><p class="para">
+  A function with C function calling conventions can be used as a function with Objective-C block calling conventions, and a function with Objective-C block calling conventions can be used as a function with Swift function calling conventions. However, only nongeneric global functions, and local functions or closures that don’t capture any local variables, can be used as a function with C function calling conventions.
+</p></dd></td>
+</tr>
+<tr>
+  <td scope="row"><dt class="term"><code class="code-voice">escaping</code></dt></td>
+  <td><dd class='definition'><p class="para">
+  Apply this attribute to a parameter’s type in a method or function declaration to indicate that the parameter’s value can be stored for later execution. This means that the value is allowed to outlive the lifetime of the call. Function type parameters with the <code class="code-voice">escaping</code> type attribute require explicit use of <code class="code-voice">self.</code> for properties or methods. For an example of how to use the <code class="code-voice">escaping</code> attribute, see <span class="x-name"><a href="Closures.html#//apple_ref/doc/uid/TP40014097-CH11-ID546" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH11-ID546">Escaping Closures</a></span>.
+</p></dd></td>
+</tr>
+
+</dl><div class="syntax-defs">
+  <p class="syntax-defs-name">
+  Grammar of an attribute
+</p><div class="syntax-defs-group">
+  <p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/attribute"></a>
+  <span class="syntax-def-name">
+  attribute
+</span>
+<span class="arrow">
+  →
+</span><code class="literal">@&shy;</code><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/attribute-name" data-renderer-version="2" data-id="//apple_ref/swift/grammar/attribute-name">attribute-name</a>&shy;</span><span class="optional"><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/attribute-argument-clause" data-renderer-version="2" data-id="//apple_ref/swift/grammar/attribute-argument-clause">attribute-argument-clause</a>&shy;</span><sub class="subscript">opt</sub>&shy;</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/attribute-name"></a>
+  <span class="syntax-def-name">
+  attribute-name
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="LexicalStructure.html#//apple_ref/swift/grammar/identifier" data-renderer-version="2" data-id="//apple_ref/swift/grammar/identifier">identifier</a>&shy;</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/attribute-argument-clause"></a>
+  <span class="syntax-def-name">
+  attribute-argument-clause
+</span>
+<span class="arrow">
+  →
+</span><code class="literal">(&shy;</code><span class="optional"><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/balanced-tokens" data-renderer-version="2" data-id="//apple_ref/swift/grammar/balanced-tokens">balanced-tokens</a>&shy;</span><sub class="subscript">opt</sub>&shy;</span><code class="literal">)&shy;</code>
+</p><p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/attributes"></a>
+  <span class="syntax-def-name">
+  attributes
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/attribute" data-renderer-version="2" data-id="//apple_ref/swift/grammar/attribute">attribute</a>&shy;</span><span class="optional"><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/attributes" data-renderer-version="2" data-id="//apple_ref/swift/grammar/attributes">attributes</a>&shy;</span><sub class="subscript">opt</sub>&shy;</span>
+</p>
+</div><div class="syntax-defs-group">
+  <p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/balanced-tokens"></a>
+  <span class="syntax-def-name">
+  balanced-tokens
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/balanced-token" data-renderer-version="2" data-id="//apple_ref/swift/grammar/balanced-token">balanced-token</a>&shy;</span><span class="optional"><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/balanced-tokens" data-renderer-version="2" data-id="//apple_ref/swift/grammar/balanced-tokens">balanced-tokens</a>&shy;</span><sub class="subscript">opt</sub>&shy;</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/balanced-token"></a>
+  <span class="syntax-def-name">
+  balanced-token
+</span>
+<span class="arrow">
+  →
+</span><code class="literal">(&shy;</code><span class="optional"><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/balanced-tokens" data-renderer-version="2" data-id="//apple_ref/swift/grammar/balanced-tokens">balanced-tokens</a>&shy;</span><sub class="subscript">opt</sub>&shy;</span><code class="literal">)&shy;</code>
+</p><p class="syntax-def">
+  <a name="//apple_ref/doc/uid/TP40014097-CH35-NoLink_850"></a>
+  <span class="syntax-def-name">
+  balanced-token
+</span>
+<span class="arrow">
+  →
+</span><code class="literal">[&shy;</code><span class="optional"><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/balanced-tokens" data-renderer-version="2" data-id="//apple_ref/swift/grammar/balanced-tokens">balanced-tokens</a>&shy;</span><sub class="subscript">opt</sub>&shy;</span><code class="literal">]&shy;</code>
+</p><p class="syntax-def">
+  <a name="//apple_ref/doc/uid/TP40014097-CH35-NoLink_851"></a>
+  <span class="syntax-def-name">
+  balanced-token
+</span>
+<span class="arrow">
+  →
+</span><code class="literal">{&shy;</code><span class="optional"><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/balanced-tokens" data-renderer-version="2" data-id="//apple_ref/swift/grammar/balanced-tokens">balanced-tokens</a>&shy;</span><sub class="subscript">opt</sub>&shy;</span><code class="literal">}&shy;</code>
+</p><p class="syntax-def">
+  <a name="//apple_ref/doc/uid/TP40014097-CH35-NoLink_852"></a>
+  <span class="syntax-def-name">
+  balanced-token
+</span>
+<span class="arrow">
+  →
+</span><span class="text-description">Any identifier, keyword, literal, or operator</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/doc/uid/TP40014097-CH35-NoLink_853"></a>
+  <span class="syntax-def-name">
+  balanced-token
+</span>
+<span class="arrow">
+  →
+</span><span class="text-description">Any punctuation except <code class="literal">(&shy;</code>, <code class="literal">)&shy;</code>, <code class="literal">[&shy;</code>, <code class="literal">]&shy;</code>, <code class="literal">{&shy;</code>, or <code class="literal">}&shy;</code></span>
+</p>
+</div>
+ </div>
+  
+</section>
+
+  	
+ 	<section id="next_previous" class="">
+    		<p class="previous-link"><a href="Declarations.html#//apple_ref/doc/uid/TP40014097-CH34-ID351" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH34-ID351">Declarations</a></p>
+  			<p class="next-link"><a href="Patterns.html#//apple_ref/doc/uid/TP40014097-CH36-ID419" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH36-ID419">Patterns</a></p>
+
+    <p class="copyright">Copyright &#x00a9; 2017 Apple Inc. All rights reserved. 
+  <a class="link" href="http://www.apple.com/legal/terms/site.html" target="_blank" rel="external">Terms of Use</a> | 
+  <a class="link" href="http://www.apple.com/privacy/" target="_blank" rel="external">Privacy Policy</a> | 
+  Updated: 2017-09-19
+</p>
+  </section>
+</article>
+
+    </div>
+    <div id='big_button'></div>
+    <footer id="footer">
+  <div class="content-wrapper">
+  	<div id="leave_feedback" class="button" role="button" tabindex="0">Feedback</div>
+  </div>
+  <script src="../../../../Resources/1274/JavaScript/devpubs-1.6.3.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../../../Resources/1274/JavaScript/feedback-1.6.3.js" type="text/javascript" charset="utf-8"></script>
+  <div id="_omniture_top">
+<!-- SiteCatalyst code version: H.8. Copyright 1997-2006 Omniture, Inc. -->
+<script type="text/javascript">
+/* RSID: */
+var s_account="appleglobal,appleusdeveloper,dappdeveloperlib"
+</script>
+
+<script type="text/javascript" src="https://www.apple.com/metrics/scripts/s_code_h.js"></script>
+<script type="text/javascript">
+s.pageName=AC.Tracking.pageName();
+s.channel="www.us.developer"
+
+/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+var s_code=s.t();if(s_code)document.write(s_code)</script>
+<!-- End SiteCatalyst code version: H.8. -->
+</div>
+
+</footer>
+
+    
+  </body>
+    <div id="blackout">
+    <div id="preload"></div>
+</div>
+<div id="modal" aria-hidden="true">
+    <div id="closebox" tabindex="0" aria-label="Close feedback form" role="button"></div>
+    <div id="sending" class="hidden">
+        <h2 tabindex="0">Sending feedback&hellip;</h2>
+        <div id="sending_img"></div>
+    </div>
+    <div id="error" class="hidden">
+        <h2 tabindex="0">We&rsquo;re sorry, an error has occurred.</h2>
+        <p>Please try submitting your feedback later.</p>
+        <div id="error_icon"></div>
+    </div>
+    <div id="success" class="hidden">
+        <h2 tabindex="0">Thank you for providing feedback!</h2>
+        <p>Your input helps improve our developer documentation.</p>
+        <div id="thank_you_icon"></div>
+    </div>
+    
+    <form id="feedback" action="#" method="post">
+        <div class="left-leaf">
+            <h2 id="helpful_title" data-asterisk="a1" tabindex="0">How helpful is this document?</h2>     
+            <sup id="a1" class="asterisk" aria-hidden="true">*</sup>
+
+            <div id="star_group" role="radiogroup" aria-required="true">
+                <label> 
+                    <input class="radio" type="radio" name="helped" value="1" /> 
+                    Very helpful
+                </label>
+                <label> 
+                    <input class="radio" type="radio" name="helped" value="2" /> 
+                    Somewhat helpful
+                </label>
+                <label>
+                    <input class="radio" type="radio" name="helped" value="3" /> 
+                    Not helpful
+                </label>
+            </div>
+        </div>
+        <div class="right-leaf">
+            <h2>How can we improve this document?</h2>
+            <div id="improve" class="checkboxes">
+                <label>
+                    <input type="checkbox" name="typo" /> 
+                    Fix typos or links
+                </label>
+                <label>
+                    <input type="checkbox" name="infoIncorrect" /> 
+                    Fix incorrect information
+                </label>
+                <label>
+                    <input type="checkbox" name="needs_examples" /> 
+                    Add or update code samples
+                </label>
+                <label>
+                    <input type="checkbox" name="needs_art" /> 
+                    Add or update illustrations
+                </label>
+                <label>
+                    <input type="checkbox" name="missingInfo" /> 
+                    Add information about...
+                </label>
+            </div>
+        </div>
+
+        <textarea id="comment" name="problem" cols="70" rows="8" placeholder="Please tell us more about your experience with this document" data-asterisk="a2" required></textarea>
+        <sup id="a2" class="asterisk" aria-hidden="true">*</sup>
+
+        <p class="fineprint">
+            <em aria-hidden="true"><span>*</span> Required information</em>
+        </p> 
+
+        <input id="submit" type="button" value="Send" />
+
+        <section id="legal">
+            <p>
+                To submit a product bug or enhancement request, please visit the 
+                <a href="https://developer.apple.com/bugreporter/" target="_blank">Bug Reporter</a> 
+                page.
+            </p>
+            <p>
+                Please read <a href="http://www.apple.com/legal/policies/ideas.html" target="_blank">Apple's Unsolicited Idea Submission Policy</a> 
+                before you send us your feedback.
+            </p> 
+        </section>
+    </form>
+</div>
+
+</div>
+</html>

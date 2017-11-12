@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>  
+  <title>The Swift Programming Language (Swift 4): Types</title>
+  <link rel="stylesheet" type="text/css" href="../../../../Resources/1274/CSS/style-1.6.3.css" />
+  <link rel="stylesheet" type="text/css" href="../../../../Resources/1274/CSS/feedback-1.6.3.css" />
+  <meta charset='utf-8'> 
+<meta id="j-version" name="j-version" content="" />
+<meta id="build" name="build" content="32e73169b28e462967e02f4e96a19a99" />
+<meta id="document-version" name="document-version" content="10.1.2" />
+<meta id="book-assignments" name="book-assignments" content="{Type/Guide}, {Topic/Swift}" />
+<meta scheme="apple_ref" id="identifier" name="identifier" content="//apple_ref/doc/uid/TP40014097" />
+<meta id="chapterId" name="chapterId" content="TP40014097-CH31">
+<meta id="book-title" name="book-title" content="The Swift Programming Language (Swift 4)" />
+<meta id="book-resource-type" name="book-resource-type" content="Guide" />
+<meta id="book-root" name="book-root" content="./" />
+<meta id="book-json" name="book-json" content="book.json">
+<meta id="date" name="date" content="2017-09-19" />
+<meta id="description" name="description" content="The definitive guide to Swift, Apple’s programming language for building iOS, macOS, watchOS, and tvOS apps." />
+<meta id="IndexTitle" name="IndexTitle" content="" />
+<meta id="resources-uri" name="resources-uri" content="../../../../Resources/1274">
+<link id="book-index-page" rel="Start" title="" type="text/html" href="./index.html">
+<!-- , next_chapter: next_chapter, previous_chapter: previous_chapter -->
+<link id="next-page" rel="Next" type="text/html" href="">
+<link id="previous-page" rel="Prev" type="text/html" href="">
+<meta id="devcenter" name="devcenter" content="<!-- DEVCENTER_NAME -->" />
+<meta id="devcenter-url" name="devcenter-url" content="<!-- DEVCENTER_URL -->" />
+<meta id="reflib" name="reflib" content="<!-- REFLIB_NAME -->" />
+
+<meta id="xcode-display" name="xcode-display" content="render" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta id="platforms" name="platforms" content="Xcode Developer Tools">
+</head>
+
+  <body id="conceptual_flow_with_tasks" class="jazz">
+    
+    <header id="ios_header" class="hideOnPrint hideInXcode">
+  <div class="content-wrapper">
+    <p class="header-text">
+    	<a href="../../../../navigation/">Guides and Sample Code
+ 		</a>
+ </p>
+    <p id="wwdr"><img id="apple_logo" src="../../../../Resources/1274/Images/apple2.png" height="14px" width="12px" aria-hidden="true" /><a href="https://developer.apple.com">Developer</a></p>
+  </div>
+</header>
+
+    <section id="valence">
+  <div class="content-wrapper">
+    <p id="hierarchial_navigation">
+      <span id="book_title">The Swift Programming Language (Swift 4)</span>
+    </p>
+    <form id="search" class="hideInXcode" method="get" action="/search/index.php" accept-charset="utf-8" autocomplete="off">
+  <input type="search" id="ssi_SearchField" placeholder="Search Guides and Sample Code" name="q" autocomplete="off" tabindex="2" />
+</form>
+
+      
+   
+   
+
+
+
+
+    <span class="download-text hideInXcode">
+      <a href="https://itunes.apple.com/us/book/the-swift-programming-language/id881256329?mt=11">iBooks</a>
+    </span>
+
+    
+
+    <img id="shortstack" src="../../../../Resources/1274/Images/shortstack_2x.png"/>
+  </div>
+</section>
+    <div class="content-wrapper">
+      <nav id="navigator" class="book-parts hideInXcode" role="navigation">
+    <ul class="nav-parts">
+        <li data-id="//apple_ref/doc/uid/TP40014097-CH1-ID2"
+            class="part-name">
+            <a href="index.html#//apple_ref/doc/uid/TP40014097-CH3-ID0" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH3-ID0">Welcome to Swift</a>
+          <ul class="nav-chapters">
+              <li class="nav-chapter">
+              	<a href="index.html#//apple_ref/doc/uid/TP40014097-CH3-ID0" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH3-ID0">About Swift</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Compatibility.html#//apple_ref/doc/uid/TP40014097-CH45-ID561" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH45-ID561">Version Compatibility</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="GuidedTour.html#//apple_ref/doc/uid/TP40014097-CH2-ID1" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH2-ID1">A Swift Tour</a>
+              </li>
+          </ul>
+        </li>
+        <li data-id="//apple_ref/doc/uid/TP40014097-CH4-ID233"
+            class="part-name">
+            <a href="TheBasics.html#//apple_ref/doc/uid/TP40014097-CH5-ID309" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH5-ID309">Language Guide</a>
+          <ul class="nav-chapters">
+              <li class="nav-chapter">
+              	<a href="TheBasics.html#//apple_ref/doc/uid/TP40014097-CH5-ID309" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH5-ID309">The Basics</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="BasicOperators.html#//apple_ref/doc/uid/TP40014097-CH6-ID60" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH6-ID60">Basic Operators</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="StringsAndCharacters.html#//apple_ref/doc/uid/TP40014097-CH7-ID285" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH7-ID285">Strings and Characters</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="CollectionTypes.html#//apple_ref/doc/uid/TP40014097-CH8-ID105" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH8-ID105">Collection Types</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="ControlFlow.html#//apple_ref/doc/uid/TP40014097-CH9-ID120" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH9-ID120">Control Flow</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Functions.html#//apple_ref/doc/uid/TP40014097-CH10-ID158" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH10-ID158">Functions</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Closures.html#//apple_ref/doc/uid/TP40014097-CH11-ID94" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH11-ID94">Closures</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Enumerations.html#//apple_ref/doc/uid/TP40014097-CH12-ID145" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH12-ID145">Enumerations</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="ClassesAndStructures.html#//apple_ref/doc/uid/TP40014097-CH13-ID82" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH13-ID82">Classes and Structures</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Properties.html#//apple_ref/doc/uid/TP40014097-CH14-ID254" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH14-ID254">Properties</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Methods.html#//apple_ref/doc/uid/TP40014097-CH15-ID234" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH15-ID234">Methods</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Subscripts.html#//apple_ref/doc/uid/TP40014097-CH16-ID305" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH16-ID305">Subscripts</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Inheritance.html#//apple_ref/doc/uid/TP40014097-CH17-ID193" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH17-ID193">Inheritance</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Initialization.html#//apple_ref/doc/uid/TP40014097-CH18-ID203" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH18-ID203">Initialization</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Deinitialization.html#//apple_ref/doc/uid/TP40014097-CH19-ID142" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH19-ID142">Deinitialization</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="OptionalChaining.html#//apple_ref/doc/uid/TP40014097-CH21-ID245" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH21-ID245">Optional Chaining</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="ErrorHandling.html#//apple_ref/doc/uid/TP40014097-CH42-ID508" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH42-ID508">Error Handling</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="TypeCasting.html#//apple_ref/doc/uid/TP40014097-CH22-ID338" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH22-ID338">Type Casting</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="NestedTypes.html#//apple_ref/doc/uid/TP40014097-CH23-ID242" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH23-ID242">Nested Types</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Extensions.html#//apple_ref/doc/uid/TP40014097-CH24-ID151" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH24-ID151">Extensions</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Protocols.html#//apple_ref/doc/uid/TP40014097-CH25-ID267" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH25-ID267">Protocols</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Generics.html#//apple_ref/doc/uid/TP40014097-CH26-ID179" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH26-ID179">Generics</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="AutomaticReferenceCounting.html#//apple_ref/doc/uid/TP40014097-CH20-ID48" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH20-ID48">Automatic Reference Counting</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="MemorySafety.html#//apple_ref/doc/uid/TP40014097-CH46-ID567" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH46-ID567">Memory Safety</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="AccessControl.html#//apple_ref/doc/uid/TP40014097-CH41-ID3" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH41-ID3">Access Control</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="AdvancedOperators.html#//apple_ref/doc/uid/TP40014097-CH27-ID28" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH27-ID28">Advanced Operators</a>
+              </li>
+          </ul>
+        </li>
+        <li data-id="//apple_ref/doc/uid/TP40014097-CH28-ID427"
+            class="part-name nav-part-active open-part">
+            <a href="AboutTheLanguageReference.html#//apple_ref/doc/uid/TP40014097-CH29-ID345" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH29-ID345">Language Reference</a>
+          <ul class="nav-chapters">
+              <li class="nav-chapter">
+              	<a href="AboutTheLanguageReference.html#//apple_ref/doc/uid/TP40014097-CH29-ID345" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH29-ID345">About the Language Reference</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="LexicalStructure.html#//apple_ref/doc/uid/TP40014097-CH30-ID410" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH30-ID410">Lexical Structure</a>
+              </li>
+              <li class="nav-chapter nav-current-chapter">
+              	<a href="#//apple_ref/doc/uid/TP40014097-CH31-ID445" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH31-ID445">Types</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Expressions.html#//apple_ref/doc/uid/TP40014097-CH32-ID383" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH32-ID383">Expressions</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Statements.html#//apple_ref/doc/uid/TP40014097-CH33-ID428" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH33-ID428">Statements</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Declarations.html#//apple_ref/doc/uid/TP40014097-CH34-ID351" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH34-ID351">Declarations</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Attributes.html#//apple_ref/doc/uid/TP40014097-CH35-ID347" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH35-ID347">Attributes</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Patterns.html#//apple_ref/doc/uid/TP40014097-CH36-ID419" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH36-ID419">Patterns</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="GenericParametersAndArguments.html#//apple_ref/doc/uid/TP40014097-CH37-ID406" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH37-ID406">Generic Parameters and Arguments</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="zzSummaryOfTheGrammar.html#//apple_ref/doc/uid/TP40014097-CH38-ID458" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH38-ID458">Summary of the Grammar</a>
+              </li>
+          </ul>
+        </li>
+        <li data-id="//apple_ref/doc/uid/TP40014097-CH39-ID460"
+            class="part-name">
+            <a href="RevisionHistory.html#//apple_ref/doc/uid/TP40014097-CH40-ID459" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH40-ID459">Revision History</a>
+          <ul class="nav-chapters">
+              <li class="nav-chapter">
+              	<a href="RevisionHistory.html#//apple_ref/doc/uid/TP40014097-CH40-ID459" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH40-ID459">Document Revision History</a>
+              </li>
+          </ul>
+        </li>
+    </ul>
+</nav>
+
+      <menu id="bashful" type="toolbar">
+  <div class="shield"></div>
+  <menuitem id="jump_to" class="menu-bar-item closed">
+  <span>On This Page</span>
+  <div class="chevron">
+    <div class="chevy chevron-left"></div>
+    <div class="chevy chevron-right"></div>
+  </div>
+  <menu type="list" class="details">
+      <ul class="list-bullet">
+          <li class="item">
+            <a href="#//apple_ref/doc/uid/TP40014097-CH31-ID446">Type Annotation</a>
+          </li>
+          <li class="item">
+            <a href="#//apple_ref/doc/uid/TP40014097-CH31-ID447">Type Identifier</a>
+          </li>
+          <li class="item">
+            <a href="#//apple_ref/doc/uid/TP40014097-CH31-ID448">Tuple Type</a>
+          </li>
+          <li class="item">
+            <a href="#//apple_ref/doc/uid/TP40014097-CH31-ID449">Function Type</a>
+          </li>
+          <li class="item">
+            <a href="#//apple_ref/doc/uid/TP40014097-CH31-ID450">Array Type</a>
+          </li>
+          <li class="item">
+            <a href="#//apple_ref/doc/uid/TP40014097-CH31-ID451">Dictionary Type</a>
+          </li>
+          <li class="item">
+            <a href="#//apple_ref/doc/uid/TP40014097-CH31-ID452">Optional Type</a>
+          </li>
+          <li class="item">
+            <a href="#//apple_ref/doc/uid/TP40014097-CH31-ID453">Implicitly Unwrapped Optional Type</a>
+          </li>
+          <li class="item">
+            <a href="#//apple_ref/doc/uid/TP40014097-CH31-ID454">Protocol Composition Type</a>
+          </li>
+          <li class="item">
+            <a href="#//apple_ref/doc/uid/TP40014097-CH31-ID455">Metatype Type</a>
+          </li>
+          <li class="item">
+            <a href="#//apple_ref/doc/uid/TP40014097-CH31-ID456">Type Inheritance Clause</a>
+          </li>
+          <li class="item">
+            <a href="#//apple_ref/doc/uid/TP40014097-CH31-ID457">Type Inference</a>
+          </li>
+      </ul>
+  </menu>
+</menuitem>
+
+</menu>
+<div class="pixel-line"></div>
+<div class="rubber-band-gap"></div>
+<article class="chapter">
+  <a name="//apple_ref/doc/uid/TP40014097-CH31"></a><a name="//apple_ref/doc/uid/TP40014097-CH31-ID445"></a>
+
+  <h2 class='chapter-name'>Types</h2>
+
+
+  
+  	<section class="section">
+  		<p class="para">
+  In Swift, there are two kinds of types: named types and compound types. A <em>named type</em> is a type that can be given a particular name when it’s defined. Named types include classes, structures, enumerations, and protocols. For example, instances of a user-defined class named <code class="code-voice">MyClass</code> have the type <code class="code-voice">MyClass</code>. In addition to user-defined named types, the Swift standard library defines many commonly used named types, including those that represent arrays, dictionaries, and optional values.
+</p>
+<p class="para">
+  Data types that are normally considered basic or primitive in other languages—such as types that represent numbers, characters, and strings—are actually named types, defined and implemented in the Swift standard library using structures. Because they’re named types, you can extend their behavior to suit the needs of your program, using an extension declaration, discussed in <span class="x-name"><a href="Extensions.html#//apple_ref/doc/uid/TP40014097-CH24-ID151" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH24-ID151">Extensions</a></span> and <span class="x-name"><a href="Declarations.html#//apple_ref/doc/uid/TP40014097-CH34-ID378" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH34-ID378">Extension Declaration</a></span>.
+</p>
+<p class="para">
+  A <em>compound type</em> is a type without a name, defined in the Swift language itself. There are two compound types: function types and tuple types. A compound type may contain named types and other compound types. For instance, the tuple type <code class="code-voice">(Int, (Int, Int))</code> contains two elements: The first is the named type <code class="code-voice">Int</code>, and the second is another compound type <code class="code-voice">(Int, Int)</code>.
+</p>
+<p class="para">
+  You can put parentheses around a named type or a compound type. However, adding parentheses around a type doesn’t have any effect. For example, <code class="code-voice">(Int)</code> is equivalent to <code class="code-voice">Int</code>.
+</p>
+<p class="para">
+  This chapter discusses the types defined in the Swift language itself and describes the type inference behavior of Swift.
+</p>
+<div class="syntax-defs">
+  <p class="syntax-defs-name">
+  Grammar of a type
+</p><div class="syntax-defs-group">
+  <p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/type"></a>
+  <span class="syntax-def-name">
+  type
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/array-type" data-renderer-version="2" data-id="//apple_ref/swift/grammar/array-type">array-type</a>&shy;</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/doc/uid/TP40014097-CH31-NoLink_354"></a>
+  <span class="syntax-def-name">
+  type
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/dictionary-type" data-renderer-version="2" data-id="//apple_ref/swift/grammar/dictionary-type">dictionary-type</a>&shy;</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/doc/uid/TP40014097-CH31-NoLink_355"></a>
+  <span class="syntax-def-name">
+  type
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/function-type" data-renderer-version="2" data-id="//apple_ref/swift/grammar/function-type">function-type</a>&shy;</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/doc/uid/TP40014097-CH31-NoLink_356"></a>
+  <span class="syntax-def-name">
+  type
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/type-identifier" data-renderer-version="2" data-id="//apple_ref/swift/grammar/type-identifier">type-identifier</a>&shy;</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/doc/uid/TP40014097-CH31-NoLink_357"></a>
+  <span class="syntax-def-name">
+  type
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/tuple-type" data-renderer-version="2" data-id="//apple_ref/swift/grammar/tuple-type">tuple-type</a>&shy;</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/doc/uid/TP40014097-CH31-NoLink_358"></a>
+  <span class="syntax-def-name">
+  type
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/optional-type" data-renderer-version="2" data-id="//apple_ref/swift/grammar/optional-type">optional-type</a>&shy;</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/doc/uid/TP40014097-CH31-NoLink_359"></a>
+  <span class="syntax-def-name">
+  type
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/implicitly-unwrapped-optional-type" data-renderer-version="2" data-id="//apple_ref/swift/grammar/implicitly-unwrapped-optional-type">implicitly-unwrapped-optional-type</a>&shy;</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/doc/uid/TP40014097-CH31-NoLink_360"></a>
+  <span class="syntax-def-name">
+  type
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/protocol-composition-type" data-renderer-version="2" data-id="//apple_ref/swift/grammar/protocol-composition-type">protocol-composition-type</a>&shy;</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/doc/uid/TP40014097-CH31-NoLink_361"></a>
+  <span class="syntax-def-name">
+  type
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/metatype-type" data-renderer-version="2" data-id="//apple_ref/swift/grammar/metatype-type">metatype-type</a>&shy;</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/doc/uid/TP40014097-CH31-NoLink_362"></a>
+  <span class="syntax-def-name">
+  type
+</span>
+<span class="arrow">
+  →
+</span><code class="literal">Any&shy;</code>
+</p><p class="syntax-def">
+  <a name="//apple_ref/doc/uid/TP40014097-CH31-NoLink_363"></a>
+  <span class="syntax-def-name">
+  type
+</span>
+<span class="arrow">
+  →
+</span><code class="literal">Self&shy;</code>
+</p><p class="syntax-def">
+  <a name="//apple_ref/doc/uid/TP40014097-CH31-NoLink_364"></a>
+  <span class="syntax-def-name">
+  type
+</span>
+<span class="arrow">
+  →
+</span><code class="literal">(&shy;</code><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/type" data-renderer-version="2" data-id="//apple_ref/swift/grammar/type">type</a>&shy;</span><code class="literal">)&shy;</code>
+</p>
+</div>
+ </div>
+		</section> 
+
+
+  <section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH31-ID446"></a>
+  <h3 class="section-name" tabindex="0">Type Annotation</h3>
+  <p class="para">
+  A <em>type annotation</em> explicitly specifies the type of a variable or expression. Type annotations begin with a colon (<code class="code-voice">:</code>) and end with a type, as the following examples show:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">let</span> <span class="vc">someTuple</span>: (<span class="n"><!-- a href="" -->Double<!-- /a --></span>, <span class="n"><!-- a href="" -->Double<!-- /a --></span>) = (<span class="m">3.14159</span>, <span class="m">2.71828</span>)</code></li>
+            <li><code class="code-voice"><span class="kt">func</span> <span class="vc">someFunction</span>(<span class="vc">a</span>: <span class="n"><!-- a href="" -->Int<!-- /a --></span>) { <span class="c">/* ... */</span> }</code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  In the first example, the expression <code class="code-voice">someTuple</code> is specified to have the tuple type <code class="code-voice">(Double, Double)</code>. In the second example, the parameter <code class="code-voice">a</code> to the function <code class="code-voice">someFunction</code> is specified to have the type <code class="code-voice">Int</code>.
+</p><p class="para">
+  Type annotations can contain an optional list of type attributes before the type.
+</p><div class="syntax-defs">
+  <p class="syntax-defs-name">
+  Grammar of a type annotation
+</p><div class="syntax-defs-group">
+  <p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/type-annotation"></a>
+  <span class="syntax-def-name">
+  type-annotation
+</span>
+<span class="arrow">
+  →
+</span><code class="literal">:&shy;</code><span class="optional"><span class="syntactic-cat"><a href="Attributes.html#//apple_ref/swift/grammar/attributes" data-renderer-version="2" data-id="//apple_ref/swift/grammar/attributes">attributes</a>&shy;</span><sub class="subscript">opt</sub>&shy;</span><span class="optional"><code class="literal">inout&shy;</code><sub class="subscript">opt</sub>&shy;</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/type" data-renderer-version="2" data-id="//apple_ref/swift/grammar/type">type</a>&shy;</span>
+</p>
+</div>
+ </div>
+  
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH31-ID447"></a>
+  <h3 class="section-name" tabindex="0">Type Identifier</h3>
+  <p class="para">
+  A type identifier refers to either a named type or a type alias of a named or compound type.
+</p><p class="para">
+  Most of the time, a type identifier directly refers to a named type with the same name as the identifier. For example, <code class="code-voice">Int</code> is a type identifier that directly refers to the named type <code class="code-voice">Int</code>, and the type identifier <code class="code-voice">Dictionary&lt;String, Int&gt;</code> directly refers to the named type <code class="code-voice">Dictionary&lt;String, Int&gt;</code>.
+</p><p class="para">
+  There are two cases in which a type identifier doesn’t refer to a type with the same name. In the first case, a type identifier refers to a type alias of a named or compound type. For instance, in the example below, the use of <code class="code-voice">Point</code> in the type annotation refers to the tuple type <code class="code-voice">(Int, Int)</code>.
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">typealias</span> <span class="vc">Point</span> = (<span class="n"><!-- a href="" -->Int<!-- /a --></span>, <span class="n"><!-- a href="" -->Int<!-- /a --></span>)</code></li>
+            <li><code class="code-voice"><span class="kt">let</span> <span class="vc">origin</span>: <span class="n"><!-- a href="" -->Point<!-- /a --></span> = (<span class="m">0</span>, <span class="m">0</span>)</code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  In the second case, a type identifier uses dot (<code class="code-voice">.</code>) syntax to refer to named types declared in other modules or nested within other types. For example, the type identifier in the following code references the named type <code class="code-voice">MyType</code> that is declared in the <code class="code-voice">ExampleModule</code> module.
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">var</span> <span class="vc">someValue</span>: <span class="n"><!-- a href="" -->ExampleModule<!-- /a --></span>.<span class="n"><!-- a href="" -->MyType<!-- /a --></span></code></li>
+        </ol>
+      </div>
+  </div>
+</section><div class="syntax-defs">
+  <p class="syntax-defs-name">
+  Grammar of a type identifier
+</p><div class="syntax-defs-group">
+  <p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/type-identifier"></a>
+  <span class="syntax-def-name">
+  type-identifier
+</span>
+<span class="arrow">
+  →
+</span><span class="alternative">
+  <span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/type-name" data-renderer-version="2" data-id="//apple_ref/swift/grammar/type-name">type-name</a>&shy;</span><span class="optional"><span class="syntactic-cat"><a href="GenericParametersAndArguments.html#//apple_ref/swift/grammar/generic-argument-clause" data-renderer-version="2" data-id="//apple_ref/swift/grammar/generic-argument-clause">generic-argument-clause</a>&shy;</span><sub class="subscript">opt</sub>&shy;</span>
+</span><span class="alternative">
+  <span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/type-name" data-renderer-version="2" data-id="//apple_ref/swift/grammar/type-name">type-name</a>&shy;</span><span class="optional"><span class="syntactic-cat"><a href="GenericParametersAndArguments.html#//apple_ref/swift/grammar/generic-argument-clause" data-renderer-version="2" data-id="//apple_ref/swift/grammar/generic-argument-clause">generic-argument-clause</a>&shy;</span><sub class="subscript">opt</sub>&shy;</span><code class="literal">.&shy;</code><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/type-identifier" data-renderer-version="2" data-id="//apple_ref/swift/grammar/type-identifier">type-identifier</a>&shy;</span>
+</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/type-name"></a>
+  <span class="syntax-def-name">
+  type-name
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="LexicalStructure.html#//apple_ref/swift/grammar/identifier" data-renderer-version="2" data-id="//apple_ref/swift/grammar/identifier">identifier</a>&shy;</span>
+</p>
+</div>
+ </div>
+  
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH31-ID448"></a>
+  <h3 class="section-name" tabindex="0">Tuple Type</h3>
+  <p class="para">
+  A tuple type is a comma-separated list of types, enclosed in parentheses.
+</p><p class="para">
+  You can use a tuple type as the return type of a function to enable the function to return a single tuple containing multiple values. You can also name the elements of a tuple type and use those names to refer to the values of the individual elements. An element name consists of an identifier followed immediately by a colon (:). For an example that demonstrates both of these features, see <span class="x-name"><a href="Functions.html#//apple_ref/doc/uid/TP40014097-CH10-ID164" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH10-ID164">Functions with Multiple Return Values</a></span>.
+</p><p class="para">
+  When an element of a tuple type has a name, that name is part of the type.
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">var</span> <span class="vc">someTuple</span> = (<span class="vc">top</span>: <span class="m">10</span>, <span class="vc">bottom</span>: <span class="m">12</span>)  <span class="c">// someTuple is of type (top: Int, bottom: Int)</span></code></li>
+            <li><code class="code-voice"><span class="vc">someTuple</span> = (<span class="vc">top</span>: <span class="m">4</span>, <span class="vc">bottom</span>: <span class="m">42</span>) <span class="c">// OK: names match</span></code></li>
+            <li><code class="code-voice"><span class="vc">someTuple</span> = (<span class="m">9</span>, <span class="m">99</span>)              <span class="c">// OK: names are inferred</span></code></li>
+            <li><code class="code-voice"><span class="vc">someTuple</span> = (<span class="vc">left</span>: <span class="m">5</span>, <span class="vc">right</span>: <span class="m">5</span>)  <span class="c">// Error: names don&#39;t match</span></code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  All tuple types contain two or more types, except for <code class="code-voice">Void</code> which is a type alias for the empty tuple type, <code class="code-voice">()</code>.
+</p><div class="syntax-defs">
+  <p class="syntax-defs-name">
+  Grammar of a tuple type
+</p><div class="syntax-defs-group">
+  <p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/tuple-type"></a>
+  <span class="syntax-def-name">
+  tuple-type
+</span>
+<span class="arrow">
+  →
+</span><span class="alternative">
+  <code class="literal">(&shy;</code><code class="literal">)&shy;</code>
+</span><span class="alternative">
+  <code class="literal">(&shy;</code><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/tuple-type-element" data-renderer-version="2" data-id="//apple_ref/swift/grammar/tuple-type-element">tuple-type-element</a>&shy;</span><code class="literal">,&shy;</code><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/tuple-type-element-list" data-renderer-version="2" data-id="//apple_ref/swift/grammar/tuple-type-element-list">tuple-type-element-list</a>&shy;</span><code class="literal">)&shy;</code>
+</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/tuple-type-element-list"></a>
+  <span class="syntax-def-name">
+  tuple-type-element-list
+</span>
+<span class="arrow">
+  →
+</span><span class="alternative">
+  <span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/tuple-type-element" data-renderer-version="2" data-id="//apple_ref/swift/grammar/tuple-type-element">tuple-type-element</a>&shy;</span>
+</span><span class="alternative">
+  <span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/tuple-type-element" data-renderer-version="2" data-id="//apple_ref/swift/grammar/tuple-type-element">tuple-type-element</a>&shy;</span><code class="literal">,&shy;</code><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/tuple-type-element-list" data-renderer-version="2" data-id="//apple_ref/swift/grammar/tuple-type-element-list">tuple-type-element-list</a>&shy;</span>
+</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/tuple-type-element"></a>
+  <span class="syntax-def-name">
+  tuple-type-element
+</span>
+<span class="arrow">
+  →
+</span><span class="alternative">
+  <span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/element-name" data-renderer-version="2" data-id="//apple_ref/swift/grammar/element-name">element-name</a>&shy;</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/type-annotation" data-renderer-version="2" data-id="//apple_ref/swift/grammar/type-annotation">type-annotation</a>&shy;</span>
+</span><span class="alternative">
+  <span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/type" data-renderer-version="2" data-id="//apple_ref/swift/grammar/type">type</a>&shy;</span>
+</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/element-name"></a>
+  <span class="syntax-def-name">
+  element-name
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="LexicalStructure.html#//apple_ref/swift/grammar/identifier" data-renderer-version="2" data-id="//apple_ref/swift/grammar/identifier">identifier</a>&shy;</span>
+</p>
+</div>
+ </div>
+  
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH31-ID449"></a>
+  <h3 class="section-name" tabindex="0">Function Type</h3>
+  <p class="para">
+  A function type represents the type of a function, method, or closure and consists of a parameter and return type separated by an arrow (<code class="code-voice">-&gt;</code>):
+</p><span class="caption"></span>
+<div class="code-outline">
+  <ul class="code-outline-lines">
+    <li><pre class="code-voice">(<em class="variable-text">parameter type</em>) -&gt; <em class="variable-text">return type</em></pre></li>
+  </ul>
+</div><p class="para">
+  The <em>parameter type</em> is comma-separated list of types. Because the <em>return type</em> can be a tuple type, function types support functions and methods that return multiple values.
+</p><p class="para">
+  A parameter of the function type <code class="code-voice">() -&gt; T</code> (where <code class="code-voice">T</code> is any type) can apply the <code class="code-voice">autoclosure</code> attribute to implicitly create a closure at its call sites. This provides a syntactically convenient way to defer the evaluation of an expression without needing to write an explicit closure when you call the function. For an example of an autoclosure function type parameter, see <span class="x-name"><a href="Closures.html#//apple_ref/doc/uid/TP40014097-CH11-ID543" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH11-ID543">Autoclosures</a></span>.
+</p><p class="para">
+  A function type can have a variadic parameter in its <em>parameter type</em>. Syntactically, a variadic parameter consists of a base type name followed immediately by three dots (<code class="code-voice">...</code>), as in <code class="code-voice">Int...</code>. A variadic parameter is treated as an array that contains elements of the base type name. For instance, the variadic parameter <code class="code-voice">Int...</code> is treated as <code class="code-voice">[Int]</code>. For an example that uses a variadic parameter, see <span class="x-name"><a href="Functions.html#//apple_ref/doc/uid/TP40014097-CH10-ID171" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH10-ID171">Variadic Parameters</a></span>.
+</p><p class="para">
+  To specify an in-out parameter, prefix the parameter type with the <code class="code-voice">inout</code> keyword. You can’t mark a variadic parameter or a return type with the <code class="code-voice">inout</code> keyword. In-out parameters are discussed in <span class="x-name"><a href="Functions.html#//apple_ref/doc/uid/TP40014097-CH10-ID173" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH10-ID173">In-Out Parameters</a></span>.
+</p><p class="para">
+  If a function type has only one parameter and that parameter’s type is a tuple type, then the tuple type must be parenthesized when writing the function’s type. For example, <code class="code-voice">((Int, Int)) -&gt; Void</code> is the type of a function that takes a single parameter of the tuple type <code class="code-voice">(Int, Int)</code> and doesn’t return any value. In contrast, without parentheses, <code class="code-voice">(Int, Int) -&gt; Void</code> is the type of a function that takes two <code class="code-voice">Int</code> parameters and doesn’t return any value. Likewise, because <code class="code-voice">Void</code> is a type alias for <code class="code-voice">()</code>, the function type <code class="code-voice">(Void) -&gt; Void</code> is the same as <code class="code-voice">(()) -&gt; ()</code>—a function that takes a single argument that is an empty tuple. These types are not the same as <code class="code-voice">() -&gt; ()</code>—a function that takes no arguments.
+</p><p class="para">
+  Argument names in functions and methods are not part of the corresponding function type. For example:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">func</span> <span class="vc">someFunction</span>(<span class="vc">left</span>: <span class="n"><!-- a href="" -->Int<!-- /a --></span>, <span class="vc">right</span>: <span class="n"><!-- a href="" -->Int<!-- /a --></span>) {}</code></li>
+            <li><code class="code-voice"><span class="kt">func</span> <span class="vc">anotherFunction</span>(<span class="vc">left</span>: <span class="n"><!-- a href="" -->Int<!-- /a --></span>, <span class="vc">right</span>: <span class="n"><!-- a href="" -->Int<!-- /a --></span>) {}</code></li>
+            <li><code class="code-voice"><span class="kt">func</span> <span class="vc">functionWithDifferentLabels</span>(<span class="vc">top</span>: <span class="n"><!-- a href="" -->Int<!-- /a --></span>, <span class="vc">bottom</span>: <span class="n"><!-- a href="" -->Int<!-- /a --></span>) {}</code></li>
+            <li><code class="code-voice"> </code></li>
+            <li><code class="code-voice"><span class="kt">var</span> <span class="vc">f</span> = <span class="vc">someFunction</span> <span class="c">// The type of f is (Int, Int) -&gt; Void, not (left: Int, right: Int) -&gt; Void.</span></code></li>
+            <li><code class="code-voice"><span class="vc">f</span> = <span class="vc">anotherFunction</span>              <span class="c">// OK</span></code></li>
+            <li><code class="code-voice"><span class="vc">f</span> = <span class="vc">functionWithDifferentLabels</span>  <span class="c">// OK</span></code></li>
+            <li><code class="code-voice"> </code></li>
+            <li><code class="code-voice"><span class="kt">func</span> <span class="vc">functionWithDifferentArgumentTypes</span>(<span class="vc">left</span>: <span class="n"><!-- a href="" -->Int<!-- /a --></span>, <span class="vc">right</span>: <span class="n"><!-- a href="" -->String<!-- /a --></span>) {}</code></li>
+            <li><code class="code-voice"><span class="vc">f</span> = <span class="vc">functionWithDifferentArgumentTypes</span>     <span class="c">// Error</span></code></li>
+            <li><code class="code-voice"> </code></li>
+            <li><code class="code-voice"><span class="kt">func</span> <span class="vc">functionWithDifferentNumberOfArguments</span>(<span class="vc">left</span>: <span class="n"><!-- a href="" -->Int<!-- /a --></span>, <span class="vc">right</span>: <span class="n"><!-- a href="" -->Int<!-- /a --></span>, <span class="vc">top</span>: <span class="n"><!-- a href="" -->Int<!-- /a --></span>) {}</code></li>
+            <li><code class="code-voice"><span class="vc">f</span> = <span class="vc">functionWithDifferentNumberOfArguments</span> <span class="c">// Error</span></code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  Because argument labels are not part of a function’s type, you omit them when writing a function type.
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">var</span> <span class="vc">operation</span>: (<span class="vc">lhs</span>: <span class="n"><!-- a href="" -->Int<!-- /a --></span>, <span class="vc">rhs</span>: <span class="n"><!-- a href="" -->Int<!-- /a --></span>) -&gt; <span class="n"><!-- a href="" -->Int<!-- /a --></span>     <span class="c">// Error</span></code></li>
+            <li><code class="code-voice"><span class="kt">var</span> <span class="vc">operation</span>: (<span class="kt">_</span> <span class="vc">lhs</span>: <span class="n"><!-- a href="" -->Int<!-- /a --></span>, <span class="kt">_</span> <span class="vc">rhs</span>: <span class="n"><!-- a href="" -->Int<!-- /a --></span>) -&gt; <span class="n"><!-- a href="" -->Int<!-- /a --></span> <span class="c">// OK</span></code></li>
+            <li><code class="code-voice"><span class="kt">var</span> <span class="vc">operation</span>: (<span class="n"><!-- a href="" -->Int<!-- /a --></span>, <span class="n"><!-- a href="" -->Int<!-- /a --></span>) -&gt; <span class="n"><!-- a href="" -->Int<!-- /a --></span>               <span class="c">// OK</span></code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  If a function type includes more than a single arrow (<code class="code-voice">-&gt;</code>), the function types are grouped from right to left. For example, the function type <code class="code-voice">(Int) -&gt; (Int) -&gt; Int</code> is understood as <code class="code-voice">(Int) -&gt; ((Int) -&gt; Int)</code>—that is, a function that takes an <code class="code-voice">Int</code> and returns another function that takes and returns an <code class="code-voice">Int</code>.
+</p><p class="para">
+  Function types that can throw an error must be marked with the <code class="code-voice">throws</code> keyword, and function types that can rethrow an error must be marked with the <code class="code-voice">rethrows</code> keyword. The <code class="code-voice">throws</code> keyword is part of a function’s type, and nonthrowing functions are subtypes of throwing functions. As a result, you can use a nonthrowing function in the same places as a throwing one. Throwing and rethrowing functions are described in <span class="x-name"><a href="Declarations.html#//apple_ref/doc/uid/TP40014097-CH34-ID530" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH34-ID530">Throwing Functions and Methods</a></span> and <span class="x-name"><a href="Declarations.html#//apple_ref/doc/uid/TP40014097-CH34-ID531" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH34-ID531">Rethrowing Functions and Methods</a></span>.
+</p>
+  <section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH31-ID572"></a>
+  <h3 class="section-name" tabindex="0">Restrictions for Nonescaping Closures</h3>
+  <p class="para">
+  A parameter that’s a nonescaping function can’t be passed as an argument to another nonescaping function parameter. This restriction helps Swift perform more of its checks for conflicting access to memory at compile time instead of at runtime. For example:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">let</span> <span class="vc">external</span>: (<span class="kt">Any</span>) -&gt; <span class="n"><!-- a href="" -->Void<!-- /a --></span> = { <span class="kt">_</span> <span class="kt">in</span> () }</code></li>
+            <li><code class="code-voice"><span class="kt">func</span> <span class="vc">takesTwoFunctions</span>(<span class="vc">first</span>: (<span class="kt">Any</span>) -&gt; <span class="n"><!-- a href="" -->Void<!-- /a --></span>, <span class="vc">second</span>: (<span class="kt">Any</span>) -&gt; <span class="n"><!-- a href="" -->Void<!-- /a --></span>) {</code></li>
+            <li><code class="code-voice">    <span class="vc">first</span>(<span class="vc">first</span>)    <span class="c">// Error</span></code></li>
+            <li><code class="code-voice">    <span class="vc">second</span>(<span class="vc">second</span>)  <span class="c">// Error</span></code></li>
+            <li><code class="code-voice">    </code></li>
+            <li><code class="code-voice">    <span class="vc">first</span>(<span class="vc">second</span>)   <span class="c">// Error</span></code></li>
+            <li><code class="code-voice">    <span class="vc">second</span>(<span class="vc">first</span>)   <span class="c">// Error</span></code></li>
+            <li><code class="code-voice">    </code></li>
+            <li><code class="code-voice">    <span class="vc">first</span>(<span class="vc">external</span>) <span class="c">// OK</span></code></li>
+            <li><code class="code-voice">    <span class="vc">external</span>(<span class="vc">first</span>) <span class="c">// OK</span></code></li>
+            <li><code class="code-voice">}</code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  In the code above, both of the parameters to <code class="code-voice">takesTwoFunctions(first:second:)</code> are functions. Neither parameter is marked <code class="code-voice">@escaping</code>, so they’re both nonescaping as a result.
+</p><p class="para">
+  The four function calls marked “Error” in the example above cause compiler errors. Because the <code class="code-voice">first</code> and <code class="code-voice">second</code> parameters are nonescaping functions, they can’t be passed as arguments to another nonescaping function parameter. In contrast, the two function calls marked “OK” don’t cause a compiler error. These function calls don’t violate the restriction because <code class="code-voice">external</code> isn’t one of the parameters of <code class="code-voice">takesTwoFunctions(first:second:)</code>.
+</p><p class="para">
+  If you need to avoid this restriction, mark one of the parameters as escaping, or temporarily convert one of the nonescaping function parameters to an escaping function by using the <code class="code-voice">withoutActuallyEscaping(_:do:)</code> function. For information about avoiding conflicting access to memory, see <span class="x-name"><a href="MemorySafety.html#//apple_ref/doc/uid/TP40014097-CH46-ID567" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH46-ID567">Memory Safety</a></span>.
+</p><div class="syntax-defs">
+  <p class="syntax-defs-name">
+  Grammar of a function type
+</p><div class="syntax-defs-group">
+  <p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/function-type"></a>
+  <span class="syntax-def-name">
+  function-type
+</span>
+<span class="arrow">
+  →
+</span><span class="optional"><span class="syntactic-cat"><a href="Attributes.html#//apple_ref/swift/grammar/attributes" data-renderer-version="2" data-id="//apple_ref/swift/grammar/attributes">attributes</a>&shy;</span><sub class="subscript">opt</sub>&shy;</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/function-type-argument-clause" data-renderer-version="2" data-id="//apple_ref/swift/grammar/function-type-argument-clause">function-type-argument-clause</a>&shy;</span><span class="optional"><code class="literal">throws&shy;</code><sub class="subscript">opt</sub>&shy;</span><code class="literal">-&gt;&shy;</code><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/type" data-renderer-version="2" data-id="//apple_ref/swift/grammar/type">type</a>&shy;</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/doc/uid/TP40014097-CH31-NoLink_377"></a>
+  <span class="syntax-def-name">
+  function-type
+</span>
+<span class="arrow">
+  →
+</span><span class="optional"><span class="syntactic-cat"><a href="Attributes.html#//apple_ref/swift/grammar/attributes" data-renderer-version="2" data-id="//apple_ref/swift/grammar/attributes">attributes</a>&shy;</span><sub class="subscript">opt</sub>&shy;</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/function-type-argument-clause" data-renderer-version="2" data-id="//apple_ref/swift/grammar/function-type-argument-clause">function-type-argument-clause</a>&shy;</span><code class="literal">rethrows&shy;</code><code class="literal">-&gt;&shy;</code><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/type" data-renderer-version="2" data-id="//apple_ref/swift/grammar/type">type</a>&shy;</span>
+</p>
+</div><div class="syntax-defs-group">
+  <p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/function-type-argument-clause"></a>
+  <span class="syntax-def-name">
+  function-type-argument-clause
+</span>
+<span class="arrow">
+  →
+</span><code class="literal">(&shy;</code><code class="literal">)&shy;</code>
+</p><p class="syntax-def">
+  <a name="//apple_ref/doc/uid/TP40014097-CH31-NoLink_379"></a>
+  <span class="syntax-def-name">
+  function-type-argument-clause
+</span>
+<span class="arrow">
+  →
+</span><code class="literal">(&shy;</code><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/function-type-argument-list" data-renderer-version="2" data-id="//apple_ref/swift/grammar/function-type-argument-list">function-type-argument-list</a>&shy;</span><span class="optional"><code class="literal">...&shy;</code><sub class="subscript">opt</sub>&shy;</span><code class="literal">)&shy;</code>
+</p>
+</div><div class="syntax-defs-group">
+  <p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/function-type-argument-list"></a>
+  <span class="syntax-def-name">
+  function-type-argument-list
+</span>
+<span class="arrow">
+  →
+</span><span class="alternative">
+  <span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/function-type-argument" data-renderer-version="2" data-id="//apple_ref/swift/grammar/function-type-argument">function-type-argument</a>&shy;</span>
+</span><span class="alternative">
+  <span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/function-type-argument" data-renderer-version="2" data-id="//apple_ref/swift/grammar/function-type-argument">function-type-argument</a>&shy;</span><code class="literal">,&shy;</code><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/function-type-argument-list" data-renderer-version="2" data-id="//apple_ref/swift/grammar/function-type-argument-list">function-type-argument-list</a>&shy;</span>
+</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/function-type-argument"></a>
+  <span class="syntax-def-name">
+  function-type-argument
+</span>
+<span class="arrow">
+  →
+</span><span class="alternative">
+  <span class="optional"><span class="syntactic-cat"><a href="Attributes.html#//apple_ref/swift/grammar/attributes" data-renderer-version="2" data-id="//apple_ref/swift/grammar/attributes">attributes</a>&shy;</span><sub class="subscript">opt</sub>&shy;</span><span class="optional"><code class="literal">inout&shy;</code><sub class="subscript">opt</sub>&shy;</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/type" data-renderer-version="2" data-id="//apple_ref/swift/grammar/type">type</a>&shy;</span>
+</span><span class="alternative">
+  <span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/argument-label" data-renderer-version="2" data-id="//apple_ref/swift/grammar/argument-label">argument-label</a>&shy;</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/type-annotation" data-renderer-version="2" data-id="//apple_ref/swift/grammar/type-annotation">type-annotation</a>&shy;</span>
+</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/argument-label"></a>
+  <span class="syntax-def-name">
+  argument-label
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="LexicalStructure.html#//apple_ref/swift/grammar/identifier" data-renderer-version="2" data-id="//apple_ref/swift/grammar/identifier">identifier</a>&shy;</span>
+</p>
+</div>
+ </div>
+  
+</section>
+
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH31-ID450"></a>
+  <h3 class="section-name" tabindex="0">Array Type</h3>
+  <p class="para">
+  The Swift language provides the following syntactic sugar for the Swift standard library <code class="code-voice">Array&lt;Element&gt;</code> type:
+</p><span class="caption"></span>
+<div class="code-outline">
+  <ul class="code-outline-lines">
+    <li><pre class="code-voice">[<em class="variable-text">type</em>]</pre></li>
+  </ul>
+</div><p class="para">
+  In other words, the following two declarations are equivalent:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">let</span> <span class="vc">someArray</span>: <span class="n"><!-- a href="" -->Array<!-- /a --></span>&lt;<span class="n"><!-- a href="" -->String<!-- /a --></span>&gt; = [<span class="s">&quot;Alex&quot;</span>, <span class="s">&quot;Brian&quot;</span>, <span class="s">&quot;Dave&quot;</span>]</code></li>
+            <li><code class="code-voice"><span class="kt">let</span> <span class="vc">someArray</span>: [<span class="n"><!-- a href="" -->String<!-- /a --></span>] = [<span class="s">&quot;Alex&quot;</span>, <span class="s">&quot;Brian&quot;</span>, <span class="s">&quot;Dave&quot;</span>]</code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  In both cases, the constant <code class="code-voice">someArray</code> is declared as an array of strings. The elements of an array can be accessed through subscripting by specifying a valid index value in square brackets: <code class="code-voice">someArray[0]</code> refers to the element at index 0, <code class="code-voice">&quot;Alex&quot;</code>.
+</p><p class="para">
+  You can create multidimensional arrays by nesting pairs of square brackets, where the name of the base type of the elements is contained in the innermost pair of square brackets. For example, you can create a three-dimensional array of integers using three sets of square brackets:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">var</span> <span class="vc">array3D</span>: [[[<span class="n"><!-- a href="" -->Int<!-- /a --></span>]]] = [[[<span class="m">1</span>, <span class="m">2</span>], [<span class="m">3</span>, <span class="m">4</span>]], [[<span class="m">5</span>, <span class="m">6</span>], [<span class="m">7</span>, <span class="m">8</span>]]]</code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  When accessing the elements in a multidimensional array, the left-most subscript index refers to the element at that index in the outermost array. The next subscript index to the right refers to the element at that index in the array that’s nested one level in. And so on. This means that in the example above, <code class="code-voice">array3D[0]</code> refers to <code class="code-voice">[[1, 2], [3, 4]]</code>, <code class="code-voice">array3D[0][1]</code> refers to <code class="code-voice">[3, 4]</code>, and <code class="code-voice">array3D[0][1][1]</code> refers to the value 4.
+</p><p class="para">
+  For a detailed discussion of the Swift standard library <code class="code-voice">Array</code> type, see <span class="x-name"><a href="CollectionTypes.html#//apple_ref/doc/uid/TP40014097-CH8-ID107" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH8-ID107">Arrays</a></span>.
+</p><div class="syntax-defs">
+  <p class="syntax-defs-name">
+  Grammar of an array type
+</p><div class="syntax-defs-group">
+  <p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/array-type"></a>
+  <span class="syntax-def-name">
+  array-type
+</span>
+<span class="arrow">
+  →
+</span><code class="literal">[&shy;</code><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/type" data-renderer-version="2" data-id="//apple_ref/swift/grammar/type">type</a>&shy;</span><code class="literal">]&shy;</code>
+</p>
+</div>
+ </div>
+  
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH31-ID451"></a>
+  <h3 class="section-name" tabindex="0">Dictionary Type</h3>
+  <p class="para">
+  The Swift language provides the following syntactic sugar for the Swift standard library <code class="code-voice">Dictionary&lt;Key, Value&gt;</code> type:
+</p><span class="caption"></span>
+<div class="code-outline">
+  <ul class="code-outline-lines">
+    <li><pre class="code-voice">[<em class="variable-text">key type</em>: <em class="variable-text">value type</em>]</pre></li>
+  </ul>
+</div><p class="para">
+  In other words, the following two declarations are equivalent:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">let</span> <span class="vc">someDictionary</span>: [<span class="n"><!-- a href="" -->String<!-- /a --></span>: <span class="n"><!-- a href="" -->Int<!-- /a --></span>] = [<span class="s">&quot;Alex&quot;</span>: <span class="m">31</span>, <span class="s">&quot;Paul&quot;</span>: <span class="m">39</span>]</code></li>
+            <li><code class="code-voice"><span class="kt">let</span> <span class="vc">someDictionary</span>: <span class="n"><!-- a href="" -->Dictionary<!-- /a --></span>&lt;<span class="n"><!-- a href="" -->String<!-- /a --></span>, <span class="n"><!-- a href="" -->Int<!-- /a --></span>&gt; = [<span class="s">&quot;Alex&quot;</span>: <span class="m">31</span>, <span class="s">&quot;Paul&quot;</span>: <span class="m">39</span>]</code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  In both cases, the constant <code class="code-voice">someDictionary</code> is declared as a dictionary with strings as keys and integers as values.
+</p><p class="para">
+  The values of a dictionary can be accessed through subscripting by specifying the corresponding key in square brackets: <code class="code-voice">someDictionary[&quot;Alex&quot;]</code> refers to the value associated with the key <code class="code-voice">&quot;Alex&quot;</code>. The subscript returns an optional value of the dictionary’s value type. If the specified key isn’t contained in the dictionary, the subscript returns <code class="code-voice">nil</code>.
+</p><p class="para">
+  The key type of a dictionary must conform to the Swift standard library <code class="code-voice">Hashable</code> protocol.
+</p><p class="para">
+  For a detailed discussion of the Swift standard library <code class="code-voice">Dictionary</code> type, see <span class="x-name"><a href="CollectionTypes.html#//apple_ref/doc/uid/TP40014097-CH8-ID113" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH8-ID113">Dictionaries</a></span>.
+</p><div class="syntax-defs">
+  <p class="syntax-defs-name">
+  Grammar of a dictionary type
+</p><div class="syntax-defs-group">
+  <p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/dictionary-type"></a>
+  <span class="syntax-def-name">
+  dictionary-type
+</span>
+<span class="arrow">
+  →
+</span><code class="literal">[&shy;</code><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/type" data-renderer-version="2" data-id="//apple_ref/swift/grammar/type">type</a>&shy;</span><code class="literal">:&shy;</code><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/type" data-renderer-version="2" data-id="//apple_ref/swift/grammar/type">type</a>&shy;</span><code class="literal">]&shy;</code>
+</p>
+</div>
+ </div>
+  
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH31-ID452"></a>
+  <h3 class="section-name" tabindex="0">Optional Type</h3>
+  <p class="para">
+  The Swift language defines the postfix <code class="code-voice">?</code> as syntactic sugar for the named type <code class="code-voice">Optional&lt;Wrapped&gt;</code>, which is defined in the Swift standard library. In other words, the following two declarations are equivalent:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">var</span> <span class="vc">optionalInteger</span>: <span class="n"><!-- a href="" -->Int<!-- /a --></span>?</code></li>
+            <li><code class="code-voice"><span class="kt">var</span> <span class="vc">optionalInteger</span>: <span class="n"><!-- a href="" -->Optional<!-- /a --></span>&lt;<span class="n"><!-- a href="" -->Int<!-- /a --></span>&gt;</code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  In both cases, the variable <code class="code-voice">optionalInteger</code> is declared to have the type of an optional integer. Note that no whitespace may appear between the type and the <code class="code-voice">?</code>.
+</p><p class="para">
+  The type <code class="code-voice">Optional&lt;Wrapped&gt;</code> is an enumeration with two cases, <code class="code-voice">none</code> and <code class="code-voice">some(Wrapped)</code>, which are used to represent values that may or may not be present. Any type can be explicitly declared to be (or implicitly converted to) an optional type. If you don’t provide an initial value when you declare an optional variable or property, its value automatically defaults to <code class="code-voice">nil</code>.
+</p><p class="para">
+  If an instance of an optional type contains a value, you can access that value using the postfix operator <code class="code-voice">!</code>, as shown below:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="vc">optionalInteger</span> = <span class="m">42</span></code></li>
+            <li><code class="code-voice"><span class="vc">optionalInteger</span>! <span class="c">// 42</span></code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  Using the <code class="code-voice">!</code> operator to unwrap an optional that has a value of <code class="code-voice">nil</code> results in a runtime error.
+</p><p class="para">
+  You can also use optional chaining and optional binding to conditionally perform an operation on an optional expression. If the value is <code class="code-voice">nil</code>, no operation is performed and therefore no runtime error is produced.
+</p><p class="para">
+  For more information and to see examples that show how to use optional types, see <span class="x-name"><a href="TheBasics.html#//apple_ref/doc/uid/TP40014097-CH5-ID330" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH5-ID330">Optionals</a></span>.
+</p><div class="syntax-defs">
+  <p class="syntax-defs-name">
+  Grammar of an optional type
+</p><div class="syntax-defs-group">
+  <p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/optional-type"></a>
+  <span class="syntax-def-name">
+  optional-type
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/type" data-renderer-version="2" data-id="//apple_ref/swift/grammar/type">type</a>&shy;</span><code class="literal">?&shy;</code>
+</p>
+</div>
+ </div>
+  
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH31-ID453"></a>
+  <h3 class="section-name" tabindex="0">Implicitly Unwrapped Optional Type</h3>
+  <p class="para">
+  The Swift language defines the postfix <code class="code-voice">!</code> as syntactic sugar for the named type <code class="code-voice">Optional&lt;Wrapped&gt;</code>, which is defined in the Swift standard library, with the additional behavior that it’s automatically unwrapped when it’s accessed. If you try to use an implicitly unwrapped optional that has a value of <code class="code-voice">nil</code>, you’ll get a runtime error. With the exception of the implicit unwrapping behavior, the following two declarations are equivalent:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">var</span> <span class="vc">implicitlyUnwrappedString</span>: <span class="n"><!-- a href="" -->String<!-- /a --></span>!</code></li>
+            <li><code class="code-voice"><span class="kt">var</span> <span class="vc">explicitlyUnwrappedString</span>: <span class="n"><!-- a href="" -->Optional<!-- /a --></span>&lt;<span class="n"><!-- a href="" -->String<!-- /a --></span>&gt;</code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  Note that no whitespace may appear between the type and the <code class="code-voice">!</code>.
+</p><p class="para">
+  Because implicit unwrapping changes the meaning of the declaration that contains that type, optional types that are nested inside a tuple type or a generic type—such as the element types of a dictionary or array—can’t be marked as implicitly unwrapped. For example:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">let</span> <span class="vc">tupleOfImplicitlyUnwrappedElements</span>: (<span class="n"><!-- a href="" -->Int<!-- /a --></span>!, <span class="n"><!-- a href="" -->Int<!-- /a --></span>!)  <span class="c">// Error</span></code></li>
+            <li><code class="code-voice"><span class="kt">let</span> <span class="vc">implicitlyUnwrappedTuple</span>: (<span class="n"><!-- a href="" -->Int<!-- /a --></span>, <span class="n"><!-- a href="" -->Int<!-- /a --></span>)!             <span class="c">// OK</span></code></li>
+            <li><code class="code-voice"> </code></li>
+            <li><code class="code-voice"><span class="kt">let</span> <span class="vc">arrayOfImplicitlyUnwrappedElements</span>: [<span class="n"><!-- a href="" -->Int<!-- /a --></span>!]        <span class="c">// Error</span></code></li>
+            <li><code class="code-voice"><span class="kt">let</span> <span class="vc">implicitlyUnwrappedArray</span>: [<span class="n"><!-- a href="" -->Int<!-- /a --></span>]!                  <span class="c">// OK</span></code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  Because implicitly unwrapped optionals have the same <code class="code-voice">Optional&lt;Wrapped&gt;</code> type as optional values, you can use implicitly unwrapped optionals in all the same places in your code that you can use optionals. For instance, you can assign values of implicitly unwrapped optionals to variables, constants, and properties of optionals, and vice versa.
+</p><p class="para">
+  As with optionals, if you don’t provide an initial value when you declare an implicitly unwrapped optional variable or property, its value automatically defaults to <code class="code-voice">nil</code>.
+</p><p class="para">
+  Use optional chaining to conditionally perform an operation on an implicitly unwrapped optional expression. If the value is <code class="code-voice">nil</code>, no operation is performed and therefore no runtime error is produced.
+</p><p class="para">
+  For more information about implicitly unwrapped optional types, see <span class="x-name"><a href="TheBasics.html#//apple_ref/doc/uid/TP40014097-CH5-ID334" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH5-ID334">Implicitly Unwrapped Optionals</a></span>.
+</p><div class="syntax-defs">
+  <p class="syntax-defs-name">
+  Grammar of an implicitly unwrapped optional type
+</p><div class="syntax-defs-group">
+  <p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/implicitly-unwrapped-optional-type"></a>
+  <span class="syntax-def-name">
+  implicitly-unwrapped-optional-type
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/type" data-renderer-version="2" data-id="//apple_ref/swift/grammar/type">type</a>&shy;</span><code class="literal">!&shy;</code>
+</p>
+</div>
+ </div>
+  
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH31-ID454"></a>
+  <h3 class="section-name" tabindex="0">Protocol Composition Type</h3>
+  <p class="para">
+  A protocol composition type defines a type that conforms to each protocol in a list of specified protocols, or a type that is a subclass of a given class and conforms to each protocol in a list of specified protocols. Protocol composition types may be used only when specifying a type in type annotations, in generic parameter clauses, and in generic <code class="code-voice">where</code> clauses.
+</p><p class="para">
+  Protocol composition types have the following form:
+</p><span class="caption"></span>
+<div class="code-outline">
+  <ul class="code-outline-lines">
+    <li><pre class="code-voice"><em class="variable-text">Protocol 1</em> &amp; <em class="variable-text">Protocol 2</em></pre></li>
+  </ul>
+</div><p class="para">
+  A protocol composition type allows you to specify a value whose type conforms to the requirements of multiple protocols without explicitly defining a new, named protocol that inherits from each protocol you want the type to conform to. For example, you can use the protocol composition type <code class="code-voice">ProtocolA &amp; ProtocolB &amp; ProtocolC</code> instead of declaring a new protocol that inherits from <code class="code-voice">ProtocolA</code>, <code class="code-voice">ProtocolB</code>, and <code class="code-voice">ProtocolC</code>. Likewise, you can use <code class="code-voice">SuperClass &amp; ProtocolA</code> instead of declaring a new protocol that is a subclass of <code class="code-voice">SuperClass</code> and conforms to <code class="code-voice">ProtocolA</code>.
+</p><p class="para">
+  Each item in a protocol composition list is one of the following; the list can contain at most one class:
+</p><ul class="list-bullet">
+  <li class="item"><p class="para">
+  The name of a class
+</p>
+</li><li class="item"><p class="para">
+  The name of a protocol
+</p>
+</li><li class="item"><p class="para">
+  A type alias whose underlying type is a protocol composition type, a protocol, or a class.
+</p>
+</li>
+</ul><p class="para">
+  When a protocol composition type contains type aliases, it’s possible for the same protocol to appear more than once in the definitions—duplicates are ignored. For example, the definition of <code class="code-voice">PQR</code> in the code below is equivalent to <code class="code-voice">P &amp; Q &amp; R</code>.
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">typealias</span> <span class="vc">PQ</span> = <span class="n"><!-- a href="" -->P<!-- /a --></span> &amp; <span class="n"><!-- a href="" -->Q<!-- /a --></span></code></li>
+            <li><code class="code-voice"><span class="kt">typealias</span> <span class="vc">PQR</span> = <span class="n"><!-- a href="" -->PQ<!-- /a --></span> &amp; <span class="n"><!-- a href="" -->Q<!-- /a --></span> &amp; <span class="n"><!-- a href="" -->R<!-- /a --></span></code></li>
+        </ol>
+      </div>
+  </div>
+</section><div class="syntax-defs">
+  <p class="syntax-defs-name">
+  Grammar of a protocol composition type
+</p><div class="syntax-defs-group">
+  <p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/protocol-composition-type"></a>
+  <span class="syntax-def-name">
+  protocol-composition-type
+</span>
+<span class="arrow">
+  →
+</span><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/type-identifier" data-renderer-version="2" data-id="//apple_ref/swift/grammar/type-identifier">type-identifier</a>&shy;</span><code class="literal">&amp;&shy;</code><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/protocol-composition-continuation" data-renderer-version="2" data-id="//apple_ref/swift/grammar/protocol-composition-continuation">protocol-composition-continuation</a>&shy;</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/protocol-composition-continuation"></a>
+  <span class="syntax-def-name">
+  protocol-composition-continuation
+</span>
+<span class="arrow">
+  →
+</span><span class="alternative">
+  <span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/type-identifier" data-renderer-version="2" data-id="//apple_ref/swift/grammar/type-identifier">type-identifier</a>&shy;</span>
+</span><span class="alternative">
+  <span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/protocol-composition-type" data-renderer-version="2" data-id="//apple_ref/swift/grammar/protocol-composition-type">protocol-composition-type</a>&shy;</span>
+</span>
+</p>
+</div>
+ </div>
+  
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH31-ID455"></a>
+  <h3 class="section-name" tabindex="0">Metatype Type</h3>
+  <p class="para">
+  A metatype type refers to the type of any type, including class types, structure types, enumeration types, and protocol types.
+</p><p class="para">
+  The metatype of a class, structure, or enumeration type is the name of that type followed by <code class="code-voice">.Type</code>. The metatype of a protocol type—not the concrete type that conforms to the protocol at runtime—is the name of that protocol followed by <code class="code-voice">.Protocol</code>. For example, the metatype of the class type <code class="code-voice">SomeClass</code> is <code class="code-voice">SomeClass.Type</code> and the metatype of the protocol <code class="code-voice">SomeProtocol</code> is <code class="code-voice">SomeProtocol.Protocol</code>.
+</p><p class="para">
+  You can use the postfix <code class="code-voice">self</code> expression to access a type as a value. For example, <code class="code-voice">SomeClass.self</code> returns <code class="code-voice">SomeClass</code> itself, not an instance of <code class="code-voice">SomeClass</code>. And <code class="code-voice">SomeProtocol.self</code> returns <code class="code-voice">SomeProtocol</code> itself, not an instance of a type that conforms to <code class="code-voice">SomeProtocol</code> at runtime. You can call the <code class="code-voice">type(of:)</code> function with an instance of a type to access that instance’s dynamic, runtime type as a value, as the following example shows:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">class</span> <span class="vc">SomeBaseClass</span> {</code></li>
+            <li><code class="code-voice">    <span class="kt">class</span> <span class="kt">func</span> <span class="vc">printClassName</span>() {</code></li>
+            <li><code class="code-voice">        <span class="vc">print</span>(<span class="s">&quot;SomeBaseClass&quot;</span>)</code></li>
+            <li><code class="code-voice">    }</code></li>
+            <li><code class="code-voice">}</code></li>
+            <li><code class="code-voice"><span class="kt">class</span> <span class="vc">SomeSubClass</span>: <span class="n"><!-- a href="" -->SomeBaseClass<!-- /a --></span> {</code></li>
+            <li><code class="code-voice">    <span class="kt">override</span> <span class="kt">class</span> <span class="kt">func</span> <span class="vc">printClassName</span>() {</code></li>
+            <li><code class="code-voice">        <span class="vc">print</span>(<span class="s">&quot;SomeSubClass&quot;</span>)</code></li>
+            <li><code class="code-voice">    }</code></li>
+            <li><code class="code-voice">}</code></li>
+            <li><code class="code-voice"><span class="kt">let</span> <span class="vc">someInstance</span>: <span class="n"><!-- a href="" -->SomeBaseClass<!-- /a --></span> = <span class="vc">SomeSubClass</span>()</code></li>
+            <li><code class="code-voice"><span class="c">// The compile-time type of someInstance is SomeBaseClass,</span></code></li>
+            <li><code class="code-voice"><span class="c">// and the runtime type of someInstance is SomeSubClass</span></code></li>
+            <li><code class="code-voice"><span class="vc">type</span>(<span class="vc">of</span>: <span class="vc">someInstance</span>).<span class="vc">printClassName</span>()</code></li>
+            <li><code class="code-voice"><span class="c">// Prints &quot;SomeSubClass&quot;</span></code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  For more information, see <code class="code-voice u-api"><!-- a href="" -->type(of:)<!-- /a --></code> in the Swift standard library.
+</p><p class="para">
+  Use an initializer expression to construct an instance of a type from that type’s metatype value. For class instances, the initializer that’s called must be marked with the <code class="code-voice">required</code> keyword or the entire class marked with the <code class="code-voice">final</code> keyword.
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">class</span> <span class="vc">AnotherSubClass</span>: <span class="n"><!-- a href="" -->SomeBaseClass<!-- /a --></span> {</code></li>
+            <li><code class="code-voice">    <span class="kt">let</span> <span class="vc">string</span>: <span class="n"><!-- a href="" -->String<!-- /a --></span></code></li>
+            <li><code class="code-voice">    <span class="kt">required</span> <span class="kt">init</span>(<span class="vc">string</span>: <span class="n"><!-- a href="" -->String<!-- /a --></span>) {</code></li>
+            <li><code class="code-voice">        <span class="kt">self</span>.<span class="vc">string</span> = <span class="vc">string</span></code></li>
+            <li><code class="code-voice">    }</code></li>
+            <li><code class="code-voice">    <span class="kt">override</span> <span class="kt">class</span> <span class="kt">func</span> <span class="vc">printClassName</span>() {</code></li>
+            <li><code class="code-voice">        <span class="vc">print</span>(<span class="s">&quot;AnotherSubClass&quot;</span>)</code></li>
+            <li><code class="code-voice">    }</code></li>
+            <li><code class="code-voice">}</code></li>
+            <li><code class="code-voice"><span class="kt">let</span> <span class="vc">metatype</span>: <span class="n"><!-- a href="" -->AnotherSubClass<!-- /a --></span>.<span class="vc">Type</span> = <span class="vc">AnotherSubClass</span>.<span class="kt">self</span></code></li>
+            <li><code class="code-voice"><span class="kt">let</span> <span class="vc">anotherInstance</span> = <span class="vc">metatype</span>.<span class="kt">init</span>(<span class="vc">string</span>: <span class="s">&quot;some string&quot;</span>)</code></li>
+        </ol>
+      </div>
+  </div>
+</section><div class="syntax-defs">
+  <p class="syntax-defs-name">
+  Grammar of a metatype type
+</p><div class="syntax-defs-group">
+  <p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/metatype-type"></a>
+  <span class="syntax-def-name">
+  metatype-type
+</span>
+<span class="arrow">
+  →
+</span><span class="alternative">
+  <span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/type" data-renderer-version="2" data-id="//apple_ref/swift/grammar/type">type</a>&shy;</span><code class="literal">.&shy;</code><code class="literal">Type&shy;</code>
+</span><span class="alternative">
+  <span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/type" data-renderer-version="2" data-id="//apple_ref/swift/grammar/type">type</a>&shy;</span><code class="literal">.&shy;</code><code class="literal">Protocol&shy;</code>
+</span>
+</p>
+</div>
+ </div>
+  
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH31-ID456"></a>
+  <h3 class="section-name" tabindex="0">Type Inheritance Clause</h3>
+  <p class="para">
+  A type inheritance clause is used to specify which class a named type inherits from and which protocols a named type conforms to. A type inheritance clause begins with a colon (<code class="code-voice">:</code>), followed by a list of type identifiers.
+</p><p class="para">
+  Class types can inherit from a single superclass and conform to any number of protocols. When defining a class, the name of the superclass must appear first in the list of type identifiers, followed by any number of protocols the class must conform to. If the class doesn’t inherit from another class, the list can begin with a protocol instead. For an extended discussion and several examples of class inheritance, see <span class="x-name"><a href="Inheritance.html#//apple_ref/doc/uid/TP40014097-CH17-ID193" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH17-ID193">Inheritance</a></span>.
+</p><p class="para">
+  Other named types can only inherit from or conform to a list of protocols. Protocol types can inherit from any number of other protocols. When a protocol type inherits from other protocols, the set of requirements from those other protocols are aggregated together, and any type that inherits from the current protocol must conform to all of those requirements.
+</p><p class="para">
+  A type inheritance clause in an enumeration definition can be either a list of protocols, or in the case of an enumeration that assigns raw values to its cases, a single, named type that specifies the type of those raw values. For an example of an enumeration definition that uses a type inheritance clause to specify the type of its raw values, see <span class="x-name"><a href="Enumerations.html#//apple_ref/doc/uid/TP40014097-CH12-ID149" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH12-ID149">Raw Values</a></span>.
+</p><div class="syntax-defs">
+  <p class="syntax-defs-name">
+  Grammar of a type inheritance clause
+</p><div class="syntax-defs-group">
+  <p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/type-inheritance-clause"></a>
+  <span class="syntax-def-name">
+  type-inheritance-clause
+</span>
+<span class="arrow">
+  →
+</span><code class="literal">:&shy;</code><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/type-inheritance-list" data-renderer-version="2" data-id="//apple_ref/swift/grammar/type-inheritance-list">type-inheritance-list</a>&shy;</span>
+</p><p class="syntax-def">
+  <a name="//apple_ref/swift/grammar/type-inheritance-list"></a>
+  <span class="syntax-def-name">
+  type-inheritance-list
+</span>
+<span class="arrow">
+  →
+</span><span class="alternative">
+  <span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/type-identifier" data-renderer-version="2" data-id="//apple_ref/swift/grammar/type-identifier">type-identifier</a>&shy;</span>
+</span><span class="alternative">
+  <span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/type-identifier" data-renderer-version="2" data-id="//apple_ref/swift/grammar/type-identifier">type-identifier</a>&shy;</span><code class="literal">,&shy;</code><span class="syntactic-cat"><a href="#//apple_ref/swift/grammar/type-inheritance-list" data-renderer-version="2" data-id="//apple_ref/swift/grammar/type-inheritance-list">type-inheritance-list</a>&shy;</span>
+</span>
+</p>
+</div>
+ </div>
+  
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH31-ID457"></a>
+  <h3 class="section-name" tabindex="0">Type Inference</h3>
+  <p class="para">
+  Swift uses type inference extensively, allowing you to omit the type or part of the type of many variables and expressions in your code. For example, instead of writing <code class="code-voice">var x: Int = 0</code>, you can write <code class="code-voice">var x = 0</code>, omitting the type completely—the compiler correctly infers that <code class="code-voice">x</code> names a value of type <code class="code-voice">Int</code>. Similarly, you can omit part of a type when the full type can be inferred from context. For instance, if you write <code class="code-voice">let dict: Dictionary = [&quot;A&quot;: 1]</code>, the compiler infers that <code class="code-voice">dict</code> has the type <code class="code-voice">Dictionary&lt;String, Int&gt;</code>.
+</p><p class="para">
+  In both of the examples above, the type information is passed up from the leaves of the expression tree to its root. That is, the type of <code class="code-voice">x</code> in <code class="code-voice">var x: Int = 0</code> is inferred by first checking the type of <code class="code-voice">0</code> and then passing this type information up to the root (the variable <code class="code-voice">x</code>).
+</p><p class="para">
+  In Swift, type information can also flow in the opposite direction—from the root down to the leaves. In the following example, for instance, the explicit type annotation (<code class="code-voice">: Float</code>) on the constant <code class="code-voice">eFloat</code> causes the numeric literal <code class="code-voice">2.71828</code> to have an inferred type of <code class="code-voice">Float</code> instead of <code class="code-voice">Double</code>.
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">let</span> <span class="vc">e</span> = <span class="m">2.71828</span> <span class="c">// The type of e is inferred to be Double.</span></code></li>
+            <li><code class="code-voice"><span class="kt">let</span> <span class="vc">eFloat</span>: <span class="n"><!-- a href="" -->Float<!-- /a --></span> = <span class="m">2.71828</span> <span class="c">// The type of eFloat is Float.</span></code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  Type inference in Swift operates at the level of a single expression or statement. This means that all of the information needed to infer an omitted type or part of a type in an expression must be accessible from type-checking the expression or one of its subexpressions.
+</p>
+  
+</section>
+
+  	
+ 	<section id="next_previous" class="">
+    		<p class="previous-link"><a href="LexicalStructure.html#//apple_ref/doc/uid/TP40014097-CH30-ID410" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH30-ID410">Lexical Structure</a></p>
+  			<p class="next-link"><a href="Expressions.html#//apple_ref/doc/uid/TP40014097-CH32-ID383" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH32-ID383">Expressions</a></p>
+
+    <p class="copyright">Copyright &#x00a9; 2017 Apple Inc. All rights reserved. 
+  <a class="link" href="http://www.apple.com/legal/terms/site.html" target="_blank" rel="external">Terms of Use</a> | 
+  <a class="link" href="http://www.apple.com/privacy/" target="_blank" rel="external">Privacy Policy</a> | 
+  Updated: 2017-09-19
+</p>
+  </section>
+</article>
+
+    </div>
+    <div id='big_button'></div>
+    <footer id="footer">
+  <div class="content-wrapper">
+  	<div id="leave_feedback" class="button" role="button" tabindex="0">Feedback</div>
+  </div>
+  <script src="../../../../Resources/1274/JavaScript/devpubs-1.6.3.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../../../Resources/1274/JavaScript/feedback-1.6.3.js" type="text/javascript" charset="utf-8"></script>
+  <div id="_omniture_top">
+<!-- SiteCatalyst code version: H.8. Copyright 1997-2006 Omniture, Inc. -->
+<script type="text/javascript">
+/* RSID: */
+var s_account="appleglobal,appleusdeveloper,dappdeveloperlib"
+</script>
+
+<script type="text/javascript" src="https://www.apple.com/metrics/scripts/s_code_h.js"></script>
+<script type="text/javascript">
+s.pageName=AC.Tracking.pageName();
+s.channel="www.us.developer"
+
+/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+var s_code=s.t();if(s_code)document.write(s_code)</script>
+<!-- End SiteCatalyst code version: H.8. -->
+</div>
+
+</footer>
+
+    
+  </body>
+    <div id="blackout">
+    <div id="preload"></div>
+</div>
+<div id="modal" aria-hidden="true">
+    <div id="closebox" tabindex="0" aria-label="Close feedback form" role="button"></div>
+    <div id="sending" class="hidden">
+        <h2 tabindex="0">Sending feedback&hellip;</h2>
+        <div id="sending_img"></div>
+    </div>
+    <div id="error" class="hidden">
+        <h2 tabindex="0">We&rsquo;re sorry, an error has occurred.</h2>
+        <p>Please try submitting your feedback later.</p>
+        <div id="error_icon"></div>
+    </div>
+    <div id="success" class="hidden">
+        <h2 tabindex="0">Thank you for providing feedback!</h2>
+        <p>Your input helps improve our developer documentation.</p>
+        <div id="thank_you_icon"></div>
+    </div>
+    
+    <form id="feedback" action="#" method="post">
+        <div class="left-leaf">
+            <h2 id="helpful_title" data-asterisk="a1" tabindex="0">How helpful is this document?</h2>     
+            <sup id="a1" class="asterisk" aria-hidden="true">*</sup>
+
+            <div id="star_group" role="radiogroup" aria-required="true">
+                <label> 
+                    <input class="radio" type="radio" name="helped" value="1" /> 
+                    Very helpful
+                </label>
+                <label> 
+                    <input class="radio" type="radio" name="helped" value="2" /> 
+                    Somewhat helpful
+                </label>
+                <label>
+                    <input class="radio" type="radio" name="helped" value="3" /> 
+                    Not helpful
+                </label>
+            </div>
+        </div>
+        <div class="right-leaf">
+            <h2>How can we improve this document?</h2>
+            <div id="improve" class="checkboxes">
+                <label>
+                    <input type="checkbox" name="typo" /> 
+                    Fix typos or links
+                </label>
+                <label>
+                    <input type="checkbox" name="infoIncorrect" /> 
+                    Fix incorrect information
+                </label>
+                <label>
+                    <input type="checkbox" name="needs_examples" /> 
+                    Add or update code samples
+                </label>
+                <label>
+                    <input type="checkbox" name="needs_art" /> 
+                    Add or update illustrations
+                </label>
+                <label>
+                    <input type="checkbox" name="missingInfo" /> 
+                    Add information about...
+                </label>
+            </div>
+        </div>
+
+        <textarea id="comment" name="problem" cols="70" rows="8" placeholder="Please tell us more about your experience with this document" data-asterisk="a2" required></textarea>
+        <sup id="a2" class="asterisk" aria-hidden="true">*</sup>
+
+        <p class="fineprint">
+            <em aria-hidden="true"><span>*</span> Required information</em>
+        </p> 
+
+        <input id="submit" type="button" value="Send" />
+
+        <section id="legal">
+            <p>
+                To submit a product bug or enhancement request, please visit the 
+                <a href="https://developer.apple.com/bugreporter/" target="_blank">Bug Reporter</a> 
+                page.
+            </p>
+            <p>
+                Please read <a href="http://www.apple.com/legal/policies/ideas.html" target="_blank">Apple's Unsolicited Idea Submission Policy</a> 
+                before you send us your feedback.
+            </p> 
+        </section>
+    </form>
+</div>
+
+</div>
+</html>

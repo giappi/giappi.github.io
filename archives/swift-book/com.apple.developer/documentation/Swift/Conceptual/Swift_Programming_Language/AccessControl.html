@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>  
+  <title>The Swift Programming Language (Swift 4): Access Control</title>
+  <link rel="stylesheet" type="text/css" href="../../../../Resources/1274/CSS/style-1.6.3.css" />
+  <link rel="stylesheet" type="text/css" href="../../../../Resources/1274/CSS/feedback-1.6.3.css" />
+  <meta charset='utf-8'> 
+<meta id="j-version" name="j-version" content="" />
+<meta id="build" name="build" content="32e73169b28e462967e02f4e96a19a99" />
+<meta id="document-version" name="document-version" content="10.1.2" />
+<meta id="book-assignments" name="book-assignments" content="{Type/Guide}, {Topic/Swift}" />
+<meta scheme="apple_ref" id="identifier" name="identifier" content="//apple_ref/doc/uid/TP40014097" />
+<meta id="chapterId" name="chapterId" content="TP40014097-CH41">
+<meta id="book-title" name="book-title" content="The Swift Programming Language (Swift 4)" />
+<meta id="book-resource-type" name="book-resource-type" content="Guide" />
+<meta id="book-root" name="book-root" content="./" />
+<meta id="book-json" name="book-json" content="book.json">
+<meta id="date" name="date" content="2017-09-19" />
+<meta id="description" name="description" content="The definitive guide to Swift, Apple’s programming language for building iOS, macOS, watchOS, and tvOS apps." />
+<meta id="IndexTitle" name="IndexTitle" content="" />
+<meta id="resources-uri" name="resources-uri" content="../../../../Resources/1274">
+<link id="book-index-page" rel="Start" title="" type="text/html" href="./index.html">
+<!-- , next_chapter: next_chapter, previous_chapter: previous_chapter -->
+<link id="next-page" rel="Next" type="text/html" href="">
+<link id="previous-page" rel="Prev" type="text/html" href="">
+<meta id="devcenter" name="devcenter" content="<!-- DEVCENTER_NAME -->" />
+<meta id="devcenter-url" name="devcenter-url" content="<!-- DEVCENTER_URL -->" />
+<meta id="reflib" name="reflib" content="<!-- REFLIB_NAME -->" />
+
+<meta id="xcode-display" name="xcode-display" content="render" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta id="platforms" name="platforms" content="Xcode Developer Tools">
+</head>
+
+  <body id="conceptual_flow_with_tasks" class="jazz">
+    
+    <header id="ios_header" class="hideOnPrint hideInXcode">
+  <div class="content-wrapper">
+    <p class="header-text">
+    	<a href="../../../../navigation/">Guides and Sample Code
+ 		</a>
+ </p>
+    <p id="wwdr"><img id="apple_logo" src="../../../../Resources/1274/Images/apple2.png" height="14px" width="12px" aria-hidden="true" /><a href="https://developer.apple.com">Developer</a></p>
+  </div>
+</header>
+
+    <section id="valence">
+  <div class="content-wrapper">
+    <p id="hierarchial_navigation">
+      <span id="book_title">The Swift Programming Language (Swift 4)</span>
+    </p>
+    <form id="search" class="hideInXcode" method="get" action="/search/index.php" accept-charset="utf-8" autocomplete="off">
+  <input type="search" id="ssi_SearchField" placeholder="Search Guides and Sample Code" name="q" autocomplete="off" tabindex="2" />
+</form>
+
+      
+   
+   
+
+
+
+
+    <span class="download-text hideInXcode">
+      <a href="https://itunes.apple.com/us/book/the-swift-programming-language/id881256329?mt=11">iBooks</a>
+    </span>
+
+    
+
+    <img id="shortstack" src="../../../../Resources/1274/Images/shortstack_2x.png"/>
+  </div>
+</section>
+    <div class="content-wrapper">
+      <nav id="navigator" class="book-parts hideInXcode" role="navigation">
+    <ul class="nav-parts">
+        <li data-id="//apple_ref/doc/uid/TP40014097-CH1-ID2"
+            class="part-name">
+            <a href="index.html#//apple_ref/doc/uid/TP40014097-CH3-ID0" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH3-ID0">Welcome to Swift</a>
+          <ul class="nav-chapters">
+              <li class="nav-chapter">
+              	<a href="index.html#//apple_ref/doc/uid/TP40014097-CH3-ID0" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH3-ID0">About Swift</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Compatibility.html#//apple_ref/doc/uid/TP40014097-CH45-ID561" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH45-ID561">Version Compatibility</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="GuidedTour.html#//apple_ref/doc/uid/TP40014097-CH2-ID1" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH2-ID1">A Swift Tour</a>
+              </li>
+          </ul>
+        </li>
+        <li data-id="//apple_ref/doc/uid/TP40014097-CH4-ID233"
+            class="part-name nav-part-active open-part">
+            <a href="TheBasics.html#//apple_ref/doc/uid/TP40014097-CH5-ID309" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH5-ID309">Language Guide</a>
+          <ul class="nav-chapters">
+              <li class="nav-chapter">
+              	<a href="TheBasics.html#//apple_ref/doc/uid/TP40014097-CH5-ID309" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH5-ID309">The Basics</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="BasicOperators.html#//apple_ref/doc/uid/TP40014097-CH6-ID60" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH6-ID60">Basic Operators</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="StringsAndCharacters.html#//apple_ref/doc/uid/TP40014097-CH7-ID285" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH7-ID285">Strings and Characters</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="CollectionTypes.html#//apple_ref/doc/uid/TP40014097-CH8-ID105" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH8-ID105">Collection Types</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="ControlFlow.html#//apple_ref/doc/uid/TP40014097-CH9-ID120" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH9-ID120">Control Flow</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Functions.html#//apple_ref/doc/uid/TP40014097-CH10-ID158" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH10-ID158">Functions</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Closures.html#//apple_ref/doc/uid/TP40014097-CH11-ID94" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH11-ID94">Closures</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Enumerations.html#//apple_ref/doc/uid/TP40014097-CH12-ID145" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH12-ID145">Enumerations</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="ClassesAndStructures.html#//apple_ref/doc/uid/TP40014097-CH13-ID82" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH13-ID82">Classes and Structures</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Properties.html#//apple_ref/doc/uid/TP40014097-CH14-ID254" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH14-ID254">Properties</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Methods.html#//apple_ref/doc/uid/TP40014097-CH15-ID234" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH15-ID234">Methods</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Subscripts.html#//apple_ref/doc/uid/TP40014097-CH16-ID305" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH16-ID305">Subscripts</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Inheritance.html#//apple_ref/doc/uid/TP40014097-CH17-ID193" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH17-ID193">Inheritance</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Initialization.html#//apple_ref/doc/uid/TP40014097-CH18-ID203" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH18-ID203">Initialization</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Deinitialization.html#//apple_ref/doc/uid/TP40014097-CH19-ID142" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH19-ID142">Deinitialization</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="OptionalChaining.html#//apple_ref/doc/uid/TP40014097-CH21-ID245" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH21-ID245">Optional Chaining</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="ErrorHandling.html#//apple_ref/doc/uid/TP40014097-CH42-ID508" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH42-ID508">Error Handling</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="TypeCasting.html#//apple_ref/doc/uid/TP40014097-CH22-ID338" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH22-ID338">Type Casting</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="NestedTypes.html#//apple_ref/doc/uid/TP40014097-CH23-ID242" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH23-ID242">Nested Types</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Extensions.html#//apple_ref/doc/uid/TP40014097-CH24-ID151" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH24-ID151">Extensions</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Protocols.html#//apple_ref/doc/uid/TP40014097-CH25-ID267" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH25-ID267">Protocols</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Generics.html#//apple_ref/doc/uid/TP40014097-CH26-ID179" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH26-ID179">Generics</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="AutomaticReferenceCounting.html#//apple_ref/doc/uid/TP40014097-CH20-ID48" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH20-ID48">Automatic Reference Counting</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="MemorySafety.html#//apple_ref/doc/uid/TP40014097-CH46-ID567" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH46-ID567">Memory Safety</a>
+              </li>
+              <li class="nav-chapter nav-current-chapter">
+              	<a href="#//apple_ref/doc/uid/TP40014097-CH41-ID3" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH41-ID3">Access Control</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="AdvancedOperators.html#//apple_ref/doc/uid/TP40014097-CH27-ID28" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH27-ID28">Advanced Operators</a>
+              </li>
+          </ul>
+        </li>
+        <li data-id="//apple_ref/doc/uid/TP40014097-CH28-ID427"
+            class="part-name">
+            <a href="AboutTheLanguageReference.html#//apple_ref/doc/uid/TP40014097-CH29-ID345" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH29-ID345">Language Reference</a>
+          <ul class="nav-chapters">
+              <li class="nav-chapter">
+              	<a href="AboutTheLanguageReference.html#//apple_ref/doc/uid/TP40014097-CH29-ID345" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH29-ID345">About the Language Reference</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="LexicalStructure.html#//apple_ref/doc/uid/TP40014097-CH30-ID410" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH30-ID410">Lexical Structure</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Types.html#//apple_ref/doc/uid/TP40014097-CH31-ID445" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH31-ID445">Types</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Expressions.html#//apple_ref/doc/uid/TP40014097-CH32-ID383" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH32-ID383">Expressions</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Statements.html#//apple_ref/doc/uid/TP40014097-CH33-ID428" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH33-ID428">Statements</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Declarations.html#//apple_ref/doc/uid/TP40014097-CH34-ID351" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH34-ID351">Declarations</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Attributes.html#//apple_ref/doc/uid/TP40014097-CH35-ID347" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH35-ID347">Attributes</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="Patterns.html#//apple_ref/doc/uid/TP40014097-CH36-ID419" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH36-ID419">Patterns</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="GenericParametersAndArguments.html#//apple_ref/doc/uid/TP40014097-CH37-ID406" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH37-ID406">Generic Parameters and Arguments</a>
+              </li>
+              <li class="nav-chapter">
+              	<a href="zzSummaryOfTheGrammar.html#//apple_ref/doc/uid/TP40014097-CH38-ID458" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH38-ID458">Summary of the Grammar</a>
+              </li>
+          </ul>
+        </li>
+        <li data-id="//apple_ref/doc/uid/TP40014097-CH39-ID460"
+            class="part-name">
+            <a href="RevisionHistory.html#//apple_ref/doc/uid/TP40014097-CH40-ID459" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH40-ID459">Revision History</a>
+          <ul class="nav-chapters">
+              <li class="nav-chapter">
+              	<a href="RevisionHistory.html#//apple_ref/doc/uid/TP40014097-CH40-ID459" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH40-ID459">Document Revision History</a>
+              </li>
+          </ul>
+        </li>
+    </ul>
+</nav>
+
+      <menu id="bashful" type="toolbar">
+  <div class="shield"></div>
+  <menuitem id="jump_to" class="menu-bar-item closed">
+  <span>On This Page</span>
+  <div class="chevron">
+    <div class="chevy chevron-left"></div>
+    <div class="chevy chevron-right"></div>
+  </div>
+  <menu type="list" class="details">
+      <ul class="list-bullet">
+          <li class="item">
+            <a href="#//apple_ref/doc/uid/TP40014097-CH41-ID4">Modules and Source Files</a>
+          </li>
+          <li class="item">
+            <a href="#//apple_ref/doc/uid/TP40014097-CH41-ID5">Access Levels</a>
+          </li>
+          <li class="item">
+            <a href="#//apple_ref/doc/uid/TP40014097-CH41-ID10">Access Control Syntax</a>
+          </li>
+          <li class="item">
+            <a href="#//apple_ref/doc/uid/TP40014097-CH41-ID11">Custom Types</a>
+          </li>
+          <li class="item">
+            <a href="#//apple_ref/doc/uid/TP40014097-CH41-ID16">Subclassing</a>
+          </li>
+          <li class="item">
+            <a href="#//apple_ref/doc/uid/TP40014097-CH41-ID17">Constants, Variables, Properties, and Subscripts</a>
+          </li>
+          <li class="item">
+            <a href="#//apple_ref/doc/uid/TP40014097-CH41-ID19">Initializers</a>
+          </li>
+          <li class="item">
+            <a href="#//apple_ref/doc/uid/TP40014097-CH41-ID22">Protocols</a>
+          </li>
+          <li class="item">
+            <a href="#//apple_ref/doc/uid/TP40014097-CH41-ID25">Extensions</a>
+          </li>
+          <li class="item">
+            <a href="#//apple_ref/doc/uid/TP40014097-CH41-ID26">Generics</a>
+          </li>
+          <li class="item">
+            <a href="#//apple_ref/doc/uid/TP40014097-CH41-ID27">Type Aliases</a>
+          </li>
+      </ul>
+  </menu>
+</menuitem>
+
+</menu>
+<div class="pixel-line"></div>
+<div class="rubber-band-gap"></div>
+<article class="chapter">
+  <a name="//apple_ref/doc/uid/TP40014097-CH41"></a><a name="//apple_ref/doc/uid/TP40014097-CH41-ID3"></a>
+
+  <h2 class='chapter-name'>Access Control</h2>
+
+
+  
+  	<section class="section">
+  		<p class="para">
+  <em>Access control</em> restricts access to parts of your code from code in other source files and modules. This feature enables you to hide the implementation details of your code, and to specify a preferred interface through which that code can be accessed and used.
+</p>
+<p class="para">
+  You can assign specific access levels to individual types (classes, structures, and enumerations), as well as to properties, methods, initializers, and subscripts belonging to those types. Protocols can be restricted to a certain context, as can global constants, variables, and functions.
+</p>
+<p class="para">
+  In addition to offering various levels of access control, Swift reduces the need to specify explicit access control levels by providing default access levels for typical scenarios. Indeed, if you are writing a single-target app, you may not need to specify explicit access control levels at all.
+</p>
+<div class="note">
+  <a name="//apple_ref/doc/uid/TP40014097-CH41-NoLink_198"></a>
+  <aside class="aside">
+    <p class="aside-title">Note
+    </p>
+    	<p class="para">The various aspects of your code that can have access control applied to them (properties, types, functions, and so on) are referred to as “entities” in the sections below, for brevity.
+    	</p>
+    
+  </aside>
+</div>
+
+		</section> 
+
+
+  <section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH41-ID4"></a>
+  <h3 class="section-name" tabindex="0">Modules and Source Files</h3>
+  <p class="para">
+  Swift’s access control model is based on the concept of modules and source files.
+</p><p class="para">
+  A <em>module</em> is a single unit of code distribution—a framework or application that is built and shipped as a single unit and that can be imported by another module with Swift’s <code class="code-voice">import</code> keyword.
+</p><p class="para">
+  Each build target (such as an app bundle or framework) in Xcode is treated as a separate module in Swift. If you group together aspects of your app’s code as a stand-alone framework—perhaps to encapsulate and reuse that code across multiple applications—then everything you define within that framework will be part of a separate module when it’s imported and used within an app, or when it’s used within another framework.
+</p><p class="para">
+  A <em>source file</em> is a single Swift source code file within a module (in effect, a single file within an app or framework). Although it’s common to define individual types in separate source files, a single source file can contain definitions for multiple types, functions, and so on.
+</p>
+  
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH41-ID5"></a>
+  <h3 class="section-name" tabindex="0">Access Levels</h3>
+  <p class="para">
+  Swift provides five different <em>access levels</em> for entities within your code. These access levels are relative to the source file in which an entity is defined, and also relative to the module that source file belongs to.
+</p><ul class="list-bullet">
+  <li class="item"><p class="para">
+  <em>Open access</em> and <em>public access</em> enable entities to be used within any source file from their defining module, and also in a source file from another module that imports the defining module. You typically use open or public access when specifying the public interface to a framework. The difference between open and public access is described below.
+</p>
+</li><li class="item"><p class="para">
+  <em>Internal access</em> enables entities to be used within any source file from their defining module, but not in any source file outside of that module. You typically use internal access when defining an app’s or a framework’s internal structure.
+</p>
+</li><li class="item"><p class="para">
+  <em>File-private access</em> restricts the use of an entity to its own defining source file. Use file-private access to hide the implementation details of a specific piece of functionality when those details are used within an entire file.
+</p>
+</li><li class="item"><p class="para">
+  <em>Private access</em> restricts the use of an entity to the enclosing declaration, and to extensions of that declaration that are in the same file. Use private access to hide the implementation details of a specific piece of functionality when those details are used only within a single declaration.
+</p>
+</li>
+</ul><p class="para">
+  Open access is the highest (least restrictive) access level and private access is the lowest (most restrictive) access level.
+</p><p class="para">
+  Open access applies only to classes and class members, and it differs from public access as follows:
+</p><ul class="list-bullet">
+  <li class="item"><p class="para">
+  Classes with public access, or any more restrictive access level, can be subclassed only within the module where they’re defined.
+</p>
+</li><li class="item"><p class="para">
+  Class members with public access, or any more restrictive access level, can be overridden by subclasses only within the module where they’re defined.
+</p>
+</li><li class="item"><p class="para">
+  Open classes can be subclassed within the module where they’re defined, and within any module that imports the module where they’re defined.
+</p>
+</li><li class="item"><p class="para">
+  Open class members can be overridden by subclasses within the module where they’re defined, and within any module that imports the module where they’re defined.
+</p>
+</li>
+</ul><p class="para">
+  Marking a class as open explicitly indicates that you’ve considered the impact of code from other modules using that class as a superclass, and that you’ve designed your class’s code accordingly.
+</p>
+  <section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH41-ID6"></a>
+  <h3 class="section-name" tabindex="0">Guiding Principle of Access Levels</h3>
+  <p class="para">
+  Access levels in Swift follow an overall guiding principle: <em>No entity can be defined in terms of another entity that has a lower (more restrictive) access level.</em>
+</p><p class="para">
+  For example:
+</p><ul class="list-bullet">
+  <li class="item"><p class="para">
+  A public variable can’t be defined as having an internal, file-private, or private type, because the type might not be available everywhere that the public variable is used.
+</p>
+</li><li class="item"><p class="para">
+  A function can’t have a higher access level than its parameter types and return type, because the function could be used in situations where its constituent types are unavailable to the surrounding code.
+</p>
+</li>
+</ul><p class="para">
+  The specific implications of this guiding principle for different aspects of the language are covered in detail below.
+</p>
+  
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH41-ID7"></a>
+  <h3 class="section-name" tabindex="0">Default Access Levels</h3>
+  <p class="para">
+  All entities in your code (with a few specific exceptions, as described later in this chapter) have a default access level of internal if you don’t specify an explicit access level yourself. As a result, in many cases you don’t need to specify an explicit access level in your code.
+</p>
+  
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH41-ID8"></a>
+  <h3 class="section-name" tabindex="0">Access Levels for Single-Target Apps</h3>
+  <p class="para">
+  When you write a simple single-target app, the code in your app is typically self-contained within the app and doesn’t need to be made available outside of the app’s module. The default access level of internal already matches this requirement. Therefore, you don’t need to specify a custom access level. You may, however, want to mark some parts of your code as file private or private in order to hide their implementation details from other code within the app’s module.
+</p>
+  
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH41-ID9"></a>
+  <h3 class="section-name" tabindex="0">Access Levels for Frameworks</h3>
+  <p class="para">
+  When you develop a framework, mark the public-facing interface to that framework as open or public so that it can be viewed and accessed by other modules, such as an app that imports the framework. This public-facing interface is the application programming interface (or API) for the framework.
+</p><div class="note">
+  <a name="//apple_ref/doc/uid/TP40014097-CH41-NoLink_199"></a>
+  <aside class="aside">
+    <p class="aside-title">Note
+    </p>
+    	<p class="para">Any internal implementation details of your framework can still use the default access level of internal, or can be marked as private or file private if you want to hide them from other parts of the framework’s internal code. You need to mark an entity as open or public only if you want it to become part of your framework’s API.
+    	</p>
+    
+  </aside>
+</div>
+  
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH41-ID519"></a>
+  <h3 class="section-name" tabindex="0">Access Levels for Unit Test Targets</h3>
+  <p class="para">
+  When you write an app with a unit test target, the code in your app needs to be made available to that module in order to be tested. By default, only entities marked as open or public are accessible to other modules. However, a unit test target can access any internal entity, if you mark the import declaration for a product module with the <code class="code-voice">@testable</code> attribute and compile that product module with testing enabled.
+</p>
+  
+</section>
+
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH41-ID10"></a>
+  <h3 class="section-name" tabindex="0">Access Control Syntax</h3>
+  <p class="para">
+  Define the access level for an entity by placing one of the <code class="code-voice">open</code>, <code class="code-voice">public</code>, <code class="code-voice">internal</code>, <code class="code-voice">fileprivate</code>, or <code class="code-voice">private</code> modifiers before the entity’s introducer:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">public</span> <span class="kt">class</span> <span class="vc">SomePublicClass</span> {}</code></li>
+            <li><code class="code-voice"><span class="kt">internal</span> <span class="kt">class</span> <span class="vc">SomeInternalClass</span> {}</code></li>
+            <li><code class="code-voice"><span class="kt">fileprivate</span> <span class="kt">class</span> <span class="vc">SomeFilePrivateClass</span> {}</code></li>
+            <li><code class="code-voice"><span class="kt">private</span> <span class="kt">class</span> <span class="vc">SomePrivateClass</span> {}</code></li>
+            <li><code class="code-voice"> </code></li>
+            <li><code class="code-voice"><span class="kt">public</span> <span class="kt">var</span> <span class="vc">somePublicVariable</span> = <span class="m">0</span></code></li>
+            <li><code class="code-voice"><span class="kt">internal</span> <span class="kt">let</span> <span class="vc">someInternalConstant</span> = <span class="m">0</span></code></li>
+            <li><code class="code-voice"><span class="kt">fileprivate</span> <span class="kt">func</span> <span class="vc">someFilePrivateFunction</span>() {}</code></li>
+            <li><code class="code-voice"><span class="kt">private</span> <span class="kt">func</span> <span class="vc">somePrivateFunction</span>() {}</code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  Unless otherwise specified, the default access level is internal, as described in <span class="x-name"><a href="#//apple_ref/doc/uid/TP40014097-CH41-ID7" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH41-ID7">Default Access Levels</a></span>. This means that <code class="code-voice">SomeInternalClass</code> and <code class="code-voice">someInternalConstant</code> can be written without an explicit access-level modifier, and will still have an access level of internal:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">class</span> <span class="vc">SomeInternalClass</span> {}              <span class="c">// implicitly internal</span></code></li>
+            <li><code class="code-voice"><span class="kt">let</span> <span class="vc">someInternalConstant</span> = <span class="m">0</span>            <span class="c">// implicitly internal</span></code></li>
+        </ol>
+      </div>
+  </div>
+</section>
+  
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH41-ID11"></a>
+  <h3 class="section-name" tabindex="0">Custom Types</h3>
+  <p class="para">
+  If you want to specify an explicit access level for a custom type, do so at the point that you define the type. The new type can then be used wherever its access level permits. For example, if you define a file-private class, that class can only be used as the type of a property, or as a function parameter or return type, in the source file in which the file-private class is defined.
+</p><p class="para">
+  The access control level of a type also affects the default access level of that type’s <em>members</em> (its properties, methods, initializers, and subscripts). If you define a type’s access level as private or file private, the default access level of its members will also be private or file private. If you define a type’s access level as internal or public (or use the default access level of internal without specifying an access level explicitly), the default access level of the type’s members will be internal.
+</p><div class="important clear">
+  <a name="//apple_ref/doc/uid/TP40014097-CH41-DontLinkElementID_2"></a>
+  <aside class="aside">
+    <p class="aside-title">Important
+    </p>
+    <p class="para">A public type defaults to having internal members, not public members. If you want a type member to be public, you must explicitly mark it as such. This requirement ensures that the public-facing API for a type is something you opt in to publishing, and avoids presenting the internal workings of a type as public API by mistake.
+    </p>
+    
+  </aside>
+</div><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">public</span> <span class="kt">class</span> <span class="vc">SomePublicClass</span> {                  <span class="c">// explicitly public class</span></code></li>
+            <li><code class="code-voice">    <span class="kt">public</span> <span class="kt">var</span> <span class="vc">somePublicProperty</span> = <span class="m">0</span>            <span class="c">// explicitly public class member</span></code></li>
+            <li><code class="code-voice">    <span class="kt">var</span> <span class="vc">someInternalProperty</span> = <span class="m">0</span>                 <span class="c">// implicitly internal class member</span></code></li>
+            <li><code class="code-voice">    <span class="kt">fileprivate</span> <span class="kt">func</span> <span class="vc">someFilePrivateMethod</span>() {}  <span class="c">// explicitly file-private class member</span></code></li>
+            <li><code class="code-voice">    <span class="kt">private</span> <span class="kt">func</span> <span class="vc">somePrivateMethod</span>() {}          <span class="c">// explicitly private class member</span></code></li>
+            <li><code class="code-voice">}</code></li>
+            <li><code class="code-voice"> </code></li>
+            <li><code class="code-voice"><span class="kt">class</span> <span class="vc">SomeInternalClass</span> {                       <span class="c">// implicitly internal class</span></code></li>
+            <li><code class="code-voice">    <span class="kt">var</span> <span class="vc">someInternalProperty</span> = <span class="m">0</span>                 <span class="c">// implicitly internal class member</span></code></li>
+            <li><code class="code-voice">    <span class="kt">fileprivate</span> <span class="kt">func</span> <span class="vc">someFilePrivateMethod</span>() {}  <span class="c">// explicitly file-private class member</span></code></li>
+            <li><code class="code-voice">    <span class="kt">private</span> <span class="kt">func</span> <span class="vc">somePrivateMethod</span>() {}          <span class="c">// explicitly private class member</span></code></li>
+            <li><code class="code-voice">}</code></li>
+            <li><code class="code-voice"> </code></li>
+            <li><code class="code-voice"><span class="kt">fileprivate</span> <span class="kt">class</span> <span class="vc">SomeFilePrivateClass</span> {        <span class="c">// explicitly file-private class</span></code></li>
+            <li><code class="code-voice">    <span class="kt">func</span> <span class="vc">someFilePrivateMethod</span>() {}              <span class="c">// implicitly file-private class member</span></code></li>
+            <li><code class="code-voice">    <span class="kt">private</span> <span class="kt">func</span> <span class="vc">somePrivateMethod</span>() {}          <span class="c">// explicitly private class member</span></code></li>
+            <li><code class="code-voice">}</code></li>
+            <li><code class="code-voice"> </code></li>
+            <li><code class="code-voice"><span class="kt">private</span> <span class="kt">class</span> <span class="vc">SomePrivateClass</span> {                <span class="c">// explicitly private class</span></code></li>
+            <li><code class="code-voice">    <span class="kt">func</span> <span class="vc">somePrivateMethod</span>() {}                  <span class="c">// implicitly private class member</span></code></li>
+            <li><code class="code-voice">}</code></li>
+        </ol>
+      </div>
+  </div>
+</section>
+  <section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH41-ID12"></a>
+  <h3 class="section-name" tabindex="0">Tuple Types</h3>
+  <p class="para">
+  The access level for a tuple type is the most restrictive access level of all types used in that tuple. For example, if you compose a tuple from two different types, one with internal access and one with private access, the access level for that compound tuple type will be private.
+</p><div class="note">
+  <a name="//apple_ref/doc/uid/TP40014097-CH41-NoLink_200"></a>
+  <aside class="aside">
+    <p class="aside-title">Note
+    </p>
+    	<p class="para">Tuple types don’t have a standalone definition in the way that classes, structures, enumerations, and functions do. A tuple type’s access level is deduced automatically when the tuple type is used, and can’t be specified explicitly.
+    	</p>
+    
+  </aside>
+</div>
+  
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH41-ID13"></a>
+  <h3 class="section-name" tabindex="0">Function Types</h3>
+  <p class="para">
+  The access level for a function type is calculated as the most restrictive access level of the function’s parameter types and return type. You must specify the access level explicitly as part of the function’s definition if the function’s calculated access level doesn’t match the contextual default.
+</p><p class="para">
+  The example below defines a global function called <code class="code-voice">someFunction()</code>, without providing a specific access-level modifier for the function itself. You might expect this function to have the default access level of “internal”, but this isn’t the case. In fact, <code class="code-voice">someFunction()</code> won’t compile as written below:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">func</span> <span class="vc">someFunction</span>() -&gt; (<span class="n"><!-- a href="" -->SomeInternalClass<!-- /a --></span>, <span class="n"><!-- a href="" -->SomePrivateClass<!-- /a --></span>) {</code></li>
+            <li><code class="code-voice">    <span class="c">// function implementation goes here</span></code></li>
+            <li><code class="code-voice">}</code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  The function’s return type is a tuple type composed from two of the custom classes defined above in <span class="x-name"><a href="#//apple_ref/doc/uid/TP40014097-CH41-ID11" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH41-ID11">Custom Types</a></span>. One of these classes was defined as “internal”, and the other was defined as “private”. Therefore, the overall access level of the compound tuple type is “private” (the minimum access level of the tuple’s constituent types).
+</p><p class="para">
+  Because the function’s return type is private, you must mark the function’s overall access level with the <code class="code-voice">private</code> modifier for the function declaration to be valid:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">private</span> <span class="kt">func</span> <span class="vc">someFunction</span>() -&gt; (<span class="n"><!-- a href="" -->SomeInternalClass<!-- /a --></span>, <span class="n"><!-- a href="" -->SomePrivateClass<!-- /a --></span>) {</code></li>
+            <li><code class="code-voice">    <span class="c">// function implementation goes here</span></code></li>
+            <li><code class="code-voice">}</code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  It’s not valid to mark the definition of <code class="code-voice">someFunction()</code> with the <code class="code-voice">public</code> or <code class="code-voice">internal</code> modifiers, or to use the default setting of internal, because public or internal users of the function might not have appropriate access to the private class used in the function’s return type.
+</p>
+  
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH41-ID14"></a>
+  <h3 class="section-name" tabindex="0">Enumeration Types</h3>
+  <p class="para">
+  The individual cases of an enumeration automatically receive the same access level as the enumeration they belong to. You can’t specify a different access level for individual enumeration cases.
+</p><p class="para">
+  In the example below, the <code class="code-voice">CompassPoint</code> enumeration has an explicit access level of “public”. The enumeration cases <code class="code-voice">north</code>, <code class="code-voice">south</code>, <code class="code-voice">east</code>, and <code class="code-voice">west</code> therefore also have an access level of “public”:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">public</span> <span class="kt">enum</span> <span class="vc">CompassPoint</span> {</code></li>
+            <li><code class="code-voice">    <span class="kt">case</span> <span class="vc">north</span></code></li>
+            <li><code class="code-voice">    <span class="kt">case</span> <span class="vc">south</span></code></li>
+            <li><code class="code-voice">    <span class="kt">case</span> <span class="vc">east</span></code></li>
+            <li><code class="code-voice">    <span class="kt">case</span> <span class="vc">west</span></code></li>
+            <li><code class="code-voice">}</code></li>
+        </ol>
+      </div>
+  </div>
+</section>
+  <section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH41-ID468"></a>
+  <h3 class="section-name" tabindex="0">Raw Values and Associated Values</h3>
+  <p class="para">
+  The types used for any raw values or associated values in an enumeration definition must have an access level at least as high as the enumeration’s access level. You can’t use a <code class="code-voice">private</code> type as the raw-value type of an enumeration with an <code class="code-voice">internal</code> access level, for example.
+</p>
+  
+</section>
+
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH41-ID15"></a>
+  <h3 class="section-name" tabindex="0">Nested Types</h3>
+  <p class="para">
+  Nested types defined within a private type have an automatic access level of private. Nested types defined within a file-private type have an automatic access level of file private. Nested types defined within a public type or an internal type have an automatic access level of internal. If you want a nested type within a public type to be publicly available, you must explicitly declare the nested type as public.
+</p>
+  
+</section>
+
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH41-ID16"></a>
+  <h3 class="section-name" tabindex="0">Subclassing</h3>
+  <p class="para">
+  You can subclass any class that can be accessed in the current access context. A subclass can’t have a higher access level than its superclass—for example, you can’t write a public subclass of an internal superclass.
+</p><p class="para">
+  In addition, you can override any class member (method, property, initializer, or subscript) that is visible in a certain access context.
+</p><p class="para">
+  An override can make an inherited class member more accessible than its superclass version. In the example below, class <code class="code-voice">A</code> is a public class with a file-private method called <code class="code-voice">someMethod()</code>. Class <code class="code-voice">B</code> is a subclass of <code class="code-voice">A</code>, with a reduced access level of “internal”. Nonetheless, class <code class="code-voice">B</code> provides an override of <code class="code-voice">someMethod()</code> with an access level of “internal”, which is <em>higher</em> than the original implementation of <code class="code-voice">someMethod()</code>:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">public</span> <span class="kt">class</span> <span class="vc">A</span> {</code></li>
+            <li><code class="code-voice">    <span class="kt">fileprivate</span> <span class="kt">func</span> <span class="vc">someMethod</span>() {}</code></li>
+            <li><code class="code-voice">}</code></li>
+            <li><code class="code-voice"> </code></li>
+            <li><code class="code-voice"><span class="kt">internal</span> <span class="kt">class</span> <span class="vc">B</span>: <span class="n"><!-- a href="" -->A<!-- /a --></span> {</code></li>
+            <li><code class="code-voice">    <span class="kt">override</span> <span class="kt">internal</span> <span class="kt">func</span> <span class="vc">someMethod</span>() {}</code></li>
+            <li><code class="code-voice">}</code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  It’s even valid for a subclass member to call a superclass member that has lower access permissions than the subclass member, as long as the call to the superclass’s member takes place within an allowed access level context (that is, within the same source file as the superclass for a file-private member call, or within the same module as the superclass for an internal member call):
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">public</span> <span class="kt">class</span> <span class="vc">A</span> {</code></li>
+            <li><code class="code-voice">    <span class="kt">fileprivate</span> <span class="kt">func</span> <span class="vc">someMethod</span>() {}</code></li>
+            <li><code class="code-voice">}</code></li>
+            <li><code class="code-voice"> </code></li>
+            <li><code class="code-voice"><span class="kt">internal</span> <span class="kt">class</span> <span class="vc">B</span>: <span class="n"><!-- a href="" -->A<!-- /a --></span> {</code></li>
+            <li><code class="code-voice">    <span class="kt">override</span> <span class="kt">internal</span> <span class="kt">func</span> <span class="vc">someMethod</span>() {</code></li>
+            <li><code class="code-voice">        <span class="kt">super</span>.<span class="vc">someMethod</span>()</code></li>
+            <li><code class="code-voice">    }</code></li>
+            <li><code class="code-voice">}</code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  Because superclass <code class="code-voice">A</code> and subclass <code class="code-voice">B</code> are defined in the same source file, it’s valid for the <code class="code-voice">B</code> implementation of <code class="code-voice">someMethod()</code> to call <code class="code-voice">super.someMethod()</code>.
+</p>
+  
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH41-ID17"></a>
+  <h3 class="section-name" tabindex="0">Constants, Variables, Properties, and Subscripts</h3>
+  <p class="para">
+  A constant, variable, or property can’t be more public than its type. It’s not valid to write a public property with a private type, for example. Similarly, a subscript can’t be more public than either its index type or return type.
+</p><p class="para">
+  If a constant, variable, property, or subscript makes use of a private type, the constant, variable, property, or subscript must also be marked as <code class="code-voice">private</code>:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">private</span> <span class="kt">var</span> <span class="vc">privateInstance</span> = <span class="vc">SomePrivateClass</span>()</code></li>
+        </ol>
+      </div>
+  </div>
+</section>
+  <section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH41-ID18"></a>
+  <h3 class="section-name" tabindex="0">Getters and Setters</h3>
+  <p class="para">
+  Getters and setters for constants, variables, properties, and subscripts automatically receive the same access level as the constant, variable, property, or subscript they belong to.
+</p><p class="para">
+  You can give a setter a <em>lower</em> access level than its corresponding getter, to restrict the read-write scope of that variable, property, or subscript. You assign a lower access level by writing <code class="code-voice">fileprivate(set)</code>, <code class="code-voice">private(set)</code>, or <code class="code-voice">internal(set)</code> before the <code class="code-voice">var</code> or <code class="code-voice">subscript</code> introducer.
+</p><div class="note">
+  <a name="//apple_ref/doc/uid/TP40014097-CH41-NoLink_201"></a>
+  <aside class="aside">
+    <p class="aside-title">Note
+    </p>
+    	<p class="para">This rule applies to stored properties as well as computed properties. Even though you don’t write an explicit getter and setter for a stored property, Swift still synthesizes an implicit getter and setter for you to provide access to the stored property’s backing storage. Use <code class="code-voice">fileprivate(set)</code>, <code class="code-voice">private(set)</code>, and <code class="code-voice">internal(set)</code> to change the access level of this synthesized setter in exactly the same way as for an explicit setter in a computed property.
+    	</p>
+    
+  </aside>
+</div><p class="para">
+  The example below defines a structure called <code class="code-voice">TrackedString</code>, which keeps track of the number of times a string property is modified:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">struct</span> <span class="vc">TrackedString</span> {</code></li>
+            <li><code class="code-voice">    <span class="kt">private(set)</span> <span class="kt">var</span> <span class="vc">numberOfEdits</span> = <span class="m">0</span></code></li>
+            <li><code class="code-voice">    <span class="kt">var</span> <span class="vc">value</span>: <span class="n"><!-- a href="" -->String<!-- /a --></span> = <span class="s">&quot;&quot;</span> {</code></li>
+            <li><code class="code-voice">        <span class="kt">didSet</span> {</code></li>
+            <li><code class="code-voice">            <span class="vc">numberOfEdits</span> += <span class="m">1</span></code></li>
+            <li><code class="code-voice">        }</code></li>
+            <li><code class="code-voice">    }</code></li>
+            <li><code class="code-voice">}</code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  The <code class="code-voice">TrackedString</code> structure defines a stored string property called <code class="code-voice">value</code>, with an initial value of <code class="code-voice">&quot;&quot;</code> (an empty string). The structure also defines a stored integer property called <code class="code-voice">numberOfEdits</code>, which is used to track the number of times that <code class="code-voice">value</code> is modified. This modification tracking is implemented with a <code class="code-voice">didSet</code> property observer on the <code class="code-voice">value</code> property, which increments <code class="code-voice">numberOfEdits</code> every time the <code class="code-voice">value</code> property is set to a new value.
+</p><p class="para">
+  The <code class="code-voice">TrackedString</code> structure and the <code class="code-voice">value</code> property don’t provide an explicit access-level modifier, and so they both receive the default access level of internal. However, the access level for the <code class="code-voice">numberOfEdits</code> property is marked with a <code class="code-voice">private(set)</code> modifier to indicate that the property’s getter still has the default access level of internal, but the property is settable only from within code that’s part of the <code class="code-voice">TrackedString</code> structure. This enables <code class="code-voice">TrackedString</code> to modify the <code class="code-voice">numberOfEdits</code> property internally, but to present the property as a read-only property when it’s used outside the structure’s definition.
+</p><p class="para">
+  If you create a <code class="code-voice">TrackedString</code> instance and modify its string value a few times, you can see the <code class="code-voice">numberOfEdits</code> property value update to match the number of modifications:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">var</span> <span class="vc">stringToEdit</span> = <span class="vc">TrackedString</span>()</code></li>
+            <li><code class="code-voice"><span class="vc">stringToEdit</span>.<span class="vc">value</span> = <span class="s">&quot;This string will be tracked.&quot;</span></code></li>
+            <li><code class="code-voice"><span class="vc">stringToEdit</span>.<span class="vc">value</span> += <span class="s">&quot; This edit will increment numberOfEdits.&quot;</span></code></li>
+            <li><code class="code-voice"><span class="vc">stringToEdit</span>.<span class="vc">value</span> += <span class="s">&quot; So will this one.&quot;</span></code></li>
+            <li><code class="code-voice"><span class="vc">print</span>(<span class="s">&quot;The number of edits is </span>\(<span class="vc">stringToEdit</span>.<span class="vc">numberOfEdits</span>)<span class="s">&quot;</span>)</code></li>
+            <li><code class="code-voice"><span class="c">// Prints &quot;The number of edits is 3&quot;</span></code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  Although you can query the current value of the <code class="code-voice">numberOfEdits</code> property from within another source file, you can’t <em>modify</em> the property from another source file. This restriction protects the implementation details of the <code class="code-voice">TrackedString</code> edit-tracking functionality, while still providing convenient access to an aspect of that functionality.
+</p><p class="para">
+  Note that you can assign an explicit access level for both a getter and a setter if required. The example below shows a version of the <code class="code-voice">TrackedString</code> structure in which the structure is defined with an explicit access level of public. The structure’s members (including the <code class="code-voice">numberOfEdits</code> property) therefore have an internal access level by default. You can make the structure’s <code class="code-voice">numberOfEdits</code> property getter public, and its property setter private, by combining the <code class="code-voice">public</code> and <code class="code-voice">private(set)</code> access-level modifiers:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">public</span> <span class="kt">struct</span> <span class="vc">TrackedString</span> {</code></li>
+            <li><code class="code-voice">    <span class="kt">public</span> <span class="kt">private(set)</span> <span class="kt">var</span> <span class="vc">numberOfEdits</span> = <span class="m">0</span></code></li>
+            <li><code class="code-voice">    <span class="kt">public</span> <span class="kt">var</span> <span class="vc">value</span>: <span class="n"><!-- a href="" -->String<!-- /a --></span> = <span class="s">&quot;&quot;</span> {</code></li>
+            <li><code class="code-voice">        <span class="kt">didSet</span> {</code></li>
+            <li><code class="code-voice">            <span class="vc">numberOfEdits</span> += <span class="m">1</span></code></li>
+            <li><code class="code-voice">        }</code></li>
+            <li><code class="code-voice">    }</code></li>
+            <li><code class="code-voice">    <span class="kt">public</span> <span class="kt">init</span>() {}</code></li>
+            <li><code class="code-voice">}</code></li>
+        </ol>
+      </div>
+  </div>
+</section>
+  
+</section>
+
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH41-ID19"></a>
+  <h3 class="section-name" tabindex="0">Initializers</h3>
+  <p class="para">
+  Custom initializers can be assigned an access level less than or equal to the type that they initialize. The only exception is for required initializers (as defined in <span class="x-name"><a href="Initialization.html#//apple_ref/doc/uid/TP40014097-CH18-ID231" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH18-ID231">Required Initializers</a></span>). A required initializer must have the same access level as the class it belongs to.
+</p><p class="para">
+  As with function and method parameters, the types of an initializer’s parameters can’t be more private than the initializer’s own access level.
+</p>
+  <section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH41-ID20"></a>
+  <h3 class="section-name" tabindex="0">Default Initializers</h3>
+  <p class="para">
+  As described in <span class="x-name"><a href="Initialization.html#//apple_ref/doc/uid/TP40014097-CH18-ID213" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH18-ID213">Default Initializers</a></span>, Swift automatically provides a <em>default initializer</em> without any arguments for any structure or base class that provides default values for all of its properties and doesn’t provide at least one initializer itself.
+</p><p class="para">
+  A default initializer has the same access level as the type it initializes, unless that type is defined as <code class="code-voice">public</code>. For a type that is defined as <code class="code-voice">public</code>, the default initializer is considered internal. If you want a public type to be initializable with a no-argument initializer when used in another module, you must explicitly provide a public no-argument initializer yourself as part of the type’s definition.
+</p>
+  
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH41-ID21"></a>
+  <h3 class="section-name" tabindex="0">Default Memberwise Initializers for Structure Types</h3>
+  <p class="para">
+  The default memberwise initializer for a structure type is considered private if any of the structure’s stored properties are private. Likewise, if any of the structure’s stored properties are file private, the initializer is file private. Otherwise, the initializer has an access level of internal.
+</p><p class="para">
+  As with the default initializer above, if you want a public structure type to be initializable with a memberwise initializer when used in another module, you must provide a public memberwise initializer yourself as part of the type’s definition.
+</p>
+  
+</section>
+
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH41-ID22"></a>
+  <h3 class="section-name" tabindex="0">Protocols</h3>
+  <p class="para">
+  If you want to assign an explicit access level to a protocol type, do so at the point that you define the protocol. This enables you to create protocols that can only be adopted within a certain access context.
+</p><p class="para">
+  The access level of each requirement within a protocol definition is automatically set to the same access level as the protocol. You can’t set a protocol requirement to a different access level than the protocol it supports. This ensures that all of the protocol’s requirements will be visible on any type that adopts the protocol.
+</p><div class="note">
+  <a name="//apple_ref/doc/uid/TP40014097-CH41-NoLink_202"></a>
+  <aside class="aside">
+    <p class="aside-title">Note
+    </p>
+    	<p class="para">If you define a public protocol, the protocol’s requirements require a public access level for those requirements when they’r implemented. This behavior is different from other types, where a public type definition implies an access level of internal for the type’s members.
+    	</p>
+    
+  </aside>
+</div>
+  <section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH41-ID23"></a>
+  <h3 class="section-name" tabindex="0">Protocol Inheritance</h3>
+  <p class="para">
+  If you define a new protocol that inherits from an existing protocol, the new protocol can have at most the same access level as the protocol it inherits from. You can’t write a public protocol that inherits from an internal protocol, for example.
+</p>
+  
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH41-ID24"></a>
+  <h3 class="section-name" tabindex="0">Protocol Conformance</h3>
+  <p class="para">
+  A type can conform to a protocol with a lower access level than the type itself. For example, you can define a public type that can be used in other modules, but whose conformance to an internal protocol can only be used within the internal protocol’s defining module.
+</p><p class="para">
+  The context in which a type conforms to a particular protocol is the minimum of the type’s access level and the protocol’s access level. If a type is public, but a protocol it conforms to is internal, the type’s conformance to that protocol is also internal.
+</p><p class="para">
+  When you write or extend a type to conform to a protocol, you must ensure that the type’s implementation of each protocol requirement has at least the same access level as the type’s conformance to that protocol. For example, if a public type conforms to an internal protocol, the type’s implementation of each protocol requirement must be at least “internal”.
+</p><div class="note">
+  <a name="//apple_ref/doc/uid/TP40014097-CH41-NoLink_203"></a>
+  <aside class="aside">
+    <p class="aside-title">Note
+    </p>
+    	<p class="para">In Swift, as in Objective-C, protocol conformance is global—it isn’t possible for a type to conform to a protocol in two different ways within the same program.
+    	</p>
+    
+  </aside>
+</div>
+  
+</section>
+
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH41-ID25"></a>
+  <h3 class="section-name" tabindex="0">Extensions</h3>
+  <p class="para">
+  You can extend a class, structure, or enumeration in any access context in which the class, structure, or enumeration is available. Any type members added in an extension have the same default access level as type members declared in the original type being extended. If you extend a public or internal type, any new type members you add have a default access level of internal. If you extend a file-private type, any new type members you add have a default access level of file private. If you extend a private type, any new type members you add have a default access level of private.
+</p><p class="para">
+  Alternatively, you can mark an extension with an explicit access-level modifier (for example, <code class="code-voice">private extension</code>) to set a new default access level for all members defined within the extension. This new default can still be overridden within the extension for individual type members.
+</p><p class="para">
+  You can’t provide an explicit access-level modifier for an extension if you’re using that extension to add protocol conformance. Instead, the protocol’s own access level is used to provide the default access level for each protocol requirement implementation within the extension.
+</p>
+  <section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH41-ID559"></a>
+  <h3 class="section-name" tabindex="0">Private Members in Extensions</h3>
+  <p class="para">
+  Extensions that are in the same file as the class, structure, or enumeration that they extend behave as if the code in the extension had been written as part of the original type’s declaration. As a result, you can:
+</p><ul class="list-bullet">
+  <li class="item"><p class="para">
+  Declare a private member in the original declaration, and access that member from extensions in the same file.
+</p>
+</li><li class="item"><p class="para">
+  Declare a private member in one extension, and access that member from another extension in the same file.
+</p>
+</li><li class="item"><p class="para">
+  Declare a private member in an extension, and access that member from the original declaration in the same file.
+</p>
+</li>
+</ul><p class="para">
+  This behavior means you can use extensions in the same way to organize your code, whether or not your types have private entities. For example, given the following simple protocol:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">protocol</span> <span class="vc">SomeProtocol</span> {</code></li>
+            <li><code class="code-voice">    <span class="kt">func</span> <span class="vc">doSomething</span>()</code></li>
+            <li><code class="code-voice">}</code></li>
+        </ol>
+      </div>
+  </div>
+</section><p class="para">
+  You can use an extension to add protocol conformance, like this:
+</p><section class="code-listing">
+  
+  <div class="code-sample">
+      <div class="Swift">
+        <ol class="code-lines">
+            <li><code class="code-voice"><span class="kt">struct</span> <span class="vc">SomeStruct</span> {</code></li>
+            <li><code class="code-voice">    <span class="kt">private</span> <span class="kt">var</span> <span class="vc">privateVariable</span> = <span class="m">12</span></code></li>
+            <li><code class="code-voice">}</code></li>
+            <li><code class="code-voice"> </code></li>
+            <li><code class="code-voice"><span class="kt">extension</span> <span class="n"><!-- a href="" -->SomeStruct<!-- /a --></span>: <span class="n"><!-- a href="" -->SomeProtocol<!-- /a --></span> {</code></li>
+            <li><code class="code-voice">    <span class="kt">func</span> <span class="vc">doSomething</span>() {</code></li>
+            <li><code class="code-voice">        <span class="vc">print</span>(<span class="vc">privateVariable</span>)</code></li>
+            <li><code class="code-voice">    }</code></li>
+            <li><code class="code-voice">}</code></li>
+        </ol>
+      </div>
+  </div>
+</section>
+  
+</section>
+
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH41-ID26"></a>
+  <h3 class="section-name" tabindex="0">Generics</h3>
+  <p class="para">
+  The access level for a generic type or generic function is the minimum of the access level of the generic type or function itself and the access level of any type constraints on its type parameters.
+</p>
+  
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40014097-CH41-ID27"></a>
+  <h3 class="section-name" tabindex="0">Type Aliases</h3>
+  <p class="para">
+  Any type aliases you define are treated as distinct types for the purposes of access control. A type alias can have an access level less than or equal to the access level of the type it aliases. For example, a private type alias can alias a private, file-private, internal, public, or open type, but a public type alias can’t alias an internal, file-private, or private type.
+</p><div class="note">
+  <a name="//apple_ref/doc/uid/TP40014097-CH41-NoLink_204"></a>
+  <aside class="aside">
+    <p class="aside-title">Note
+    </p>
+    	<p class="para">This rule also applies to type aliases for associated types used to satisfy protocol conformances.
+    	</p>
+    
+  </aside>
+</div>
+  
+</section>
+
+  	
+ 	<section id="next_previous" class="">
+    		<p class="previous-link"><a href="MemorySafety.html#//apple_ref/doc/uid/TP40014097-CH46-ID567" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH46-ID567">Memory Safety</a></p>
+  			<p class="next-link"><a href="AdvancedOperators.html#//apple_ref/doc/uid/TP40014097-CH27-ID28" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40014097-CH27-ID28">Advanced Operators</a></p>
+
+    <p class="copyright">Copyright &#x00a9; 2017 Apple Inc. All rights reserved. 
+  <a class="link" href="http://www.apple.com/legal/terms/site.html" target="_blank" rel="external">Terms of Use</a> | 
+  <a class="link" href="http://www.apple.com/privacy/" target="_blank" rel="external">Privacy Policy</a> | 
+  Updated: 2017-09-19
+</p>
+  </section>
+</article>
+
+    </div>
+    <div id='big_button'></div>
+    <footer id="footer">
+  <div class="content-wrapper">
+  	<div id="leave_feedback" class="button" role="button" tabindex="0">Feedback</div>
+  </div>
+  <script src="../../../../Resources/1274/JavaScript/devpubs-1.6.3.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../../../Resources/1274/JavaScript/feedback-1.6.3.js" type="text/javascript" charset="utf-8"></script>
+  <div id="_omniture_top">
+<!-- SiteCatalyst code version: H.8. Copyright 1997-2006 Omniture, Inc. -->
+<script type="text/javascript">
+/* RSID: */
+var s_account="appleglobal,appleusdeveloper,dappdeveloperlib"
+</script>
+
+<script type="text/javascript" src="https://www.apple.com/metrics/scripts/s_code_h.js"></script>
+<script type="text/javascript">
+s.pageName=AC.Tracking.pageName();
+s.channel="www.us.developer"
+
+/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+var s_code=s.t();if(s_code)document.write(s_code)</script>
+<!-- End SiteCatalyst code version: H.8. -->
+</div>
+
+</footer>
+
+    
+  </body>
+    <div id="blackout">
+    <div id="preload"></div>
+</div>
+<div id="modal" aria-hidden="true">
+    <div id="closebox" tabindex="0" aria-label="Close feedback form" role="button"></div>
+    <div id="sending" class="hidden">
+        <h2 tabindex="0">Sending feedback&hellip;</h2>
+        <div id="sending_img"></div>
+    </div>
+    <div id="error" class="hidden">
+        <h2 tabindex="0">We&rsquo;re sorry, an error has occurred.</h2>
+        <p>Please try submitting your feedback later.</p>
+        <div id="error_icon"></div>
+    </div>
+    <div id="success" class="hidden">
+        <h2 tabindex="0">Thank you for providing feedback!</h2>
+        <p>Your input helps improve our developer documentation.</p>
+        <div id="thank_you_icon"></div>
+    </div>
+    
+    <form id="feedback" action="#" method="post">
+        <div class="left-leaf">
+            <h2 id="helpful_title" data-asterisk="a1" tabindex="0">How helpful is this document?</h2>     
+            <sup id="a1" class="asterisk" aria-hidden="true">*</sup>
+
+            <div id="star_group" role="radiogroup" aria-required="true">
+                <label> 
+                    <input class="radio" type="radio" name="helped" value="1" /> 
+                    Very helpful
+                </label>
+                <label> 
+                    <input class="radio" type="radio" name="helped" value="2" /> 
+                    Somewhat helpful
+                </label>
+                <label>
+                    <input class="radio" type="radio" name="helped" value="3" /> 
+                    Not helpful
+                </label>
+            </div>
+        </div>
+        <div class="right-leaf">
+            <h2>How can we improve this document?</h2>
+            <div id="improve" class="checkboxes">
+                <label>
+                    <input type="checkbox" name="typo" /> 
+                    Fix typos or links
+                </label>
+                <label>
+                    <input type="checkbox" name="infoIncorrect" /> 
+                    Fix incorrect information
+                </label>
+                <label>
+                    <input type="checkbox" name="needs_examples" /> 
+                    Add or update code samples
+                </label>
+                <label>
+                    <input type="checkbox" name="needs_art" /> 
+                    Add or update illustrations
+                </label>
+                <label>
+                    <input type="checkbox" name="missingInfo" /> 
+                    Add information about...
+                </label>
+            </div>
+        </div>
+
+        <textarea id="comment" name="problem" cols="70" rows="8" placeholder="Please tell us more about your experience with this document" data-asterisk="a2" required></textarea>
+        <sup id="a2" class="asterisk" aria-hidden="true">*</sup>
+
+        <p class="fineprint">
+            <em aria-hidden="true"><span>*</span> Required information</em>
+        </p> 
+
+        <input id="submit" type="button" value="Send" />
+
+        <section id="legal">
+            <p>
+                To submit a product bug or enhancement request, please visit the 
+                <a href="https://developer.apple.com/bugreporter/" target="_blank">Bug Reporter</a> 
+                page.
+            </p>
+            <p>
+                Please read <a href="http://www.apple.com/legal/policies/ideas.html" target="_blank">Apple's Unsolicited Idea Submission Policy</a> 
+                before you send us your feedback.
+            </p> 
+        </section>
+    </form>
+</div>
+
+</div>
+</html>
